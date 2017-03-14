@@ -2,9 +2,11 @@
 var path = require('path');
 
 module.exports = {
-  entry: './frontend/entry.jsx',
+  context: __dirname,
+  entry: "./frontend/entry.jsx",
   output: {
-    filename: './bundle.js',
+    path: path.join(__dirname, 'app', 'assets', 'javascripts'),
+    filename: "bundle.js"
   },
   module: {
     loaders: [
