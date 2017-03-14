@@ -1,12 +1,12 @@
 
 
-export const newUser = user => (
-  $.ajax({
+export const newUser = user => {
+  return $.ajax({
     method: 'POST',
     url: '/api/users',
-    user: { user }
-  })
-);
+    data: { user }
+  });
+};
 
 // TODO: Edit user info functionality
 // export const editUser = user => (
@@ -21,7 +21,7 @@ export const login = user => (
   $.ajax({
     method: 'POST',
     url: '/api/session',
-    user: { user }
+    data: { user }
   })
 );
 
