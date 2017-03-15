@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app';
-import Splash from './splash';
+import Splash from './splash/splash';
 import HomeContainer from './home/home_container';
 import SubscriptionsContainer from './subscriptions/subscriptions_container';
 import PodcastsContainer from './podcasts/podcasts_container';
@@ -29,7 +29,7 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Route path="/welcome" component={ Splash }  />
         <Route path="/" component={ App } onEnter={_ensureLoggedIn}>
-          
+
         </Route>
       </Router>
     </Provider>

@@ -16,17 +16,18 @@ export const receiveErrors = errors => ({
 
 export const newUser = user => dispatch => (
   SessionAPIUtil.newUser(user).then(currentUser => (
-    dispatch(receiveCurrentUser(currentUser))))
+    dispatch(receiveCurrentUser(currentUser)))).fail(errors=>(
+    dispatch(receiveErrors(errors.responseJSON))))
 );
 
 export const login = user => dispatch => (
   SessionAPIUtil.login(user).then(currentUser => (
     dispatch(receiveCurrentUser(currentUser)))).fail(errors=>(
-      dispatch(receiveErrors(errors.renderJSON))))
+      dispatch(receiveErrors(errors.responseJSON))))
 );
 
 export const logout = () => dispatch => (
   SessionAPIUtil.logout().then(currentUser => (
-    dispatch(receiveCurrentUser(currentUser.renderJSON))))
-    .fail(errors=>(dispatch(receiveErrors(errors.renderJSON))))
+    dispatch(receiveCurrentUser(currentUser))))
+    .fail(errors=>(dispatch(receiveErrors(errors.responseJSON))))
 );
