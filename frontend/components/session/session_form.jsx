@@ -22,6 +22,7 @@ class SessionForm extends React.Component {
     this.redirect();
   }
 
+  //TODO: Persisting errors array?
   //TODO: Best way to redirect?
   redirect(){
     if (this.props.currentUser) hashHistory.push("/");

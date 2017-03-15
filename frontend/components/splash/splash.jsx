@@ -14,7 +14,7 @@ class Splash extends React.Component {
   }
 
   onModalClose() {
-    console.log("inside close");
+    debugger;
     this.setState({ modalOpen: false });
   }
 
@@ -27,7 +27,7 @@ class Splash extends React.Component {
             .bind(this, true)}>Login</button>
 
         <Modal
-          className="splash-nav"
+          className="splash-nav-modal"
           isOpen={this.state.modalOpen}
           onRequestClose={this.onModalClose}
           contentLabel="auth">
