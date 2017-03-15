@@ -3,8 +3,6 @@ import { newUser, login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state, "state");
-  console.log(ownProps, "ownProps");
   return {
     currentUser: state.session.currentUser,
     errors: state.session.errors,
@@ -14,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 //TODO: Do I need to pass params here?
 const mapDispatchToProps = dispatch => ({
-  signup: (user) => dispatch(newUser(user)),
+  newUser: (user) => dispatch(newUser(user)),
   login: (user) => dispatch(login(user))
 });
 

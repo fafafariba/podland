@@ -1,22 +1,19 @@
 
 //TODO: How to style modal?
 
-.splash-nav-modal  {
-  background-color: gray;
-}
-
-Modal {
-  background-color: blue;
-}
-
-.splash-nav modal{
-  background-color: red;
-}
-
-.splash-nav Modal{
-  background-color: purple;
-}
-
-.ReactModal {
-  background-color: green;
+.splash-nav-modal {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    right: 100px;
+    bottom: 100px;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    // webkit-overflow-scrolling  : 'touch';
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
 }

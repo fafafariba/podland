@@ -13,13 +13,10 @@ class SessionForm extends React.Component {
   }
 
   submitHandler(){
-    if (this.props.formType === "login") {
-      this.props.login(this.state);
-    } else {
-      this.props.signup(this.state);
-    }
+    event.preventDefault();
+    let formAction;
+    this.props.formType(this.state).then(() =>  this.redirect());
     this.setState({name: "", email: "", password: "", image_url: ""});
-    this.redirect();
   }
 
   //TODO: Persisting errors array?
@@ -35,7 +32,6 @@ class SessionForm extends React.Component {
     let header = "Login";
 
     if (this.props.formType==="newUser") {
-      console.log("newUser");
       header = "Sign Up";
       name = <label> Name
         <input type="text" onChange={this.inputHandler("name")}/>
