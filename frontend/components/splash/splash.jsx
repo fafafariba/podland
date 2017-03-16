@@ -14,28 +14,17 @@ class Splash extends React.Component {
   }
 
   onModalClose() {
-    debugger;
+    this.props.clearErrors();
     this.setState({ modalOpen: false });
   }
 
-  render(){
-    return(
-      <div>
-        <button className="splash-nav" onClick={this.clickHandler
-            .bind(this, false)}>Sign Up</button>
-        <button className="splash-nav" onClick={this.clickHandler
-            .bind(this, true)}>Login</button>
 
-        <Modal
-          className="splash-nav-modal"
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.onModalClose}
-          contentLabel="auth">
-            <SessionFormContainer
-              formType={this.state.login ? "login" : "newUser"}/>
-          <button onClick={this.onModalClose}>close</button>
-        </Modal>
-      </div>
+  render(){
+    console.log("in splash");
+    return(
+      <main className="splash-page">
+        <h1>Pretty images go here.</h1>
+      </main>
     );
   }
 }

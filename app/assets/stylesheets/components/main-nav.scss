@@ -1,0 +1,33 @@
+.main-nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 75px;
+  width: 100%;
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-left: 50px;
+  }
+
+  ul {
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    margin-right: 50px;
+    align-items: baseline;
+    p {
+      font-size: 20px;
+    }
+    a {
+      color: white;
+      font-size: 25px;
+      margin-left: 40px;
+    }
+  }
+}

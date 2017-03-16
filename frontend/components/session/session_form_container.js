@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { newUser, login } from '../../actions/session_actions';
 import SessionForm from './session_form';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -10,10 +11,9 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-//TODO: Do I need to pass params here?
 const mapDispatchToProps = dispatch => ({
   newUser: (user) => dispatch(newUser(user)),
   login: (user) => dispatch(login(user))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SessionForm));

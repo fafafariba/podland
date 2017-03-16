@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { clearErrors } from '../../actions/session_actions';
-import Home from './home';
+import Splash from './splash';
 
 const mapStateToProps = state => ({
-  currentUser: state.session.currentUser
+  errors: state.session.errors
 });
 
 const mapDispatchToProps = dispatch => ({
   clearErrors: () => dispatch(clearErrors())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Splash);

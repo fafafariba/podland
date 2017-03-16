@@ -1,28 +1,40 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {name: "", email: "", password: "", image_url: ""};
     this.submitHandler = this.submitHandler.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   inputHandler(field){
-    return event => this.setState({[field]: event.target.value});
+    return event => this.setState({[field]: event.currentTarget.value});
   }
 
   submitHandler(){
     event.preventDefault();
-    let formAction;
-    this.props.formType(this.state).then(() =>  this.redirect());
-    this.setState({name: "", email: "", password: "", image_url: ""});
+    if (this.props.formType === "login") {
+      this.props.login(this.state);
+    } else {
+      this.props.newUser(this.state);
+    }
+    if (this.props.currentUser) this.redirect();
   }
 
-  //TODO: Persisting errors array?
-  //TODO: Best way to redirect?
+  // componentDidUpdate(){
+  //   console.log("session updated", this.props.currentUser);
+  //   if (this.props.currentUser) this.redirect();
+  //
+  // }
+
+  // resetState() {
+  //   console.log("reset");
+  //   this.setState({name: "", email: "", password: "", image_url: ""});
+  // }
+
   redirect(){
-    if (this.props.currentUser) hashHistory.push("/");
+    this.props.router.push("/");
   }
 
   render(){
@@ -33,9 +45,12 @@ class SessionForm extends React.Component {
 
     if (this.props.formType==="newUser") {
       header = "Sign Up";
-      name = <label> Name
-        <input type="text" onChange={this.inputHandler("name")}/>
-        </label>;
+      name = <div>
+              <label><p>Name</p>
+                <input type="text" onChange={this.inputHandler("name")}/>
+              </label>
+              <br/>
+            </div>;
       image_url = <label> Image
         <input type="text" onChange={this.inputHandler("image_url")}/>
         </label>;
@@ -47,21 +62,27 @@ class SessionForm extends React.Component {
 
 
     return (
-      <div>
+      <div className="splash-nav-modal-form">
         <h1>{header}</h1>
+        <br/>
         {displayErrors}
         <form onSubmit={this.submitHandler}>
           {name}
           <label>
-            Email
-            <input type="text" onChange={this.inputHandler("email")} />
+            <p>Email</p>
+            <input type="text" onChange={this.inputHandler("email").bind(this)}
+              value={this.state.email}/>
           </label>
+          <br/>
           <label>
-            Password
-            <input type="password" onChange={this.inputHandler("password")} />
+            <p>Password</p>
+            <input type="password" onChange={this.inputHandler("password").bind(this)}
+              value={this.state.password}/>
           </label>
-          <input type="submit" />
+          <br/>
+          <input type="submit" id="splash-nav-modal-button" />
         </form>
+        <br/>
       </div>
     );
   }

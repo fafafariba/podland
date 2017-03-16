@@ -1,0 +1,35 @@
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+	width: 100%;
+	margin: 0 auto;
+	font-family: $serif;
+	font-size: 12px;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+button {
+  font-weight: bold;
+  background-color: inherit;
+  box-shadow: 4px 4px 5px #888888;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
