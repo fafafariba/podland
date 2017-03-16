@@ -5,13 +5,12 @@
     username: "fafafariba"
     name: "Fariba"
     image_url: "/image.jpg"
-    subscriptions: [ 7, 23, 13, 27 ] //podcast_id
+    subs: [ 7, 23, 13, 27 ] //podcast_id
   },
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
-    playlist: {errors: ["name can't be blank"]}
-  },
+  errors: [],
+  podcasts : [
+    //Array of podcast objects like below
+  ]
   podcast: {
     1: {
       title: "This American Life",
@@ -31,7 +30,20 @@
       }
     }
   },
-  currentlyPlaying: {
+  playlist: {
+    id:
+    episodes:
+      1: {
+        id: 1,
+        podcast_id: 1,
+        name: "Some title",
+        description: "Some description"
+        audio_url: "...mp3",
+        date: "Date aired",
+
+      }
+  }
+  player: {
       episode_id: 3,
       source: "playlist" (or "podcast" or "single"),
       source_id: 5

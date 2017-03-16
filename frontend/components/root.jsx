@@ -10,14 +10,15 @@ import HomeContainer from './home/home_container';
 // import ProfileContainer from './podcasts/profile/profile_container';
 
 const Root = ({ store }) => {
-  const currentUser = store.getState().session.currentUser;
   const _ensureLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/welcome');
     }
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
     if (currentUser) {
       replace('/');
     }

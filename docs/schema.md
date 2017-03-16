@@ -15,7 +15,7 @@
     <li>category</li>
     <li>image_url</li>
     <li>link</li>
-    <li>api_id</li>
+    <li>thumb_url</li>
   </ul>
 
   <h2>Subscriptions</h2>
@@ -24,16 +24,19 @@
     <li>podcast_id</li>
   </ul>
 
+  <h2>Episode</h2>
+  <ul>
+    <li>podcast_id</li>
+    <li>episode name</li>
+    <li>episode description</li>
+    <li>date created</li>
+    <li>audio_link</li>
+    <li>image_url</li>
+  </ul>
+
   <h2>Playlist</h2>
   <ul>
     <li>user id</li>
     <li>podcast_id</li>
-    <li>episode_id (from API)</li>
-      <ul>
-      <li>episode name</li>
-      <li>episode description</li>
-      <li>date created</li>
-      <li>identifier (mp3)</li>
-      <li>image files</li>
-    </ul>
+    <li>episode_id</li>
   </ul>

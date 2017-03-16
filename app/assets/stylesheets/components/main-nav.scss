@@ -8,26 +8,92 @@
   justify-content: space-between;
   align-items: center;
 
-  h1 {
-    color: white;
-    text-transform: uppercase;
-    font-size: 30px;
-    margin-left: 50px;
-  }
+}
 
-  ul {
-    display: flex;
-    color: white;
-    justify-content: space-around;
-    margin-right: 50px;
-    align-items: baseline;
-    p {
-      font-size: 20px;
-    }
-    a {
-      color: white;
-      font-size: 25px;
-      margin-left: 40px;
-    }
+.left-nav {
+  display: flex
+}
+
+.left-nav h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-left: 50px;
+}
+
+.right-nav ul {
+  display: flex;
+  color: white;
+  justify-content: flex-end;
+  margin-right: 50px;
+  align-items: baseline;
+  color: white;
+  font-size: 25px;
+}
+
+.right-nav li {
+  font-size: 18px;
+  margin-left: 20px;
+}
+.right-nav li a {
+  color: white;
+}
+.right-nav #navicon {
+  font-size: 25px;
+  margin-left: 25px;
+  position: relative;
+}
+
+
+.settings-menu {
+
+  position: absolute;
+  top: 52px;
+  width: 150px;
+  right: 0px;
+  background-color: black;
+  box-shadow: $shadow-settings;
+}
+
+.settings-menu ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+}
+
+.settings-menu li {
+  width: 100%;
+  text-align: right;
+  background-color: black;
+  margin-bottom: 0px;
+  border-top: 1px solid white;
+  padding: 7px;
+  margin: 0px;
+}
+
+.settings-menu a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px;
+}
+
+.settings-menu > li > a {
+  width: 100%;
+  text-decoration: none;
+  font-size: 16px;
+  background-color: purple;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  .fa {
+    display:inline-flex;
   }
+}
+.settings-menu a:hover{
+  -webkit-filter: brightness(.85);
+  filter: brightness(.85);
 }

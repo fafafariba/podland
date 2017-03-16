@@ -22,11 +22,10 @@ class SessionForm extends React.Component {
     if (this.props.currentUser) this.redirect();
   }
 
-  // componentDidUpdate(){
-  //   console.log("session updated", this.props.currentUser);
-  //   if (this.props.currentUser) this.redirect();
-  //
-  // }
+  componentDidUpdate(){
+    if (this.props.currentUser) this.redirect();
+
+  }
 
   // resetState() {
   //   console.log("reset");

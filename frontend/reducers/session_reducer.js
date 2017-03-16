@@ -9,19 +9,19 @@ const _nullUser = {
 
 const SessionReducer = (state = _nullUser, action) => {
   Object.freeze(state);
+
+  let newState = merge({}, state);
+
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return {
-        currentUser: action.currentUser,
-        errors: []
-      };
+      newState.currentUser = action.currentUser;
+      newState.errors = [];
+      return newState;
     case RECEIVE_ERRORS:
-      return {
-        currentUser: null,
-        errors: action.errors
-      };
+      newState.currentUser = null;
+      newState.errors = action.errors;
+      return newState;
     case CLEAR_ERRORS:
-      let newState = merge({}, state);
       newState.errors = [];
       return newState;
     default:
