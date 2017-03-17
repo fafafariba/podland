@@ -2,6 +2,39 @@
   margin-top: 150px;
   margin-left: 50px;
 }
+
+.home h2 {
+  display: block;
+  text-transform: uppercase;
+  background-color: white;
+  margin-right: 30px;
+  border-bottom: 1px solid black;
+  padding: 7px;
+}
 .home ul {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.home ul li{
+  display: flex;
+  flex-direction: column;
+}
+
+.home ul li:hover{
+  -webkit-filter: $brightness;
+  filter: $brightness;
+}
+
+.home img {
+  width: 175px;
+  border: 1px solid darkgray;
+  box-shadow: $shadow;
+  margin: 7px 15px;
+}
+
+.home p {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px auto;
 }
