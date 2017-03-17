@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPodcast, fetchPodcasts, receiveErrors, clearErrors }
+import { fetchPodcast, fetchPodcasts, receiveErrors, clearErrors, fetchSubscriptions }
   from '../../actions/podcast_actions';
 import Home from './home';
 
@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
   podcasts: state.session.podcasts,
   podcastDetail: state.session.podcastDetail,
-  subscriptions: state.subscriptions
+  subscriptions: state.subscriptions.subscriptions
   // subscriptions: state.session.subscriptions.subscriptions,
   // subErrors: state.session.subscriptions.errors,
   // playlists: state.session.playlists.playists,
@@ -18,7 +18,8 @@ const mapDispatchToProps = dispatch => ({
   fetchPodcast: () => dispatch(fetchPodcast()),
   fetchPodcasts: () => dispatch(fetchPodcasts()),
   receiveErrors: () => dispatch(receiveErrors()),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  fetchSubscriptions: () => dispatch(fetchSubscriptions())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

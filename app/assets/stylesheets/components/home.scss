@@ -11,9 +11,9 @@
   border-bottom: 1px solid black;
   padding: 7px;
 }
-.home ul {
-  display: flex;
-  flex-wrap: wrap;
+
+.home section {
+  height: 250px;
 }
 
 .home ul li{
@@ -21,7 +21,7 @@
   flex-direction: column;
 }
 
-.home ul li:hover{
+.home ul li img:hover{
   -webkit-filter: $brightness;
   filter: $brightness;
 }
