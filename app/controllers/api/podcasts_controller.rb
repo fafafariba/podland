@@ -1,5 +1,7 @@
 class Api::PodcastsController < ApplicationController
 
+  # before_action :set_podcast, only: [:show]
+
   def create
     @podcast = Podcast.new(podcast_params)
     unless @podcast.create
@@ -8,23 +10,30 @@ class Api::PodcastsController < ApplicationController
   end
 
   def index
-    @podcasts = Podcast.all.order(:name)
-    render 'api/podcasts/all'
+    filter = params["filter"]
+    unless filter == ""
+      render json: filter
+    else
+      @podcasts = Podcast.all.order(:name)
+      render 'api/podcasts/all'
+    end
   end
 
   def show
     @podcast = Podcast.find(params[:id])
-    if @podcast
-      render 'api/podcasts/show'
-    else
-      render json: ["Podcast doesn't exist"], status: 404
-    end
+    render 'api/podcasts/show'
   end
 
   private
 
+  # def set_podcast
+  #   @podcast = Podcast.find(params[:id])
+  # rescue
+  #   render json: ["Podcast doesn't exist"], status: 404
+  # end
+
   def podcast_params
     params.require(:podcast).permit(:id, :name, :description, :category,
-    :image_url, :thumb_url, :link)
+    :image_url, :thumb_url, :link, :filter)
   end
 end

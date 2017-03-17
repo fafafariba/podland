@@ -24,13 +24,13 @@ export const clearErrors = () => ({
   type: CLEAR_ERRORS
 });
 
-export const fetchAllPodcasts = () => dispatch => (
-  PodcastAPIUtil.fetchAllPodcasts().then(podcasts => (
+export const fetchPodcasts = () => dispatch => (
+  PodcastAPIUtil.fetchPodcasts().then(podcasts => (
     dispatch(receivePodcasts(podcasts)))).fail(errors => (
       dispatch(receiveErrors)))
 );
 
-window.fetchAllPodcasts = fetchAllPodcasts;
+window.fetchPodcasts = fetchPodcasts;
 
 export const fetchPodcast = podcastId => dispatch => (
   PodcastAPIUtil.fetchPodcast(podcastId).then(podcast => (
@@ -39,9 +39,3 @@ export const fetchPodcast = podcastId => dispatch => (
 );
 
 window.fetchPodcast = fetchPodcast;
-
-// export const fetchPodcast = podcastId => dispatch => (
-//   PodcastAPIUtil.fetchPocast(podcastId).then(podcast => (
-//     dispatch(receivePodcast(podcast)))).fail(errors => (
-//       dispatch(receiveErrors)))
-// );

@@ -1,1 +1,1 @@
-json.partial! 'api/podcasts/podcast', podcast: podcast
+json.partial! 'api/podcasts/podcast', podcast: @podcast

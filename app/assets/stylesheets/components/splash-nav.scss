@@ -4,7 +4,7 @@
   flex-direction: row;
   position: fixed;
   height: 75px;
-  width: 100%;
+  width: 100vw;
   background-color: black;
   justify-content: space-between;
   align-items: center;
@@ -42,9 +42,8 @@
     flex-direction: column;
     max-height: 500px;
     position: fixed;
-      top: 0%;
-      left: 30%;
-    transform: translateX(-50%);
+      top: 0vh;
+      left: 20vw;
     width: 250px;
     margin: 200px;
     border: 1px solid #ccc;

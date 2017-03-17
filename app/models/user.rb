@@ -3,6 +3,12 @@ class User < ApplicationRecord
   validates :email, :session_token, :password_digest, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :subscriptions, dependent: :destroy
+
+  has_many :podcasts,
+  through: :subscriptions,
+  source: :podcast
+
   before_validation :ensure_session_token
 
   def self.find_by_credentials(email, password)

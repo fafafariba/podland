@@ -1,15 +1,15 @@
-import { RECEIVE_PODCAST, RECEIVE_ERRORS, CLEAR_ERRORS } from
+import { RECEIVE_PODCASTS, RECEIVE_ERRORS, CLEAR_ERRORS } from
 '../actions/podcast_actions';
 import merge from 'lodash/merge';
 
-const PodcastReducer = (state = {}, action) => {
+const PodcastsReducer = (state = {}, action) => {
   Object.freeze(state);
 
   let newState = merge({}, state);
 
   switch(action.type) {
-    case RECEIVE_PODCAST:
-      newState.podcast = action.podcast;
+    case RECEIVE_PODCASTS:
+      newState.podcasts = action.podcasts;
       return newState;
     case RECEIVE_ERRORS:
       newState.errors = action.errors;
@@ -22,4 +22,4 @@ const PodcastReducer = (state = {}, action) => {
   }
 };
 
-export default PodcastReducer;
+export default PodcastsReducer;
