@@ -1,6 +1,7 @@
 import React from 'react';
 const Modal = require('react-modal');
 import SessionFormContainer from '../session/session_form_container';
+import modalStyle from './modal_style';
 
 class SplashNav extends React.Component {
   constructor(props){
@@ -37,13 +38,15 @@ class SplashNav extends React.Component {
         </ul>
 
         <Modal
-          className="splash-nav-modal"
           isOpen={this.state.modalOpen}
           onRequestClose={this.onModalClose}
+          style={modalStyle}
           contentLabel="auth">
+          <div className= "modal">
             <SessionFormContainer
               formType={this.state.login ? "login" : "newUser"}/>
-            <a href="#" onClick={this.onModalClose}>close</a>
+            <button onClick={this.onModalClose} id="outer-modal-button">close</button>
+            </div>
         </Modal>
       </nav>
     );

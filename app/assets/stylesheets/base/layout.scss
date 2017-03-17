@@ -18,7 +18,7 @@ h1 {
 button {
   font-weight: bold;
   background-color: inherit;
-  box-shadow: 4px 4px 5px #888888;
+  box-shadow: $shadow;
   text-transform: uppercase;
   border: none;
   padding: 10px;
@@ -27,6 +27,9 @@ button {
 }
 
 button:hover {
+  -webkit-filter: $brightness;
+  filter: $brightness;
+  box-shadow: none;
   cursor: pointer;
 }
 
