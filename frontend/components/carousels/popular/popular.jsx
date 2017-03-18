@@ -3,12 +3,12 @@ import { Link } from 'react-router';
 
 
 const popular =
-<ul className="carousel">
-  <div className="carousel js-flickity"
-    data-flickity-options='{
+  <div className="carousel"
+    data-flickity='{
       "cellAlign": "left",
       "contain": true,
       "groupCells": true }'>
+      <ul>
       <li className="carousel-cell">
         <Link to="/podcasts">
           <img src="http://cloudfront.assets.stitcher.com/feedimagesplain328/56516.jpg"/>
@@ -51,8 +51,8 @@ const popular =
         </Link>
         <p>Reply All</p>
       </li>
-  </div>
-</ul>;
+    </ul>
+  </div>;
 
 
 const Popular = () => {

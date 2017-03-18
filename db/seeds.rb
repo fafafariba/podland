@@ -32,6 +32,27 @@ pcast3 = Podcast.create!(name: "The Moth",
   thumb_url: "http://is5.mzstatic.com/image/thumb/Music62/v4/e4/21/0e/e4210e1b-9efc-3064-d878-da592b8a92c8/source/170x170bb.jpg",
   link: "https://themoth.org/podcast"
   )
+pcast4 = Podcast.create!(name: "For Colored Nerds",
+  description: "Each week, BFFs Brittany and Eric humorously deep-dive into the uncool topic of their choice while testing the outer limits of their friendship.",
+  category: "Society & Culture",
+  image_url: "http://cloudfront.assets.stitcher.com/feedimagesplain328/59039.jpg",
+  thumb_url: "http://is5.mzstatic.com/image/thumb/Music62/v4/eb/e1/ef/ebe1efa7-3796-2f0f-2df7-77859a020b57/source/170x170bb.jpg",
+  link:"http://www.forcolorednerds.com"
+  )
+pcast5 = Podcast.create!(name: "Radiolab",
+  description: "A two-time Peabody Award-winner, Radiolab is an investigation told through sounds and stories, and centered around one big idea. In the Radiolab world, information sounds like music and science and culture collide. Hosted by Jad Abumrad and Robert Krulwich, the show is designed for listeners who demand skepticism, but appreciate wonder. WNYC Studios is the producer of other leading podcasts including Freakonomics Radio, Death, Sex & Money, On the Media and many more.",
+  category: "Science",
+  image_url: "http://cloudfront.assets.stitcher.com/feedimagesplain328/5459.jpg",
+  thumb_url: "http://is1.mzstatic.com/image/thumb/Music71/v4/a3/5c/0a/a35c0ad1-8b64-f680-77b1-09a12c01e950/source/170x170bb.jpg",
+  link:"http://www.radiolab.org"
+  )
+pcast6 = Podcast.create!(name: "Bulletproof Radio",
+description: "Bulletproof Executive Radio was born out of a fifteen-year single-minded crusade to upgrade the human being using every available technology. It distills the knowledge of more than 120 world-class MDs, biochemists, Olympic nutritionists, meditation experts, and more than $250,000 spent on personal self-experiments. From private brain EEG facilities hidden in a Canadian forest to remote monasteries in Tibet, from Silicon Valley to the Andes, high tech entrepreneur Dave Asprey used hacking techniques and tried everything himself, obsessively focused on discovering: What are the simplest things you can do to be better at everything? Welcome to being bulletproof, the state of high performance where you take control of and improve your biochemistry, your body, and your mind so they work in unison, helping you execute at levels far beyond what you’d expect, without burning out, getting sick, or just acting like a stressed-out jerk. It used to take a lifetime to radically rewire the human body and mind this way. Technology has changed the rules. Follow along as Dave Asprey and guests provide you with everything you need to upgrade your mind, body, and life.",
+category: "Health & Nutrition",
+image_url: "http://cloudfront.assets.stitcher.com/feedimagesplain328/18656.jpg",
+thumb_url: "http://is1.mzstatic.com/image/thumb/Music122/v4/3b/47/f8/3b47f8f6-b123-9cbc-3829-4480730e14d5/source/170x170bb.jpg",
+link: "https://blog.bulletproof.com"
+)
 
 
 ### SUBSCRIPTIONS

@@ -13,7 +13,7 @@ class Subscriptions extends React.Component {
   if (this.props.subscriptions) {
     const tenPods = this.props.subscriptions.slice(0,10);
     const carouselCells = tenPods.map((podcast, el) => (
-      <li className="carousel-cell">
+      <li className="carousel-cell" key={podcast+el}>
         <Link to={ `/podcasts/${podcast.id}`}>
           <img src={podcast.image_url}/>
         </Link>
@@ -22,15 +22,16 @@ class Subscriptions extends React.Component {
     ));
 
     const carousel = (
-      <ul className="carousel">
-        <div className="carousel js-flickity"
-          data-flickity-options='{
+        <div className="carousel"
+          data-flickity='{
             "cellAlign": "left",
             "contain": true,
             "groupCells": true}'>
+            <ul>
+
             {carouselCells}
-        </div>
-      </ul>);
+          </ul>
+        </div>);
 
     subscriptions = carousel;
     }

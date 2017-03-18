@@ -17,19 +17,14 @@ class Home extends React.Component {
 
     return (
       <main className="home">
-        <section>
-          <h2>Featured</h2>
-          <Featured />
-        </section>
+        <Featured />
         <br/>
         <section>
           <h2>My Subscriptions</h2>
-          <SubscriptionsContainer />
         </section>
         <br/>
         <section>
           <h2>Popular</h2>
-          <Popular />
         </section>
       </main>);
     }

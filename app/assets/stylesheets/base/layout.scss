@@ -10,13 +10,19 @@ body {
 	font-size: 12px;
 }
 
-h1 {
-	font-size: 24px;
-	font-weight: bold;
+h1, h2, h3, h4, h5 {
+	font-weight: 100;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+nav {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 button {
   font-weight: bold;
+  font-family: 'Josefin Sans', sans-serif;
   background-color: inherit;
   box-shadow: $shadow;
   text-transform: uppercase;
@@ -35,4 +41,10 @@ button:hover {
 
 ul {
   list-style: none;
+}
+
+a {
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
 }
