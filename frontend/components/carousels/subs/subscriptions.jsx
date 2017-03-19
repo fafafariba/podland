@@ -1,48 +1,67 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+const podcastStyle = url =>({
+  backgroundImage: 'url(' + url + ')',
+  backgroundPosition: 'center',
+  backgroundSize: 'contain'
+});
+
+let subscriptions = <p>No subscriptions yet.</p>;
+
 class Subscriptions extends React.Component {
   constructor(props){
     super(props);
   }
 
+  playHandler(){
+    //for player
+  }
+
   render() {
 
-  let subscriptions = <p>No subscriptions yet.</p>;
-
-  if (this.props.subscriptions) {
-    const tenPods = this.props.subscriptions.slice(0,10);
-    const carouselCells = tenPods.map((podcast, el) => (
-      <li className="carousel-cell" key={podcast+el}>
-        <Link to={ `/podcasts/${podcast.id}`}>
-          <img src={podcast.image_url}/>
-        </Link>
-        <p>{podcast.name}</p>
-      </li>
-    ));
-
-    const carousel = (
-        <div className="carousel"
-          data-flickity='{
-            "cellAlign": "left",
-            "contain": true,
-            "groupCells": true}'>
-            <ul>
-
-            {carouselCells}
+    if (this.props.subscriptions) {
+      let first8Subs = this.props.subscriptions.slice(0,10);
+      first8Subs= first8Subs.map((podcast, el) => (
+        <li>
+          <ul className="podcast-container">
+            <li>
+                <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
+                <div className="podcast-overlay">
+                  <a href="#" title="Play Latest Episode">
+                    <i className="fa fa-play-circle" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="podcast-link">
+                <Link to="/podcasts/{`${podcast.id}`}">{podcast.name}</Link>
+              </div>
+            </li>
           </ul>
-        </div>);
-
-    subscriptions = carousel;
+        </li>
+      ));
+      subscriptions = first8Subs;
     }
 
     return (
       <section>
-        <ul>
-          <li>
+        <div className="home-header">
+          <ul>
+            <li>
+              <h2>My Subscriptions</h2>
+            </li>
+            <li>
+              <Link to="/podcasts/subscriptions">More</Link>
+            </li>
+          </ul>
+        </div>
+        <section className="podcasts">
+          <ul>
             { subscriptions }
-          </li>
-        </ul>
+          </ul>
+        </section>
       </section>
     );
   }

@@ -8,7 +8,23 @@ class Podcast < ApplicationRecord
   through: :subscriptions,
   source: :user
 
+  def self.popular
+    self.select("podcasts.id, podcasts.name, podcasts.category, podcasts.description, podcasts.image_url, podcasts.link, podcasts.thumb_url, COUNT(subscriptions.podcast_id) AS sub_count")
+        .joins(:subscriptions)
+        .group("podcasts.id")
+        .order("sub_count DESC")
+        .limit(10)
+# joins(:subscriptions)
+    # .select('SUM(subscriptions) as tot').order('tot desc').limit(10)
+  end
+
+  def self.featured
+    self.order("RANDOM()").limit(10)
+  end
+
   def popularity
     self.subscribers.count
   end
+
+
 end

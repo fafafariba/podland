@@ -20,7 +20,7 @@ class Home extends React.Component {
         <Featured />
         <br/>
         <section>
-          <h2>My Subscriptions</h2>
+          <SubscriptionsContainer/>
         </section>
         <br/>
         <section>

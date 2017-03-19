@@ -12,7 +12,15 @@ class Api::PodcastsController < ApplicationController
   def index
     filter = params["filter"]
     unless filter == ""
-      render json: filter
+      if filter == "featured"
+        @podcasts = Podcast.featured
+        render 'api/podcasts/all'
+      elsif filter == "popular"
+        @podcasts = Podcast.popular
+        render 'api/podcasts/all'
+      else
+        render json: filter
+      end
     else
       @podcasts = Podcast.all.order(:name)
       render 'api/podcasts/all'

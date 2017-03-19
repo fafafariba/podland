@@ -1,6 +1,6 @@
 
 .home {
-  margin-top: 150px;
+  margin-top: 100px;
   margin-left: 50px;
   margin-right: 75px;
 }
@@ -11,7 +11,7 @@
   align-items: baseline;
   border-bottom: 1px solid black;
   padding: 0;
-  margin: 0;
+  margin-top: 50px;
 }
 
 
@@ -42,8 +42,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-left: 50px;
-  margin-right: 50px;
+}
+.podcasts > ul >li:not(:last-child) {
+  margin-right: 20px;
 }
 
 .podcast-container {
@@ -58,10 +59,10 @@
   border: 1px solid gray;
   height:200px;
   width: 200px;
-  margin: 20px 20px 10px 0;
+  margin: 20px 0;
   overflow: hidden;
   position: relative;
-  box-shadow: $shadow;
+  box-shadow: $shadow
 }
 
 .podcast-overlay {

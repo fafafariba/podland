@@ -105,7 +105,7 @@ class Featured extends React.Component {
               <h2>Featured</h2>
             </li>
             <li>
-              <Link to="/podcasts">SEE ALL</Link>
+              <Link to="/podcasts">More</Link>
             </li>
           </ul>
         </div>
