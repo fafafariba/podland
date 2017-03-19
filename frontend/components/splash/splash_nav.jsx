@@ -19,7 +19,6 @@ class SplashNav extends React.Component {
     this.setState({ modalOpen: false });
   }
 
-  //TODO: Does this help?
   componentWillReceiveProps(){
     if (this.props.currentUser) this.setState({modalOpen: false});
   }

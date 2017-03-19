@@ -13,11 +13,11 @@ body {
 h1, h2, h3, h4, h5 {
 	font-weight: 100;
   text-transform: uppercase;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 50px;
 }
 
 h2{
@@ -25,14 +25,14 @@ h2{
 }
 
 nav {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 button {
   font-weight: bold;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   background-color: inherit;
-  box-shadow: $shadow;
+  box-shadow: $black-shadow;
   text-transform: uppercase;
   border: none;
   padding: 10px;
@@ -52,7 +52,7 @@ ul {
 }
 
 a {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   text-decoration: none;
   text-transform: uppercase;
 }

@@ -13,43 +13,55 @@ class Splash extends React.Component {
       <main className="splash-page">
         <div className="bgimg-1">
           <div className="caption">
-            <span className="border">SCROLL DOWN</span>
+            <span className="border">PODLAND</span>
           </div>
         </div>
 
-        <div className="title">
-          <h3>Podland</h3>
-          <p>where podcasts live</p>
+        <div className="blurb-1">
+          <p>Where podcasts live</p>
         </div>
 
         <div className="bgimg-2">
           <div className="caption">
-            <span className="border">LESS HEIGHT</span>
+            <span className="border">DISCOVER</span>
           </div>
         </div>
 
         <div>
-          <div className="text1">
-            <p>Keep track of your favorite shows</p>
+          <div className="blurb-2">
+            <p>Explore new shows</p>
           </div>
         </div>
 
         <div className="bgimg-3">
           <div className="caption">
-            <span className="border">SCROLL UP</span>
+            <span className="border">CREATE</span>
           </div>
         </div>
 
         <div>
-          <div className="text2">
-            <p>Create custom playlists</p>
+          <div className="blurb-3">
+            <p>Make your own playlists</p>
           </div>
         </div>
 
-        <div className="bgimg-1">
+        <div className="bgimg-4">
           <div className="caption">
-            <span className="border">Try it now</span>
+            <span className="border">FOLLOW</span>
           </div>
+        </div>
+
+        <div>
+          <div className="blurb-4">
+            <p>Track your favorites</p>
+          </div>
+        </div>
+
+        <div className="bgimg-5">
+          <a className="try-button" href="#">
+            <div className="caption">
+            <span className="border">try it now</span>
+          </div></a>
         </div>
 
 

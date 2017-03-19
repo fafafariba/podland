@@ -9,12 +9,12 @@
   justify-content: space-between;
   align-items: center;
   z-index: 12;
+  box-shadow: $black-shadow;
 }
 
 .splash-nav h1{
   color: white;
   text-transform: uppercase;
-  font-size: 30px;
   margin-left: 50px;
 }
 
@@ -27,9 +27,12 @@
   button {
     background-color: yellow;
     color: black;
-    box-shadow: $shadow;
+    box-shadow: $gray-shadow;
     margin: 10px 7px;
     font-size: 16px;
+  }
+  button:hover{
+    box-shadow: none;
   }
 }
 
@@ -38,19 +41,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // max-height: 500px;
-    // position: fixed;
-    //   top: 0vh;
-    //   left: 20vw;
-    // width: 250px;
-    // margin: 200px;
-    // border: 1px solid #ccc;
-    // background: #fff;
-    // overflow: auto;
-    // border-radius: 4px;
-    // outline: none;
-    // padding: 15px;
-    // justify-content: center;
+
 }
   #outer-modal-button {
     background-color: black;
@@ -97,6 +88,7 @@
     margin-top: 20px;
     background-color: black;
     font-weight: bold;
+    font-family: "Lato";
     color: white;
     text-transform: uppercase;
     padding: 7px;

@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-  box-shadow: $shadow;
+  box-shadow: $black-shadow;
 
 }
 
@@ -53,7 +53,7 @@
   width: 150px;
   right: 0px;
   background-color: black;
-  box-shadow: $shadow;
+  box-shadow: $black-shadow;
 }
 
 .settings-menu ul {
@@ -95,6 +95,6 @@
   }
 }
 .settings-menu a:hover{
-  -webkit-filter: brightness(.85);
-  filter: brightness(.85);
+  -webkit-filter: $brightness;
+  filter: $brightness;
 }
