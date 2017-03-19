@@ -14,3 +14,6 @@ Deciding how to add structure data tables, what to calculated on the back end (p
 
 DAY 7:
 Spent the better part of a day trying to debug a carousel that only displayed properly upon an initial refresh. Didn't fix it so decided to use another react library.
+
+DAY 8:
+Trashed the carousel completely to accommodate button layover. Tried to use SQL to calculate popularity on the back end and took some time figuring out active record.

@@ -8,7 +8,6 @@ class Splash extends React.Component {
   }
 
   render(){
-    console.log("in splash");
     return(
       <main className="splash-page">
         <div className="bgimg-1">
@@ -58,10 +57,11 @@ class Splash extends React.Component {
         </div>
 
         <div className="bgimg-5">
-          <a className="try-button" href="#">
-            <div className="caption">
+          <div className="caption">
+            <a className="try-button" href="#">
             <span className="border">try it now</span>
-          </div></a>
+            </a>
+          </div>
         </div>
 
 

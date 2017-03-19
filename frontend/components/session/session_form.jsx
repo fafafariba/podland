@@ -62,7 +62,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="splash-nav-modal-form">
-        <h1>{header}</h1>
+        <h2>{header}</h2>
         <br/>
         {displayErrors}
         <form onSubmit={this.submitHandler}>

@@ -2,12 +2,11 @@
   // display: flex;
   // margin-top: 100px;
   // margin-left: 50px;
-  opacity: 0.9;
 }
 
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
   position: relative;
-  opacity: 0.6;
+  opacity: 0.7;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,8 +30,21 @@
   letter-spacing: 10px;
 }
 
+.try-button span:last-child {
+  background-image: url(http://res.cloudinary.com/fafafariba/image/upload/v1489953936/button-texture_d6aobr.png);
+  background-color: lightsalmon;
+  color: black;
+  box-shadow: $black-shadow;
+}
+
+.try-button span:hover {
+  -webkit-filter: $brightness;
+  filter: $brightness;
+  box-shadow: none;
+}
+
 .bgimg-1{
-  background-image: url("http://res.cloudinary.com/fafafariba/image/upload/v1489906117/podland/parallax2.jpg");
+  background-image: url("http://res.cloudinary.com/fafafariba/image/upload/c_crop,w_1000,x_147/v1489906810/podland/parallax2.jpg");
   min-height: 500px;
 }
 
@@ -53,7 +65,7 @@
 
 .bgimg-5 {
 background-image: url("http://res.cloudinary.com/fafafariba/image/upload/v1489906117/podland/parallax3.jpg");
-min-height: 500px;
+min-height: 600px;
 }
 
 
@@ -78,12 +90,4 @@ min-height: 500px;
   padding:30px 80px;
   text-align: justify;
   position: relative;
-}
-
-
-
-.try-button:hover {
-
-  -webkit-filter: brightness(10);
-  filter: brightness(10);
 }

@@ -1,5 +1,11 @@
 $black-shadow-color: #282828;
 $gray-shadow-color: #9b9ea5;
+$button-shadow-color: #888888;
+$button-shadow: 4px 4px 5px $button-shadow-color;
 $black-shadow: 4px 4px 5px $black-shadow-color;
-$gray-shadow: 4px 4px 5px $gray-shadow-color;
+$gray-shadow: 2px 2px 5px $gray-shadow-color;
 $brightness: brightness(.85);
+$black: rgba(23,23,23, .9);
+
+//button :http://res.cloudinary.com/fafafariba/image/upload/v1489953936/button-texture_d6aobr.png
+//nav :http://res.cloudinary.com/fafafariba/image/upload/v1489953939/nav-texture_oqaebq.png

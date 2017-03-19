@@ -19,12 +19,12 @@ const modalStyle = {
      right           : 0,
      bottom          : 0,
      border          : '1px solid #ccc',
-     width           : '300px',
+     width           : '250px',
      borderRadius    : 0,
      height          : '350px',
      zIndex          : 11,
      backgroundColor : '#ffffff',
-     boxShadow       : '4px 4px 5px #888888'
+     boxShadow       : '4px 4px 5px #282828'
   }
 };
 

@@ -3,13 +3,19 @@
   top: 0;
   flex-direction: row;
   position: fixed;
-  height: 75px;
+  height: 60px;
   width: 100vw;
-  background-color: black;
+  background: url(http://res.cloudinary.com/fafafariba/image/upload/v1489953939/nav-texture_oqaebq.png);
+  // background: url(http://www.transparenttextures.com/patterns/asfalt-dark.png);
+  background-color: $black;
   justify-content: space-between;
   align-items: center;
   z-index: 12;
   box-shadow: $black-shadow;
+}
+
+.splash-nav img{
+  width: 97px;
 }
 
 .splash-nav h1{
@@ -25,8 +31,7 @@
     margin-right: 20px;
   }
   button {
-    background-color: yellow;
-    color: black;
+    background-color: white;
     box-shadow: $gray-shadow;
     margin: 10px 7px;
     font-size: 16px;
@@ -44,7 +49,7 @@
 
 }
   #outer-modal-button {
-    background-color: black;
+    background-color: $black;
     color: white;
     font-size: 14px;
     width: 193.125px;
@@ -61,22 +66,25 @@
   align-self: stretch;
   align-items: center;
   width: 100%;
-  h1  {
+  h2  {
     width: 100%;
     text-align: center;
-    background-color: black;
+    background-image: url(http://res.cloudinary.com/fafafariba/image/upload/v1489953936/button-texture_d6aobr.png);
+    background-color: $black;
     color: white;
     padding: 7px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 0;
   }
   label {
     display: flex;
     align-items: center;
+    margin: 0;
 
     p{
-      margin-right: 7px;
+      margin-right: 10px;
       text-align: left;
-      text-transform: uppercase;
+      font-size: 14px;
     }
   }
   input {
@@ -85,8 +93,9 @@
   }
 
   #splash-nav-modal-button {
-    margin-top: 20px;
-    background-color: black;
+    margin-top: 10px;
+    background-image: url(http://res.cloudinary.com/fafafariba/image/upload/v1489953936/button-texture_d6aobr.png);
+    background-color: $black;
     font-weight: bold;
     font-family: "Lato";
     color: white;
