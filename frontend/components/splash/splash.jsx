@@ -1,29 +1,59 @@
 import React from 'react';
-const Modal = require('react-modal');
-import SessionFormContainer from '../session/session_form_container';
+import ParallaxComponent from 'react-parallax-component';
+
 
 class Splash extends React.Component {
   constructor(props){
     super(props);
-    this.state = { modalOpen: false, login: true };
-    this.onModalClose = this.onModalClose.bind(this);
   }
-
-  clickHandler(loginBool){
-    this.setState({ modalOpen: true, login: loginBool });
-  }
-
-  onModalClose() {
-    this.props.clearErrors();
-    this.setState({ modalOpen: false });
-  }
-
 
   render(){
     console.log("in splash");
     return(
       <main className="splash-page">
-        <h1>Pretty images go here.</h1>
+        <div className="bgimg-1">
+          <div className="caption">
+            <span className="border">SCROLL DOWN</span>
+          </div>
+        </div>
+
+        <div className="title">
+          <h3>Podland</h3>
+          <p>where podcasts live</p>
+        </div>
+
+        <div className="bgimg-2">
+          <div className="caption">
+            <span className="border">LESS HEIGHT</span>
+          </div>
+        </div>
+
+        <div>
+          <div className="text1">
+            <p>Keep track of your favorite shows</p>
+          </div>
+        </div>
+
+        <div className="bgimg-3">
+          <div className="caption">
+            <span className="border">SCROLL UP</span>
+          </div>
+        </div>
+
+        <div>
+          <div className="text2">
+            <p>Create custom playlists</p>
+          </div>
+        </div>
+
+        <div className="bgimg-1">
+          <div className="caption">
+            <span className="border">Try it now</span>
+          </div>
+        </div>
+
+
+
       </main>
     );
   }

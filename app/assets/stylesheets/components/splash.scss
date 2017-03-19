@@ -1,6 +1,53 @@
 .splash-page {
-  display: flex;
-  margin-top: 150px;
-  margin-left: 50px;
+  // display: flex;
+  // margin-top: 100px;
+  // margin-left: 50px;
 
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-1{
+  background-image: url("http://elleuk.cdnds.net/16/24/980x490/landscape-1466181719-djmusic.jpg");
+  min-height: 400px;
+}
+
+.bgimg-2 {
+  background-image: url("http://elleuk.cdnds.net/16/24/980x490/landscape-1466181719-djmusic.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("http://elleuk.cdnds.net/16/24/980x490/landscape-1466181719-djmusic.jpg");
+  min-height: 400px;
+}
+
+
+.title{
+  color: white;
+  background-color: black;
+}
+
+
+.text1{
+  color: white;
+  background-color: black;
+  position: relative;
+}
+
+.text2{
+  color: white;
+  background-color: black;
+  position: relative;
+}
+
+.caption {
+  position: absolute;
 }
