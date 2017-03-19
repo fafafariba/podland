@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
-import { fetchPodcast, fetchPodcasts, receiveErrors, clearErrors, fetchSubscriptions }
+import { fetchPodcast, fetchAllPodcasts, receiveErrors, clearErrors,
+  fetchSubscriptions, fetchFeaturedPodcasts, fetchPopularPodcasts }
   from '../../actions/podcast_actions';
 import Home from './home';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  podcasts: state.session.podcasts,
+  allPodcasts: state.podcasts.all,
+  featuredPodcasts: state.podcasts.featured,
+  popularPodcasts: state.podcasts.popular,
   podcastDetail: state.session.podcastDetail,
   subscriptions: state.subscriptions.subscriptions
-  // subscriptions: state.session.subscriptions.subscriptions,
   // subErrors: state.session.subscriptions.errors,
   // playlists: state.session.playlists.playists,
   // plErrors: state.session.playlists.errors
@@ -16,7 +18,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchPodcast: () => dispatch(fetchPodcast()),
-  fetchPodcasts: () => dispatch(fetchPodcasts()),
+  fetchAllPodcasts: () => dispatch(fetchAllPodcasts()),
+  fetchFeaturedPodcasts: () => dispatch(fetchFeaturedPodcasts()),
+  fetchPopularPodcasts: () => dispatch(fetchPopularPodcasts()),
   receiveErrors: () => dispatch(receiveErrors()),
   clearErrors: () => dispatch(clearErrors()),
   fetchSubscriptions: () => dispatch(fetchSubscriptions())

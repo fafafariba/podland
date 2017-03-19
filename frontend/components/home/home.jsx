@@ -1,7 +1,7 @@
 import React from 'react';
-import SubscriptionsContainer from '../carousels/subs/subs_container';
-import Popular from '../carousels/popular/popular';
-import Featured from '../carousels/featured';
+import SubscriptionsContainer from '../subscriptions/subscriptions_container';
+import PopularContainer from '../podcasts/popular/popular_container';
+import FeaturedContainer from '../podcasts/featured/featured_container';
 import { Link } from 'react-router';
 
 class Home extends React.Component {
@@ -10,21 +10,23 @@ class Home extends React.Component {
   }
 
   componentWillMount(){
+    this.props.fetchFeaturedPodcasts();
     this.props.fetchSubscriptions();
+    this.props.fetchPopularPodcasts();
   }
 
   render() {
 
     return (
       <main className="home">
-        <Featured />
+          <FeaturedContainer/>
         <br/>
         <section>
           <SubscriptionsContainer/>
         </section>
         <br/>
         <section>
-          <h2>Popular</h2>
+          <PopularContainer />
         </section>
       </main>);
     }

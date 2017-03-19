@@ -1,16 +1,27 @@
 import * as PodcastAPIUtil from '../util/podcast_api_util';
 
-export const RECEIVE_PODCASTS = 'RECEIVE_PODCASTS';
+export const RECEIVE_ALL_PODCASTS = 'RECEIVE_ALL_PODCASTS';
+export const RECEIVE_FEATURED_PODCASTS = 'RECEIVE_FEATURED_PODCASTS';
+export const RECEIVE_POPULAR_PODCASTS = 'RECEIVE_POPULAR_PODCASTS';
 export const RECEIVE_PODCAST = 'RECEIVE_PODCAST';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const RECEIVE_SUBSCRIPTIONS = 'RECEIVE_SUBSCRIPTIONS';
 
-export const receivePodcasts = podcasts => ({
-  type: RECEIVE_PODCASTS,
+export const receiveAllPodcasts = podcasts => ({
+  type: RECEIVE_ALL_PODCASTS,
   podcasts
 });
 
+export const receiveFeaturedPodcasts = featured => ({
+  type: RECEIVE_FEATURED_PODCASTS,
+  featured
+});
+
+export const receivePopularPodcasts = popular => ({
+  type: RECEIVE_POPULAR_PODCASTS,
+  popular
+});
 
 export const receivePodcast = podcast => ({
   type: RECEIVE_PODCAST,
@@ -31,9 +42,23 @@ export const clearErrors = () => ({
   type: CLEAR_ERRORS
 });
 
-export const fetchPodcasts = () => dispatch => (
+export const fetchAllPodcasts = () => dispatch => (
   PodcastAPIUtil.fetchPodcasts().then(podcasts => (
-    dispatch(receivePodcasts(podcasts)))).fail(errors => (
+    dispatch(receiveAllPodcasts(podcasts)))).fail(errors => (
+      dispatch(receiveErrors)))
+);
+
+export const fetchFeaturedPodcasts = () => dispatch => (
+  PodcastAPIUtil.fetchPodcasts("featured").then(podcasts => (
+    dispatch(receiveFeaturedPodcasts(podcasts)))).fail(errors => (
+      dispatch(receiveErrors)))
+);
+
+window.fetchFeaturedPodcasts = fetchFeaturedPodcasts;
+
+export const fetchPopularPodcasts = () => dispatch => (
+  PodcastAPIUtil.fetchPodcasts("popular").then(podcasts => (
+    dispatch(receivePopularPodcasts(podcasts)))).fail(errors => (
       dispatch(receiveErrors)))
 );
 
@@ -48,5 +73,3 @@ export const fetchSubscriptions = () => dispatch => (
     dispatch(receiveSubscriptions(subs)))).fail(errors => (
       dispatch(receiveErrors)))
     );
-
-window.fetchSubscriptions = fetchSubscriptions;

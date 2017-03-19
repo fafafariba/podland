@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { clearErrors, fetchAllSubscriptions } from '../../../actions/podcast_actions';
+import { clearErrors, fetchAllSubscriptions } from '../../actions/podcast_actions';
 import Subscriptions from './subscriptions';
 import { withRouter } from 'react-router';
 

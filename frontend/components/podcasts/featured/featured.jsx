@@ -7,26 +7,24 @@ const podcastStyle = url =>({
   backgroundSize: 'contain'
 });
 
-let subscriptions = <p>No subscriptions yet.</p>;
-
-class Subscriptions extends React.Component {
-  constructor(props){
+class Featured extends React.Component {
+  constructor(props) {
     super(props);
   }
 
-  playHandler(){
-    //for player
+  componentWillMount() {
+    this.props.fetchFeaturedPodcasts();
   }
 
-  render() {
-
-    if (this.props.subscriptions) {
-      let first8Subs = this.props.subscriptions.slice(0,10);
-      first8Subs= first8Subs.map((podcast, el) => (
+  render () {
+    let featured = [];
+      if (this.props.featured) {
+      featured =
+      this.props.featured.map((podcast, el) => (
         <li>
           <ul className="podcast-container">
             <li>
-                <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
+              <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
                 <div className="podcast-overlay">
                   <a href="#" title="Play Latest Episode">
                     <i className="fa fa-play-circle" aria-hidden="true"></i>
@@ -42,7 +40,6 @@ class Subscriptions extends React.Component {
           </ul>
         </li>
       ));
-      subscriptions = first8Subs;
     }
 
     return (
@@ -50,16 +47,16 @@ class Subscriptions extends React.Component {
         <div className="home-header">
           <ul>
             <li>
-              <h2>My Subscriptions</h2>
+              <h2>Featured</h2>
             </li>
             <li>
-              <Link to="/podcasts/subscriptions">More</Link>
+              <Link to="/podcasts">More</Link>
             </li>
           </ul>
         </div>
         <section className="podcasts">
           <ul>
-            { subscriptions }
+            { featured }
           </ul>
         </section>
       </section>
@@ -68,4 +65,4 @@ class Subscriptions extends React.Component {
 }
 
 
-export default Subscriptions;
+export default Featured;

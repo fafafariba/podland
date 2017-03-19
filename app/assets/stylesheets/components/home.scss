@@ -2,7 +2,7 @@
 .home {
   margin-top: 100px;
   margin-left: 50px;
-  margin-right: 75px;
+  margin-right: 50px;
 }
 
 .home-header ul{
@@ -37,15 +37,28 @@
 
 }
 
+.podcasts{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .podcasts > ul{
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 95%;
+  align-self: flex-end;
 }
+
+.podcasts > ul > li{
+}
+
 .podcasts > ul >li:not(:last-child) {
   margin-right: 20px;
 }
+.podcasts > ul >li:first-child {
+}
+
 
 .podcast-container {
   display: flex;
