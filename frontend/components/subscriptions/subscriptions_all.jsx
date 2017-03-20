@@ -7,7 +7,7 @@ const podcastStyle = url =>({
   backgroundSize: 'contain'
 });
 
-let subscriptions = <p>No subscriptions...yet</p>;
+let subscriptions = <p>No subscriptions...yet...</p>;
 
 class SubscriptionsAll extends React.Component {
   constructor(props){
@@ -21,7 +21,7 @@ class SubscriptionsAll extends React.Component {
 
   //TODO: HELP!!!! This run on load. WHY??????
   deleteHandler(id){
-    return ()=> this.props.removeSubscription(id);
+    this.props.removeSubscription(id);
   }
 
   playHandler(){
@@ -29,7 +29,7 @@ class SubscriptionsAll extends React.Component {
   }
 
   render() {
-    if (this.props.subscriptions) {
+    if (this.props.subscriptions.length > 0) {
       subscriptions = this.props.subscriptions.map((podcast, idx) => (
         <li key={podcast+idx}>
           <ul className="podcast-container">
@@ -38,18 +38,15 @@ class SubscriptionsAll extends React.Component {
                 style={podcastStyle(podcast.image_url)}>
                 <ul className="subscriptions-podcast-overlay">
                   <li>
-                    <a href="#" title="Play Latest Episode"
-                      onClick={this.playHandler(podcast.episode.id)}>
-                      <i className="fa fa-play-circle"
-                        aria-hidden="true"></i>
-                      </a>
+                    <i className="fa fa-play-circle"
+                      onClick={ () => this.playHandler(podcast.episode.id) }
+                      aria-hidden="true" title="Play Latest Episode"></i>
                   </li>
                   <li>
-                    <a href="#" title="Unsubscribe"
-                      onClick={this.deleteHandler(podcast.subscription_id)}>
-                        <i className="fa fa-minus-circle"
-                          aria-hidden="true"></i>
-                    </a>
+                    <i className="fa fa-minus-circle"
+                        onClick={ () => this.deleteHandler(podcast.subscription_id) }
+                          aria-hidden="true" title="Unsubscribe">
+                    </i>
                   </li>
                 </ul>
               </div>

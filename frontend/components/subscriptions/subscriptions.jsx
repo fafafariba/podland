@@ -7,7 +7,7 @@ const podcastStyle = url =>({
   backgroundSize: 'contain'
 });
 
-let subscriptions = <p>No subscriptions...yet</p>;
+let subscriptions = <p>No subscriptions...yet...</p>;
 
 class Subscriptions extends React.Component {
   constructor(props){
@@ -32,7 +32,7 @@ class Subscriptions extends React.Component {
             <li>
                 <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
                 <div className="podcast-overlay">
-                  <a href="#" title="Play Latest Episode">
+                  <a href="" title="Play Latest Episode">
                     <i className="fa fa-play-circle" aria-hidden="true"></i>
                   </a>
                 </div>

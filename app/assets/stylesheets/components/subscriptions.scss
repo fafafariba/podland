@@ -88,6 +88,7 @@
   text-decoration: none;
 }
 
-a > i:hover {
+i:hover {
   color: rgba(255, 255, 255, 1);
+  cursor: pointer;
 }

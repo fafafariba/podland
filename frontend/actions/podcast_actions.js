@@ -42,13 +42,11 @@ export const receiveSubscription = subscription => ({
   subscription
 });
 
-export const removeSubscription = subscription => {
-  debugger;
-  return {
+export const removeSubscription = subscription => ({
   type: REMOVE_SUBSCRIPTION,
   subscription
-};
-};
+});
+
 
 export const receiveMessages = messages => ({
   type: RECEIVE_MESSAGES,

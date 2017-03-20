@@ -30,13 +30,14 @@
       link: "https://www.thisamericanlife.org",
       categories: "Society & Culture",
       popularity: 4 //number of subscribers
-    }
     episodes: {
-      //Array of episodes or object of episodes?
+        //Array of episodes or object of episodes?
         //id, podcast_id, name, description, audio_url, image_url,
         //thumb_url, episode_no, duration
       }
+    errors: []
     },
+
 
   playlists: {
     playlists: {

@@ -17,11 +17,8 @@ class Api::SubscriptionsController < ApplicationController
   end
 
   def destroy
-    debugger
     @subscription = Subscription.find(params[:id])
-    debugger
     if @subscription.destroy!
-      debugger
       render json: @subscription
     else
       render json: ["Subscription not found"], status: 404
