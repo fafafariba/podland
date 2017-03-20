@@ -7,11 +7,15 @@ const podcastStyle = url =>({
   backgroundSize: 'contain'
 });
 
-let subscriptions = <p>No subscriptions yet.</p>;
+let subscriptions = <p>No subscriptions...yet</p>;
 
 class Subscriptions extends React.Component {
   constructor(props){
     super(props);
+  }
+
+  componentWillMount(){
+    this.props.fetchSubscriptions();
   }
 
   playHandler(){
@@ -20,10 +24,11 @@ class Subscriptions extends React.Component {
 
   render() {
 
+    console.log(this.props, "subs");
     if (this.props.subscriptions) {
       let first8Subs = this.props.subscriptions.slice(0,10);
-      first8Subs= first8Subs.map((podcast, el) => (
-        <li>
+      first8Subs= first8Subs.map((podcast, idx) => (
+        <li key={podcast+idx}>
           <ul className="podcast-container">
             <li>
                 <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
@@ -36,7 +41,7 @@ class Subscriptions extends React.Component {
             </li>
             <li>
               <div className="podcast-link">
-                <Link to="/podcasts/{`${podcast.id}`}">{podcast.name}</Link>
+                <Link to={`/podcasts/${podcast.id}`}>{podcast.name}</Link>
               </div>
             </li>
           </ul>

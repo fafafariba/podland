@@ -20,8 +20,8 @@ class Popular extends React.Component {
     let popular = [];
 
     if (this.props.popular) {
-      popular =this.props.popular.map((podcast, el) => (
-        <li>
+      popular =this.props.popular.map((podcast, idx) => (
+        <li key={podcast+"li"+idx}>
           <ul className="podcast-container">
             <li>
               <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
@@ -34,7 +34,7 @@ class Popular extends React.Component {
             </li>
             <li>
               <div className="podcast-link">
-                <Link to="/podcasts/{`${podcast.id}`}">{podcast.name}</Link>
+                <Link to={`/podcasts/${podcast.id}`}>{podcast.name}</Link>
               </div>
             </li>
           </ul>

@@ -9,10 +9,13 @@ class Subscriptions extends React.Component {
     super(props);
   }
 
+  componentWillMount(){
+    this.props.fetchSubscriptions();
+  }
 
   render() {
 
-    let subscriptions = <p>No subscriptions yet.</p>;
+    
 
     if (this.props.subscriptions) {
       const subs = this.props.subscriptions.slice(0,10);

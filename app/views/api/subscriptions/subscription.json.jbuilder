@@ -1,1 +1,1 @@
-json.extract! @subscription, :podcasts
+json.extract! @subscription, :id, :podcast

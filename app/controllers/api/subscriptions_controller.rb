@@ -3,7 +3,7 @@ class Api::SubscriptionsController < ApplicationController
   before_action :set_sub, only: [:destroy]
 
   def index
-    @subscriptions = current_user.podcasts
+    @subscriptions = current_user.subscriptions
     render 'api/subscriptions/index'
   end
 
@@ -12,14 +12,14 @@ class Api::SubscriptionsController < ApplicationController
     if @subscription.save
       render 'api/subscriptions/subscription'
     else
-      render json: @subscription.errors.full_messages, status: 422
+      render json: ["Already subscribed to podcast."], status: 422
     end
   end
 
   def destroy
-    @subscription = Subscription.new(subs_params)
-    if @subscription
-      render 'api/subscriptions/subscription'
+    @subscription = Subscription.find(params[:id])
+    if @subscription.destroy!
+      render json: @subscription
     else
       render json: ["Subscription not found"], status: 404
     end

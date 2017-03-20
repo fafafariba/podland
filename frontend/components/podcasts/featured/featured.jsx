@@ -20,9 +20,9 @@ class Featured extends React.Component {
     let featured = [];
       if (this.props.featured) {
       featured =
-      this.props.featured.map((podcast, el) => (
-        <li>
-          <ul className="podcast-container">
+      this.props.featured.map((podcast, idx) => (
+        <li key={podcast+idx}>
+          <ul className="podcast-container" >
             <li>
               <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
                 <div className="podcast-overlay">
@@ -34,7 +34,7 @@ class Featured extends React.Component {
             </li>
             <li>
               <div className="podcast-link">
-                <Link to="/podcasts/{`${podcast.id}`}">{podcast.name}</Link>
+                <Link to={`/podcasts/${podcast.id}`}>{podcast.name}</Link>
               </div>
             </li>
           </ul>

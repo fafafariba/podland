@@ -19,3 +19,18 @@ export const fetchSubscriptions = () => (
     url: 'api/subscriptions'
   })
 );
+
+export const addSubscription = subscription => (
+  $.ajax({
+    method: 'POST',
+    data: { subscription },
+    url: "/api/subscriptions"
+  })
+);
+
+export const deleteSubscription = subscriptionId => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/subscriptions/${subscriptionId}`
+  })
+);
