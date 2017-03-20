@@ -56,8 +56,6 @@
 .podcasts > ul >li:not(:last-child) {
   margin-right: 30px;
 }
-.podcasts > ul >li:first-child {
-}
 
 .podcasts p{
   font-size: 14px;
@@ -82,7 +80,7 @@
   margin: 20px 0;
   overflow: hidden;
   position: relative;
-  box-shadow: $black-shadow;
+  box-shadow: $gray-shadow;
 }
 
 .podcast-overlay {

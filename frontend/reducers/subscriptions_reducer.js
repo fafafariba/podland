@@ -9,9 +9,7 @@ const defaultState = {
 
 const SubscriptionsReducer = (state = defaultState, action) => {
   Object.freeze(state);
-
   let newState = merge({}, state);
-
   switch(action.type) {
     case RECEIVE_SUBSCRIPTIONS:
       newState.subscriptions = action.subscriptions;
@@ -21,8 +19,10 @@ const SubscriptionsReducer = (state = defaultState, action) => {
         action.subscription.podcast;
       return newState;
     case REMOVE_SUBSCRIPTION:
-      delete newState.subscriptions[action.subscription.id];
-      return newState;
+      if (action.subscription){
+        delete newState.subscriptions[action.subscription.id];
+        return newState;
+      }
     case RECEIVE_MESSAGES:
       newState.messages = action.messages;
       return newState;

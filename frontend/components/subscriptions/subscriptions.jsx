@@ -58,7 +58,7 @@ class Subscriptions extends React.Component {
               <h2>My Subscriptions</h2>
             </li>
             <li>
-              <Link to="/podcasts/subscriptions">More</Link>
+              <Link to="/subscriptions">More</Link>
             </li>
           </ul>
         </div>
