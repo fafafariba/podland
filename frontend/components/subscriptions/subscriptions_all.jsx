@@ -28,9 +28,7 @@ class SubscriptionsAll extends React.Component {
   }
 
   render() {
-    console.log(this.props.subscriptions);
     if (this.props.subscriptions) {
-      console.log(this.props.subscriptions);
       subscriptions = this.props.subscriptions.map((podcast, idx) => (
         <li key={podcast+idx}>
           <ul className="podcast-container">
