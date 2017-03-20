@@ -6,8 +6,9 @@ import App from './app';
 import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import SubscriptionsAllContainer from './subscriptions/subscriptions_all_container';
-// import PodcastsContainer from './podcasts/podcasts_container';
+import PodcastsAllContainer from './podcasts/podcasts_all_container';
 // import ProfileContainer from './podcasts/profile/profile_container';
+// import PlaylistsContainer from './podcasts/playslists/playslists_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -34,6 +35,9 @@ const Root = ({ store }) => {
             onEnter={_redirectIfLoggedIn} />
           <Route path="/subscriptions" component={ SubscriptionsAllContainer }
             onEnter={_ensureLoggedIn} />
+          <Route path="/podcasts" component={ PodcastsAllContainer }
+            onEnter={_ensureLoggedIn } >
+          </Route>
         </Route>
       </Router>
     </Provider>
@@ -41,7 +45,5 @@ const Root = ({ store }) => {
 };
 
 export default Root;
-// <Route path="/subscriptions" component={ PodcastsContainer } onEnter={_ensureLoggedIn } />
-// <Route path="/podcasts" component={ PodcastsContainer } onEnter={_ensureLoggedIn } >
 //   <Route path="/podcasts/:podcastId" component={ ProfileContainer } onEnter={_ensureLoggedIn } />
-// </Route>
+//   <Route path="/playlists" component={ PlaylistsContainer } onEnter={_ensureLoggedIn } />

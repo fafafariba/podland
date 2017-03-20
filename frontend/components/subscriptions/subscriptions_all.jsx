@@ -19,10 +19,11 @@ class SubscriptionsAll extends React.Component {
     this.props.fetchSubscriptions();
   }
 
-  deleteHandler(subId){
-    event.preventDefault();
-    return ()=> this.props.removeSubscription(subId);
+  //TODO: HELP!!!! This run on load. WHY??????
+  deleteHandler(id){
+    return ()=> this.props.removeSubscription(id);
   }
+
   playHandler(){
     //for player
   }
@@ -37,7 +38,8 @@ class SubscriptionsAll extends React.Component {
                 style={podcastStyle(podcast.image_url)}>
                 <ul className="subscriptions-podcast-overlay">
                   <li>
-                    <a href="#" title="Play Latest Episode">
+                    <a href="#" title="Play Latest Episode"
+                      onClick={this.playHandler(podcast.episode.id)}>
                       <i className="fa fa-play-circle"
                         aria-hidden="true"></i>
                       </a>

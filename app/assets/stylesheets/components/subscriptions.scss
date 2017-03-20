@@ -75,7 +75,6 @@
 
 .subscriptions-podcast-img:hover .subscriptions-podcast-overlay{
   display: flex;
-  cursor: pointer;
   box-shadow: none;
 }
 
@@ -89,8 +88,6 @@
   text-decoration: none;
 }
 
-.podcast-link a:hover {
-  -webkit-filter: $brightness;
-  filter: $brightness;
-  cursor: pointer;
+a > i:hover {
+  color: rgba(255, 255, 255, 1);
 }

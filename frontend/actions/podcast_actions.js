@@ -12,9 +12,9 @@ export const REMOVE_SUBSCRIPTION = 'REMOVE_SUBSCRIPTION';
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const CLEAR_MESSAGES = 'CLEAR_MESSAGES';
 
-export const receiveAllPodcasts = podcasts => ({
+export const receiveAllPodcasts = all => ({
   type: RECEIVE_ALL_PODCASTS,
-  podcasts
+  all
 });
 
 export const receiveFeaturedPodcasts = featured => ({
@@ -42,10 +42,13 @@ export const receiveSubscription = subscription => ({
   subscription
 });
 
-export const removeSubscription = subscription => ({
+export const removeSubscription = subscription => {
+  debugger;
+  return {
   type: REMOVE_SUBSCRIPTION,
   subscription
-});
+};
+};
 
 export const receiveMessages = messages => ({
   type: RECEIVE_MESSAGES,
@@ -84,8 +87,6 @@ export const fetchSubscriptions = () => dispatch => (
     dispatch(receiveSubscriptions(subs))))
     );
 
-window.fetchSubscriptions = fetchSubscriptions;
-
 export const addSubscription = (subscription) => dispatch => (
   PodcastAPIUtil.addSubscription(subscription).then(subs => {
     dispatch(receiveSubscription(subs));
@@ -93,13 +94,9 @@ export const addSubscription = (subscription) => dispatch => (
   }).fail(errors => dispatch(receiveMessages(errors.responseJSON)))
 );
 
-window.addSubscription = addSubscription;
-
-export const deleteSubscription = (subscriptionId) => dispatch => (
-  PodcastAPIUtil.deleteSubscription(subscriptionId)
+export const deleteSubscription = (id) => dispatch => (
+  PodcastAPIUtil.deleteSubscription(id)
   .then(subs => dispatch(removeSubscription(subs)))
   .then(()=>dispatch(receiveMessages(["Subscription successfully deleted."])))
   .fail(errors => dispatch(receiveMessages(errors.responseJSON)))
 );
-
-window.deleteSubscription = deleteSubscription;

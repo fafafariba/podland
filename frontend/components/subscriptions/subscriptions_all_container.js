@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { clearMessages, fetchSubscriptions, addSubscription, removeSubscription }
+import { clearMessages, fetchSubscriptions, addSubscription, deleteSubscription }
   from '../../actions/podcast_actions';
 import SubscriptionsAll from './subscriptions_all';
 import { withRouter } from 'react-router';
@@ -12,8 +12,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchSubscriptions: () => dispatch(fetchSubscriptions()),
-  addSubscription: () => dispatch(addSubscription()),
-  removeSubscription: () => dispatch(removeSubscription()),
+  removeSubscription: (id) => dispatch(deleteSubscription(id)),
   clearMessages: () => dispatch(clearMessages())
 });
 

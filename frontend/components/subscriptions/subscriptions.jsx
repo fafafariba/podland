@@ -24,8 +24,7 @@ class Subscriptions extends React.Component {
 
   render() {
 
-    console.log(this.props, "subs");
-    if (this.props.subscriptions) {
+    if (this.props.subscriptions.length > 0) {
       let first8Subs = this.props.subscriptions.slice(0,10);
       first8Subs= first8Subs.map((podcast, idx) => (
         <li key={podcast+idx}>
