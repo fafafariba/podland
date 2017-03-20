@@ -17,7 +17,7 @@
   podcasts : {
     all: //Array of all podcasts, first 20
     popular: //Array of podcast objects like below
-    selected: //Array of podcast objects selected based on genre
+    featured: //Array of podcast objects selected based on genre
   },
 
   podcastDetail: { //single selected podcasts
@@ -33,7 +33,8 @@
     }
     episodes: {
       //Array of episodes or object of episodes?
-        //id, podcast_id, name, description, audio_url, image_url, podcast_id, thumb_url
+        //id, podcast_id, name, description, audio_url, image_url,
+        //thumb_url, episode_no, duration
       }
     },
 

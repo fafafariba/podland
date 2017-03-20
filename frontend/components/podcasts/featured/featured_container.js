@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchFeaturedPodcasts: () => dispatch(fetchFeaturedPodcasts())
+  fetchFeaturedPodcasts: () => dispatch(fetchFeaturedPodcasts()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Featured));

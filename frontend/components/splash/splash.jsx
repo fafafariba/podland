@@ -1,6 +1,4 @@
 import React from 'react';
-import ParallaxComponent from 'react-parallax-component';
-
 
 class Splash extends React.Component {
   constructor(props){

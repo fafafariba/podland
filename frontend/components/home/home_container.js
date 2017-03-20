@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPodcast: () => dispatch(fetchPodcast()),
+  fetchPodcast: (id) => dispatch(fetchPodcast(id)),
   fetchAllPodcasts: () => dispatch(fetchAllPodcasts()),
   fetchFeaturedPodcasts: () => dispatch(fetchFeaturedPodcasts()),
   fetchPopularPodcasts: () => dispatch(fetchPopularPodcasts()),

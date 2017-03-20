@@ -1961,6 +1961,10 @@ react-redux@^5.0.3:
     lodash-es "^4.2.0"
     loose-envify "^1.1.0"
 
+react-responsive-audio-player@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-responsive-audio-player/-/react-responsive-audio-player-1.1.2.tgz#83ed6f2226c1728a8f65e88d292cf0e4b49ae69e"
+
 react-router@3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-3.0.2.tgz#5a19156678810e01d81901f9c0fef63284b8a514"

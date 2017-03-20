@@ -5,9 +5,11 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
-import SubscriptionsAllContainer from './subscriptions/subscriptions_all_container';
+import SubscriptionsAllContainer
+  from './subscriptions/subscriptions_all_container';
 import PodcastsAllContainer from './podcasts/podcasts_all_container';
-// import ProfileContainer from './podcasts/profile/profile_container';
+import PodcastDetailContainer
+  from './podcasts/detail/podcast_detail_container';
 // import PlaylistsContainer from './podcasts/playslists/playslists_container';
 
 const Root = ({ store }) => {
@@ -33,10 +35,14 @@ const Root = ({ store }) => {
             onEnter={_ensureLoggedIn } />
           <Route path="/welcome" component={ SplashContainer }
             onEnter={_redirectIfLoggedIn} />
-          <Route path="/subscriptions" component={ SubscriptionsAllContainer }
+          <Route path="/subscriptions"
+            component={ SubscriptionsAllContainer }
             onEnter={_ensureLoggedIn} />
           <Route path="/podcasts" component={ PodcastsAllContainer }
             onEnter={_ensureLoggedIn } >
+            <Route path="/podcasts/:podcastId"
+              component={ PodcastDetailContainer }
+              onEnter={_ensureLoggedIn } />
           </Route>
         </Route>
       </Router>
@@ -45,5 +51,4 @@ const Root = ({ store }) => {
 };
 
 export default Root;
-//   <Route path="/podcasts/:podcastId" component={ ProfileContainer } onEnter={_ensureLoggedIn } />
 //   <Route path="/playlists" component={ PlaylistsContainer } onEnter={_ensureLoggedIn } />

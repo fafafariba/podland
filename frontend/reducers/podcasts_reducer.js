@@ -9,7 +9,7 @@ const defaultState = {
   popular: []
 };
 
-const PodcastsReducer = (state = {}, action) => {
+const PodcastsReducer = (state = defaultState, action) => {
   Object.freeze(state);
 
   let newState = merge({}, state);
