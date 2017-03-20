@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :podcasts, only: [:create, :index, :show]
     resources :subscriptions, only: [:index, :create, :destroy]
+    resources :episodes, only: [:index, :show]
   end
   root "static_pages#root"
 end

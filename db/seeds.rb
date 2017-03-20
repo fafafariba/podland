@@ -40,7 +40,7 @@ pcast4 = Podcast.create!(name: "For Colored Nerds",
   link:"http://www.forcolorednerds.com"
   )
 pcast5 = Podcast.create!(name: "Radiolab",
-  description: "A two-time Peabody Award-winner, Radiolab is an investigation told through sounds and stories, and centered around one big idea. In the Radiolab world, information sounds like music and science and culture collide. Hosted by Jad Abumrad and Robert Krulwich, the show is designed for listeners who demand skepticism, but appreciate wonder. WNYC Studios is the producer of other leading podcasts including Freakonomics Radio, Death, Sex & Money, On the Media and many more.",
+  description: "A two-time Peabody Award-winner, Radiolab is an investigation told through sounds and stories, and centered around one big idea. In the Radiolab world, information sounds like music and science and culture collide. Hosted by Jad Abumrad and Robert Krulwich, the show is designed for listeners who demand skepticism, but appreciate wonder.",
   category: "Science",
   image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489899016/podland/5459.jpg",
   thumb_url: "http://is1.mzstatic.com/image/thumb/Music71/v4/a3/5c/0a/a35c0ad1-8b64-f680-77b1-09a12c01e950/source/170x170bb.jpg",
@@ -79,7 +79,22 @@ pcast10 = Podcast.create!(name:"KEXP Song of the Day",
   category: "Music",
   image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489900146/podland/11137.jpg",
   thumb_url: "http://is4.mzstatic.com/image/thumb/Music/v4/14/de/94/14de94fa-7c8c-bb8a-9d3e-f301c681a351/source/170x170bb.jpg",
-  link: "http://www.kexp.org/podcasts#song")
+  link: "http://www.kexp.org/podcasts#song"
+  )
+pcast11 = Podcast.create!(name:"Hidden Brain",
+  description: "The Hidden Brain helps curious people understand the world – and themselves. Using science and storytelling, Hidden Brain's host Shankar Vedantam reveals the unconscious patterns that drive human behavior, the biases that shape our choices, and the triggers that direct the course of our relationships.",
+  category: "Science",
+  image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489992114/71231_ritxfr.jpg",
+  thumb_url: "http://is2.mzstatic.com/image/thumb/Music122/v4/7b/16/03/7b1603b4-2f14-3d6a-294a-b9274ea46173/source/170x170bb.jpg",
+  link: "http://www.npr.org/series/423302056/hidden-brain"
+  )
+pcast12 = Podcast.create!(name: "Freakonomics",
+  description: "Have fun discovering the hidden side of everything with host Stephen J. Dubner, co-author of the best-selling \"Freakonomics\" books. Each week, hear surprising conversations that explore the riddles of everyday life and the weird wrinkles of human nature—from cheating and crime to parenting and sports. Dubner talks with Nobel laureates and provocateurs, social scientists and entrepreneurs — and his \"Freakonomics\” co-author Steve Levitt. After just a few episodes, this podcast will have you too thinking like a Freak.",
+  category: "Society & Culture",
+  image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489992248/11394_jsrjwx.jpg",
+  thumb_url: "http://is2.mzstatic.com/image/thumb/Music71/v4/7b/a7/41/7ba7414b-4534-3d9a-615e-e00e3d7c7819/source/170x170bb.jpg",
+  link: "http://freakonomics.com/"
+  )
 
 
 ### SUBSCRIPTIONS
@@ -92,6 +107,59 @@ subs6 = Subscription.create!(user_id: guest.id, podcast_id: pcast3.id)
 
 
 ## EPISODES
-
+e1 = Episode.create!(name:"Why Is My Life So Hard?",
+description: "Most of us feel we face more headwinds and obstacles than everyone else — which breeds resentment. We also undervalue the tailwinds that help us — which leaves us ungrateful and unhappy. How can we avoid this trap? Below is a transcript of the episode, modified for your reading pleasure. For more information on the people and ideas in the episode, see the links at the bottom of this post. And you’ll find credits for the music in the episode noted within the transcript.",
+podcast_id: pcast12.id,
+date: Date.new(2017, 03, 16),
+no: 279,
+duration: "30:29",
+audio_url: "http://audio.wnyc.org/freakonomics_podcast/freakonomics_podcast031517.mp3",
+image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489992492/5054532634_cf25044dee_o-e1489163907747-550x319_tilvjp.jpg"
+)
+e2 = Episode.create!(name:"Chuck E. Cheese’s: Where a Kid Can Learn Price Theory",
+description: "The pizza-and-gaming emporium prides itself on affordability, which means its arcade games are really cheap to play. Does that lead to kids hogging the best games — and parents starting those infamous YouTube brawls?",
+podcast_id: pcast12.id,
+date: Date.new(2017, 03, 9),
+no: 278,
+duration: "31:22",
+audio_url: "http://audio.wnyc.org/freakonomics_podcast/freakonomics_podcast030817.mp3",
+image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489994403/6670430309_7d67d3a1f1_o-300x224_ycnbnx.jpg"
+)
+e3 = Episode.create!(name:"The Taboo Trifecta",
+description: "Serial entrepreneur Miki Agrawal loves to talk about the bodily functions that make most people flinch. That’s why she’s building a business around the three P’s: periods, pee, and poop.",
+podcast_id: pcast12.id,
+date: Date.new(2017, 03, 2),
+no: 277,
+duration: "32:06",
+audio_url: "http://audio.wnyc.org/freakonomics_podcast/freakonomics_podcast030117.mp3",
+image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489994517/miki2-e1488312630847-550x544_gynf3r.jpg"
+)
+e4 = Episode.create!(name: "I'm Right, You're Wrong",
+  description: "There are some topics about which it seems no amount of data will change people's minds: things like climate change, or restrictions on gun ownership. Neuroscientist Tali Sharot says that's actually for good reason. As a general rule, she says, it's better to stick to your beliefs and disregard new information that contradicts them. But this also means it's very difficult to change false beliefs. This week, we look at how we process information, and why it's so hard to change our views.",
+  podcast_id: pcast11.id,
+  date: Date.new(2017, 03, 13),
+  no: 64,
+  duration: "23:14",
+  audio_url: "https://play.podtrac.com/npr-510308/npr.mc.tritondigital.com/NPR_510308/media/anon.npr-mp3/npr/hiddenbrain/2017/03/20170313_hiddenbrain_64.mp3",
+  image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489995208/misinfornedcustom_wide-4761b5abcc60dd914c3adc15f571544a232b0b67-s800-c85_omfjpl.png"
+  )
+e5 = Episode.create!(name: "Rebroadcast: Tribes and Traitors",
+  description: "Nearly a year ago, we ran an episode about one of the world's most intractable divides: the Israeli–Palestinian conflict. Since that story aired, a solution seems even more out of reach. We wanted to play this episode again, because it offers something we don't often hear in the news: empathy for the other side.",
+  podcast_id: pcast11.id,
+  date: Date.new(2017, 03, 6),
+  no: 24,
+  duration: "30:27",
+  audio_url: "ttps://play.podtrac.com/npr-510308/npr.mc.tritondigital.com/NPR_510308/media/anon.npr-mp3/npr/hiddenbrain/2017/03/20170306_hiddenbrain_24.mp3",
+  image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489996415/tribes-and-traitors-98a33627fdab1376ecbd933260e40678cefa79da-s800-c85_hmtz9l.jpg"
+  )
+e6 = Episode.create!(name: "I'm Not A Terrorist...",
+  description: "Making jokes about politics is a tradition as old as America itself. These days, of course, comedians have a new target: President Donald Trump. We talk with Iranian-American comedian Maz Jobrani about finding humor in the midst of deep political divides, and how he uses an understanding of human nature to craft a successful punchline.",
+  podcast_id: pcast11.id,
+  date: Date.new(2017, 02, 27),
+  no: 63,
+  duration: "23:58",
+  audio_url: "https://play.podtrac.com/npr-510308/npr.mc.tritondigital.com/NPR_510308/media/anon.npr-mp3/npr/hiddenbrain/2017/02/20170227_hiddenbrain_63.mp3",
+  image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489996813/gettyimages-635158220-97b3ed6b307b5b8b938a23750052b3cf03dd3f0b-s700-c85_cvuiae.jpg"
+  )
 
 ## PLAYLISTS

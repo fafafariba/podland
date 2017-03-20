@@ -4,6 +4,8 @@ class Podcast < ApplicationRecord
 
   has_many :subscriptions
 
+  has_many :episodes
+
   has_many :subscribers,
   through: :subscriptions,
   source: :user
