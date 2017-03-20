@@ -26,8 +26,7 @@ class SplashNav extends React.Component {
   render(){
     return(
       <nav className="splash-nav">
-        <img src="http://res.cloudinary.com/fafafariba/image/upload/v1489954235/logo_n9qifh.png" alt="Podland" className="logo"></img>
-        <span><h1>Podland</h1></span>
+        <h1>Podland</h1>
         <ul className="splash-nav-buttons">
           <li>
             <button onClick={this.clickHandler.bind(this, false)}>Sign Up</button>
