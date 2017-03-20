@@ -1,4 +1,4 @@
-class EpisodesController < ApplicationController
+class Api::EpisodesController < ApplicationController
 
   def index
     @episodes = Podcast.episodes

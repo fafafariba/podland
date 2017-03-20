@@ -20,6 +20,10 @@ class Podcast < ApplicationRecord
     .limit(10)
   end
 
+  def self.episodes
+    self.includes(:episodes).order(date: :desc)
+  end
+
   def self.featured
     self.order("RANDOM()").limit(10)
   end

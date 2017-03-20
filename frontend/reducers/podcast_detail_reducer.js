@@ -3,7 +3,7 @@ import { RECEIVE_PODCAST, RECEIVE_ERRORS, CLEAR_ERRORS } from
 import merge from 'lodash/merge';
 
 const defaultState = {
-  podcastDetail: {},
+  podcast: {},
   errors: []
 };
 
@@ -14,7 +14,7 @@ const PodcastDetailReducer = (state = defaultState, action) => {
 
   switch(action.type) {
     case RECEIVE_PODCAST:
-      newState.podcastDetail = action.podcast;
+      newState.podcast = action.podcast;
       return newState;
     case RECEIVE_ERRORS:
       newState.errors = action.errors;

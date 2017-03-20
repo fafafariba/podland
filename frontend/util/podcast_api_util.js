@@ -34,3 +34,10 @@ export const deleteSubscription = id => (
     url: `/api/subscriptions/${id}`
   })
 );
+
+export const fetchEpisode = id => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/episodes/${id}`
+  })
+);

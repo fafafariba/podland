@@ -28,7 +28,12 @@ class Api::PodcastsController < ApplicationController
   end
 
   def show
-    render 'api/podcasts/show'
+    @podcast = Podcast.find(params[:id])
+    if @podcast
+      render 'api/podcasts/show'
+    else
+      render json: ["Podcast not found"]
+    end
   end
 
   private

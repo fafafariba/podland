@@ -80,6 +80,8 @@ export const fetchPodcast = podcastId => dispatch => (
       dispatch(receiveMessages(errors.responseJSON))))
 );
 
+window.fetchPodcast = fetchPodcast;
+
 export const fetchSubscriptions = () => dispatch => (
   PodcastAPIUtil.fetchSubscriptions().then(subs => (
     dispatch(receiveSubscriptions(subs))))
