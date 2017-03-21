@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import EpisodeTrack from './episode_track';
 
 class PodcastDetail extends React.Component {
   constructor(props) {
@@ -13,9 +14,11 @@ class PodcastDetail extends React.Component {
     let subscription = Object.values(subs).find(sub => sub.id === podcast.id);
     let subscribed = Boolean(subscription);
     if (subscribed) {
-      this.setState({ subscribed: true, button: "Unsubscribe", subscriptionId: subscription.subscription_id });
+      this.setState({ subscribed: true, button: "Unsubscribe",
+        subscriptionId: subscription.subscription_id });
     } else {
-      this.setState({ subscribed: false, button: "Subscribe", subscriptionId: null });
+      this.setState({ subscribed: false, button: "Subscribe",
+        subscriptionId: null });
     }
 
   }
@@ -63,7 +66,7 @@ class PodcastDetail extends React.Component {
       // console.log("rest", rest);
     }
 
-    let latestContent;
+    let latestContent, episodeContent;
 
     if (latest) {
       latestContent =
@@ -87,6 +90,12 @@ class PodcastDetail extends React.Component {
         </ul>
       </section>;
     }
+    if (rest) {
+      episodeContent = rest.map((episode) => (
+        <EpisodeTrack no={episode.no} name={episode.name}
+          duration={episode.duration} description={episode.description} />
+      ));
+    }
 
     return (
       <main className="podcast-detail">
@@ -101,7 +110,8 @@ class PodcastDetail extends React.Component {
               <li className="buttons-descriptions">
                 <ul>
                   <li>
-                    <p className="description">{this.props.podcast.description}</p>
+                    <p className="description">
+                      {this.props.podcast.description}</p>
                   </li>
                   <li className="row-buttons">
                     <ul>
@@ -123,6 +133,7 @@ class PodcastDetail extends React.Component {
         <header className="podcast-detail-header">
           <h3>All Episodes</h3>
         </header>
+        {episodeContent}
       </main>
     );
   }

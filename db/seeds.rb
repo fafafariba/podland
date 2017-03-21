@@ -161,5 +161,57 @@ e6 = Episode.create!(name: "I'm Not A Terrorist...",
   audio_url: "https://play.podtrac.com/npr-510308/npr.mc.tritondigital.com/NPR_510308/media/anon.npr-mp3/npr/hiddenbrain/2017/02/20170227_hiddenbrain_63.mp3",
   image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1489996813/gettyimages-635158220-97b3ed6b307b5b8b938a23750052b3cf03dd3f0b-s700-c85_cvuiae.jpg"
   )
+e7 = Episode.create!(name: "Get Out",
+  description: "B & E dissect the new hit horror film from Jordan Peele, Get Out. We’ll dive into the way the film explores white supremacy, plays with point of view in horror films, and highlights the Black body.",
+  podcast_id: pcast4.id,
+  date: Date.new(2017, 03, 17),
+  no: 62,
+  duration: "1:04:43",
+  audio_url:"https://media.acast.com/forcolorednerds/getout/media.mp3"
+  )
+e8 = Episode.create!(name: "FCN Live BHM Edition",
+  description: "Join B & E for an XXL Black History Month LIVE edition of the show. Brittany and Eric will share what BHM means to them, test your knowledge of black history, and share their unconventional picks for the BHM pantheon. Joining them are special guests Tracy Clayton of BuzzFeed’s Another Round podcast and Rembert Browne of New York magazine.",
+  podcast_id: pcast4.id,
+  date: Date.new(2017, 03, 1),
+  no: 61,
+  duration: "1:29:04",
+  audio_url: "https://media.acast.com/forcolorednerds/fcnlivebhmedition/media.mp3"
+  )
+e9 = Episode.create!(name: "Someday We'll All Be Free",
+  description: "B & E dedicate this episode to a slept-on G.O.A.T. - the legendary Donny Hathaway. Revisiting his raw talent, unforgettable balladry, and why we need him today.",
+  podcast_id: pcast4.id,
+  date: Date.new(2017, 02, 6),
+  no: 60,
+  duration: "47:32",
+  audio_url: "https://media.acast.com/forcolorednerds/somedaywellallbefree/media.mp3"
+  )
+e10 = Episode.create!(name: "Ask a Grown-Up",
+  description: "Stories from people who need a grown-up. Featuring teenage girls asking for advice about their love lives and Ira's tribute to his very grown-up friend Mary.",
+  podcast_id: pcast1.id,
+  date: Date.new(2017, 03, 17),
+  no: 612,
+  duration: "1:04:10",
+  audio_url: "http://www.podtrac.com/pts/redirect.mp3/podcast.thisamericanlife.org/podcast/612.mp3",
+  image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1490083206/612_enlarged_fcqugq.jpg"
+  )
+e12 = Episode.create!(name: "Rebroadcast: My Damn Mind",
+  description: "The brain! It's powerful! Two stories of the brain working for and against its owners.",
+  podcast_id: pcast1.id,
+  date: Date.new(2017, 03, 10),
+  no: 579,
+  duration: "58:50",
+  audio_url: "http://feedproxy.google.com/~r/talpodcast/~5/tpT1B8Baoe8/579.mp3",
+  image_url: "http://res.cloudinary.com/fafafariba/image/upload/v1490083979/579_3enlarged_vowgrs.jpg"
+  )
+e11 = Episode.create!(name: "Vague and Confused",
+  description: "A show about rules and what happens when they’re vague and randomly enforced.",
+  podcast_id: pcast1.id,
+  date: Date.new(2017, 03, 3),
+  no: 611,
+  duration: "1:03:51",
+  audio_url: "http://res.cloudinary.com/fafafariba/image/upload/v1490084281/611-enlarged_apen2a.jpg",
+  image_url: "http://www.podtrac.com/pts/redirect.mp3/podcast.thisamericanlife.org/extended/611.mp3"
+  )
+
 
 ## PLAYLISTS
