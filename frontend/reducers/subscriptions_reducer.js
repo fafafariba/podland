@@ -16,7 +16,7 @@ const SubscriptionsReducer = (state = defaultState, action) => {
       return newState;
     case RECEIVE_SUBSCRIPTION:
       newState.subscriptions[action.subscription.id] =
-        action.subscription.podcast;
+        action.subscription;
       return newState;
     case REMOVE_SUBSCRIPTION:
       if (action.subscription){

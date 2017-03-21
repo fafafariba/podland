@@ -9,6 +9,7 @@ class Api::SubscriptionsController < ApplicationController
 
   def create
     @subscription = Subscription.new(subs_params)
+    @subscription.user_id = current_user.id
     if @subscription.save
       render 'api/subscriptions/subscription'
     else
@@ -19,7 +20,7 @@ class Api::SubscriptionsController < ApplicationController
   def destroy
     @subscription = Subscription.find(params[:id])
     if @subscription.destroy!
-      render json: @subscription
+      render 'api/subscriptions/subscription'
     else
       render json: ["Subscription not found"], status: 404
     end
@@ -32,6 +33,6 @@ class Api::SubscriptionsController < ApplicationController
   end
 
   def subs_params
-    params.require(:subscription).permit(:user_id, :podcast_id)
+    params.require(:subscription).permit(:podcast_id)
   end
 end

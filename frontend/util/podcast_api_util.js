@@ -22,10 +22,10 @@ export const fetchSubscriptions = () => (
   })
 );
 
-export const addSubscription = subscription => (
+export const addSubscription = podcastId => (
   $.ajax({
     method: 'POST',
-    data: { subscription },
+    data: { subscription: { podcast_id: podcastId } },
     url: "/api/subscriptions"
   })
 );

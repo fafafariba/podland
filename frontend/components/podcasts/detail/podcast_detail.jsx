@@ -4,42 +4,58 @@ import { Link } from 'react-router';
 class PodcastDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { subscribed: "", button: "" };
+    this.state = { subscribed: "", button: "" , subscriptionId: ""};
+    this.subHandler = this.subHandler.bind(this);
+  }
+
+  setSubscribed(subs){
+    let {podcast} = this.props;
+    let subscription = Object.values(subs).find(sub => sub.id === podcast.id);
+    console.log(subscription);
+    let subscribed = Boolean(subscription);
+    if (subscribed) {
+      console.log("setting subscription ID");
+      this.setState({ subscribed: true, button: "Unsubscribe", subscriptionId: subscription.subscription_id });
+    } else {
+      console.log(("not setting ID"));
+      this.setState({ subscribed: false, button: "Subscribe", subscriptionId: null });
+    }
+
   }
 
   componentDidMount(){
+    console.log("did mount");
     this.props.fetchPodcast(this.props.params.podcastId);
     this.props.fetchSubscriptions();
 
     if (this.props.podcast.length) {
-      if (this.props.subscriptions.includes(this.props.podcast.id)) {
-        this.setState({ subscribed: true, button: "Unsubscribe" });
-      } else {
-        this.setState({ subscribed: false, button: "Subscribe" });
-      }
+      this.setSubscribed(this.props.subscriptions);
     }
   }
 
   componentWillReceiveProps(nextProps){
+    console.log("props changed");
     if (Object.keys(nextProps.podcast).length) {
-      if (nextProps.subscriptions.includes(nextProps.podcast.id)) {
-        this.setState({ subscribed: true, button: "Unsubscribe" });
-      } else {
-        this.setState({ subscribed: false, button: "Subscribe" });
-      }
+      this.setSubscribed(nextProps.subscriptions);
     }
   }
 
-  toggleSubscribe(){
-    this.setState({ subscribe: !this.state.subscribe});
-  }
+  // toggleSubscribe(){
+  //   this.setState({ subscribed: !this.state.subscribed});
+  // }
 
   playerHandler(){
     //start playlist with all podcasts
   }
 
-  subscriblehandler(){
-
+  subHandler(){
+    console.log(this.state);
+    event.preventDefault();
+    if (this.state.subscribed) {
+      this.props.deleteSubscription(this.state.subscriptionId);
+    } else {
+      this.props.addSubscription(this.props.podcast.id);
+    }
   }
 
   externalHandler(){
@@ -82,7 +98,7 @@ class PodcastDetail extends React.Component {
           <section className="profile">
             <ul>
               <li>
-                <img src={this.props.podcast.image_url} />
+                <img src={this.props.podcast.image_url} onClick={()=>console.log(this.state)}/>
               </li>
               <li className="buttons-descriptions">
                 <ul>
@@ -92,7 +108,7 @@ class PodcastDetail extends React.Component {
                   <li className="row-buttons">
                     <ul>
                       <li><i className="fa fa-play" aria-hidden="true" title="Play Podcast Radio"></i></li>
-                      <li><button className="subscribe-button" onClick={() => this.toggleSubscribe}>
+                      <li><button className="subscribe-button" onClick={()=>this.subHandler()}>
                         {this.state.button}</button></li>
                     </ul>
                   </li>

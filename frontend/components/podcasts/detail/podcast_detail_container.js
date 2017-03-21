@@ -7,16 +7,17 @@ import PodcastDetail from './podcast_detail';
 import { selectSubscriptionIds } from '../../../reducers/selectors.js';
 
 const mapStateToProps = state => ({
+  currentUserId: state.session.currentUser.id,
   podcast: state.podcastDetail.podcast,
   errors: state.podcastDetail.errors,
-  subscriptions: selectSubscriptionIds(state.subscriptions.subscriptions)
+  subscriptions: state.subscriptions.subscriptions
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
   fetchSubscriptions: () => dispatch(fetchSubscriptions()),
   fetchPodcast: (podcastId) => dispatch(fetchPodcast(podcastId)),
-  addSubscription: id => dispatch(addSubscription(id)),
-  removeSubscription: id => dispatch(deleteSubscription(id)),
+  addSubscription: (podcastId) => dispatch(addSubscription(podcastId)),
+  deleteSubscription: id => dispatch(deleteSubscription(id)),
   clearMessages: id => dispatch(clearMessages())
 });
 

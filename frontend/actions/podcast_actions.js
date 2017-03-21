@@ -89,16 +89,18 @@ export const fetchSubscriptions = () => dispatch => (
     dispatch(receiveSubscriptions(subs))))
     );
 
-export const addSubscription = (subscription) => dispatch => (
-  PodcastAPIUtil.addSubscription(subscription).then(subs => {
-    dispatch(receiveSubscription(subs));
-    dispatch(receiveMessages(["Subscription successfully added."]));
-  }).fail(errors => dispatch(receiveMessages(errors.responseJSON)))
-);
-
-export const deleteSubscription = (id) => dispatch => (
-  PodcastAPIUtil.deleteSubscription(id)
-  .then(subs => dispatch(removeSubscription(subs)))
-  .then(()=>dispatch(receiveMessages(["Subscription successfully deleted."])))
+export const addSubscription = subscription => dispatch => (
+  PodcastAPIUtil.addSubscription(subscription)
+  .then(subs => dispatch(receiveSubscription(subs)))
+  .then( () => dispatch(receiveMessages(["Subscription successfully added."])))
   .fail(errors => dispatch(receiveMessages(errors.responseJSON)))
 );
+
+export const deleteSubscription = id => dispatch => (
+  PodcastAPIUtil.deleteSubscription(id)
+  .then(subs => dispatch(removeSubscription(subs)))
+  .then( () => dispatch(receiveMessages(["Subscription successfully deleted."])))
+  .fail(errors => dispatch(receiveMessages(errors.responseJSON)))
+);
+
+//.fail(errors => dispatch(receiveMessages(errors.responseJSON)))
