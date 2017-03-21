@@ -90,11 +90,21 @@ class PodcastDetail extends React.Component {
         </ul>
       </section>;
     }
+
     if (rest) {
       episodeContent = rest.map((episode) => (
         <EpisodeTrack no={episode.no} name={episode.name}
           duration={episode.duration} description={episode.description} />
       ));
+    }
+
+    let episodeImage = <div></div>;
+
+    if (this.props.podcast.image_url) {
+      episodeImage =
+      <li>
+        <img src={this.props.podcast.image_url}/>
+      </li>;
     }
 
     return (
@@ -104,9 +114,7 @@ class PodcastDetail extends React.Component {
         </header>
           <section className="profile">
             <ul>
-              <li>
-                <img src={this.props.podcast.image_url}/>
-              </li>
+                { episodeImage }
               <li className="buttons-descriptions">
                 <ul>
                   <li>
@@ -133,7 +141,9 @@ class PodcastDetail extends React.Component {
         <header className="podcast-detail-header">
           <h3>All Episodes</h3>
         </header>
-        {episodeContent}
+        <section className="all-episodes">
+          {episodeContent}
+        </section>
       </main>
     );
   }

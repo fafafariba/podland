@@ -23,6 +23,20 @@ class SplashNav extends React.Component {
     if (this.props.currentUser) this.setState({modalOpen: false});
   }
 
+  guestLogin(){
+    event.preventDefault();
+    this.props.login({email: "guest@guest.com", password: "beourguest" });
+  }
+
+  // componentDidUpdate(){
+  //   if (this.props.currentUser) this.redirect();
+  //
+  // }
+  //
+  // redirect(){
+  //   this.props.router.push("/");
+  // }
+
   render(){
     return(
       <nav className="splash-nav">
@@ -44,8 +58,11 @@ class SplashNav extends React.Component {
           <div className= "modal">
             <SessionFormContainer
               formType={this.state.login ? "login" : "newUser"}/>
-            <button onClick={this.onModalClose} id="outer-modal-button">close</button>
-            </div>
+            <button onClick={this.onModalClose} id="outer-modal-button">
+              close</button>
+            <a href="" onClick={()=>this.guestLogin()}>
+              Login as a guest</a>
+          </div>
         </Modal>
       </nav>
     );

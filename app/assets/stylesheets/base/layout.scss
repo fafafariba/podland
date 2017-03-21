@@ -67,4 +67,10 @@ ul {
 a {
   font-family: 'Lato', sans-serif;
   text-decoration: none;
+  font-weight: bold;
+  color: rgb(89, 159, 168);
+}
+
+a:hover {
+  color: rgba(89, 159, 168, .7);
 }

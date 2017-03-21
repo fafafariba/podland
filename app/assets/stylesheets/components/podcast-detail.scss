@@ -2,6 +2,7 @@
   margin-top: 100px;
   margin-left: 50px;
   margin-right: 50px;
+  margin-bottom: 100px;
 }
 
 .podcast-detail-header {
@@ -115,6 +116,50 @@
 
 #plus {
   font-size: 25px;
+}
+
+.all-episodes {
+  margin: 30px 50px 50px 30px;
+}
+
+.all-episodes-header h4{
+  margin-left: 20px;
+  padding: 0;
+}
+
+.all-episodes-header p{
+  margin-left: 20px;
+}
+
+
+.all-episodes-header > ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+all-episodes-header ul li{
+  background-color: yellow;
+  border-bottom: 1px solid gray;
+}
+
+
+.all-episodes-header i{
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+
+.collapsible {
+  background-color: rgb(208, 213, 221);
+  box-shadow: $gray-shadow;
+  border-top: 1px solid gray;
+  padding: 0;
+}
+
+.Collapsible__contentInner p {
+  margin-left: 20px;
 }
 
 

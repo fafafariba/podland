@@ -3,6 +3,21 @@ import React from 'react';
 class Splash extends React.Component {
   constructor(props){
     super(props);
+    this.guestLogin = this.guestLogin.bind(this);
+  }
+
+  guestLogin(){
+    event.preventDefault();
+    this.props.login({email: "guest@guest.com", password: "beourguest" });
+  }
+
+  componentDidUpdate(){
+    if (this.props.currentUser) this.redirect();
+
+  }
+
+  redirect(){
+    this.props.router.push("/");
   }
 
   render(){
@@ -57,7 +72,7 @@ class Splash extends React.Component {
         <div className="bgimg-5">
           <div className="caption">
             <a className="try-button" href="#">
-            <span className="border">try it now</span>
+            <span className="border" onClick={()=>this.guestLogin()}>try it now</span>
             </a>
           </div>
         </div>

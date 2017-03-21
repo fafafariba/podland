@@ -21,7 +21,7 @@ const modalStyle = {
      border          : '1px solid #ccc',
      width           : '250px',
      borderRadius    : 0,
-     height          : '350px',
+     height          : '380px',
      zIndex          : 11,
      backgroundColor : '#ffffff',
      boxShadow       : '4px 4px 5px #282828'

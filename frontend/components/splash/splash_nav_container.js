@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { clearErrors } from '../../actions/session_actions';
+import { clearErrors, login } from '../../actions/session_actions';
 import SplashNav from './splash_nav';
 
 const mapStateToProps = state => ({
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  login: (user)=> dispatch(login(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SplashNav);
