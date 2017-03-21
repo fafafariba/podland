@@ -5,26 +5,22 @@ class PodcastDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = { subscribed: "", button: "" , subscriptionId: ""};
-    this.subHandler = this.subHandler.bind(this);
+    this.subscriptionsHandler = this.subscriptionsHandler.bind(this);
   }
 
   setSubscribed(subs){
     let {podcast} = this.props;
     let subscription = Object.values(subs).find(sub => sub.id === podcast.id);
-    console.log(subscription);
     let subscribed = Boolean(subscription);
     if (subscribed) {
-      console.log("setting subscription ID");
       this.setState({ subscribed: true, button: "Unsubscribe", subscriptionId: subscription.subscription_id });
     } else {
-      console.log(("not setting ID"));
       this.setState({ subscribed: false, button: "Subscribe", subscriptionId: null });
     }
 
   }
 
   componentDidMount(){
-    console.log("did mount");
     this.props.fetchPodcast(this.props.params.podcastId);
     this.props.fetchSubscriptions();
 
@@ -34,22 +30,16 @@ class PodcastDetail extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log("props changed");
     if (Object.keys(nextProps.podcast).length) {
       this.setSubscribed(nextProps.subscriptions);
     }
   }
 
-  // toggleSubscribe(){
-  //   this.setState({ subscribed: !this.state.subscribed});
-  // }
-
   playerHandler(){
     //start playlist with all podcasts
   }
 
-  subHandler(){
-    console.log(this.state);
+  subscriptionsHandler(){
     event.preventDefault();
     if (this.state.subscribed) {
       this.props.deleteSubscription(this.state.subscriptionId);
@@ -108,7 +98,7 @@ class PodcastDetail extends React.Component {
                   <li className="row-buttons">
                     <ul>
                       <li><i className="fa fa-play" aria-hidden="true" title="Play Podcast Radio"></i></li>
-                      <li><button className="subscribe-button" onClick={()=>this.subHandler()}>
+                      <li><button className="subscribe-button" onClick={()=>this.subscriptionsHandler()}>
                         {this.state.button}</button></li>
                     </ul>
                   </li>

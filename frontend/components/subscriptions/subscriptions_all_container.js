@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchSubscriptions: () => dispatch(fetchSubscriptions()),
-  removeSubscription: (id) => dispatch(deleteSubscription(id)),
+  deleteSubscription: (id) => dispatch(deleteSubscription(id)),
   clearMessages: () => dispatch(clearMessages())
 });
 

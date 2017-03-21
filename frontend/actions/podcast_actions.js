@@ -7,53 +7,53 @@ export const RECEIVE_PODCAST = 'RECEIVE_PODCAST';
 
 export const RECEIVE_SUBSCRIPTIONS = 'RECEIVE_SUBSCRIPTIONS';
 export const RECEIVE_SUBSCRIPTION = 'RECEIVE_SUBSCRIPTION';
-export const REMOVE_SUBSCRIPTION = 'REMOVE_SUBSCRIPTION';
+export const DELETE_SUBSCRIPTION = 'DELETE_SUBSCRIPTION';
 
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const CLEAR_MESSAGES = 'CLEAR_MESSAGES';
 
-export const receiveAllPodcasts = all => ({
+const receiveAllPodcasts = all => ({
   type: RECEIVE_ALL_PODCASTS,
   all
 });
 
-export const receiveFeaturedPodcasts = featured => ({
+const receiveFeaturedPodcasts = featured => ({
   type: RECEIVE_FEATURED_PODCASTS,
   featured
 });
 
-export const receivePopularPodcasts = popular => ({
+const receivePopularPodcasts = popular => ({
   type: RECEIVE_POPULAR_PODCASTS,
   popular
 });
 
-export const receivePodcast = podcast => ({
+const receivePodcast = podcast => ({
   type: RECEIVE_PODCAST,
   podcast
 });
 
-export const receiveSubscriptions = subscriptions => ({
+const receiveSubscriptions = subscriptions => ({
   type: RECEIVE_SUBSCRIPTIONS,
   subscriptions
 });
 
-export const receiveSubscription = subscription => ({
+const receiveSubscription = subscription => ({
   type: RECEIVE_SUBSCRIPTION,
   subscription
 });
 
-export const removeSubscription = subscription => ({
-  type: REMOVE_SUBSCRIPTION,
+const delSubscription = subscription => ({
+  type: DELETE_SUBSCRIPTION,
   subscription
 });
 
 
-export const receiveMessages = messages => ({
+const receiveMessages = messages => ({
   type: RECEIVE_MESSAGES,
   messages
 });
 
-export const clearMessages = () => ({
+const clearMessages = () => ({
   type: CLEAR_MESSAGES
 });
 
@@ -98,7 +98,7 @@ export const addSubscription = subscription => dispatch => (
 
 export const deleteSubscription = id => dispatch => (
   PodcastAPIUtil.deleteSubscription(id)
-  .then(subs => dispatch(removeSubscription(subs)))
+  .then(subs => dispatch(delSubscription(subs)))
   .then( () => dispatch(receiveMessages(["Subscription successfully deleted."])))
   .fail(errors => dispatch(receiveMessages(errors.responseJSON)))
 );

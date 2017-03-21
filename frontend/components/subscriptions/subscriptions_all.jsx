@@ -15,13 +15,16 @@ class SubscriptionsAll extends React.Component {
     this.deleteHandler = this.deleteHandler.bind(this);
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.fetchSubscriptions();
   }
 
-  //TODO: HELP!!!! This run on load. WHY??????
+  componentWillReceiveProps(nextProps){
+
+  }
+
   deleteHandler(id){
-    this.props.removeSubscription(id);
+    this.props.deleteSubscription(id);
   }
 
   playHandler(){
@@ -29,7 +32,7 @@ class SubscriptionsAll extends React.Component {
   }
 
   render() {
-    if (this.props.subscriptions.length > 0) {
+    if (this.props.subscriptions) {
       subscriptions = this.props.subscriptions.map((podcast, idx) => (
         <li key={podcast+idx}>
           <ul className="podcast-container">

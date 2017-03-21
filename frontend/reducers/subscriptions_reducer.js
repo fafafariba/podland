@@ -1,4 +1,4 @@
-import { RECEIVE_SUBSCRIPTIONS, RECEIVE_SUBSCRIPTION, REMOVE_SUBSCRIPTION,
+import { RECEIVE_SUBSCRIPTIONS, RECEIVE_SUBSCRIPTION, DELETE_SUBSCRIPTION,
   RECEIVE_MESSAGES, CLEAR_MESSAGES } from '../actions/podcast_actions';
 import merge from 'lodash/merge';
 
@@ -15,12 +15,12 @@ const SubscriptionsReducer = (state = defaultState, action) => {
       newState.subscriptions = action.subscriptions;
       return newState;
     case RECEIVE_SUBSCRIPTION:
-      newState.subscriptions[action.subscription.id] =
+      newState.subscriptions[action.subscription.subscription_id] =
         action.subscription;
       return newState;
-    case REMOVE_SUBSCRIPTION:
+    case DELETE_SUBSCRIPTION:
       if (action.subscription){
-        delete newState.subscriptions[action.subscription.id];
+        delete newState.subscriptions[action.subscription.subscription_id];
         return newState;
       }
     case RECEIVE_MESSAGES:
