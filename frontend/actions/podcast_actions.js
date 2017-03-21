@@ -102,5 +102,3 @@ export const deleteSubscription = id => dispatch => (
   .then( () => dispatch(receiveMessages(["Subscription successfully deleted."])))
   .fail(errors => dispatch(receiveMessages(errors.responseJSON)))
 );
-
-//.fail(errors => dispatch(receiveMessages(errors.responseJSON)))

@@ -17,7 +17,7 @@
 
 .profile > ul{
   display: flex;
-  margin: 20px 50px 50px 50px;
+  margin: 30px 50px 50px 50px;
   justify-content: center;
   align-items: flex-start;
 }
@@ -26,12 +26,10 @@
   margin-right: 40px;
   padding: 0;
   height: 100%;
-  // background-color: red;
-  // width: 100%;
 }
 
 .profile img {
-  width: 150px;
+  width: 200px;
 }
 
 .profile p {
@@ -41,13 +39,14 @@
   height: 100%;
 }
 
-.buttons-descriptions ul{
+.buttons-descriptions > ul{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.buttons-descriptions ul li ul{
+.latest-row-buttons ul,
+.row-buttons ul{
   display: flex;
   flex-direction: row;
 }
@@ -59,25 +58,81 @@
   letter-spacing: 2px;
 }
 
-.profile i {
+
+.row-buttons i, img {
   color: black;
   font-size: 40px;
 }
 
-.profile i:hover {
-  -webkit-filter: brightness(.6);
-  filter: brightness(.6);
-  text-shadow: $gray-shadow;
-}
-
-.lastest-pd > ul {
-  display: flex;
-  background: yellow;
+.row-buttons img {
   margin-left: 10px;
 }
 
-.latest-pd img {
+.latest-row-buttons i:hover,
+.row-buttons i:hover {
+  -webkit-filter: brightness(.3);
+  filter: brightness(.3);
+  text-shadow: $black-shadow;
+}
+
+
+.latest-episode > ul {
+  display: flex;
+  margin-left: 10px;
+  margin: 30px 50px 50px 50px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.latest-episode li{
+  margin: 0;
+  padding: 0;
+}
+
+.latest-episode h4{
+  padding:0;
+  margin: 0;
+}
+
+.latest-episode p{
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.latest-episode img {
+  position: relative;
   object-fit: cover;
   width:200px;
   height:200px;
+  margin: 0px 30px;
 }
+
+.latest-row-buttons i {
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+#plus {
+  font-size: 25px;
+}
+
+
+// .thumb-overlay {
+//   position: absolute;
+//   top: 462px;
+//   background-color: transparent;
+//   width:200px;
+//   height:200px;
+// }
+//
+// .thumb-overlay {
+//
+// }
+//
+// .thumb-overlay i{
+//   color: rgba(255, 255, 255, .8);
+//   font-size: 100px;
+//   margin:0 auto;
+//
+// }

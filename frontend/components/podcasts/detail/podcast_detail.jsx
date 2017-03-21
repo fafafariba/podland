@@ -67,11 +67,19 @@ class PodcastDetail extends React.Component {
 
     if (latest) {
       latestContent =
-      <section className="latest-pd">
+      <section className="latest-episode">
         <ul>
           <li>
             <h4>No. {latest.no} {latest.name} {latest.duration}</h4>
             <p>{latest.description}</p>
+            <div className="latest-row-buttons">
+              <ul>
+                <li><i className="fa fa-play" aria-hidden="true"
+                  title="Play"></i></li>
+                <li><i id="plus" className="fa fa-plus" aria-hidden="true"
+                  title="Add to Playlist"></i></li>
+              </ul>
+            </div>
           </li>
           <li>
             <img className="thumb" src={latest.image_url} />
@@ -88,7 +96,7 @@ class PodcastDetail extends React.Component {
           <section className="profile">
             <ul>
               <li>
-                <img src={this.props.podcast.image_url} onClick={()=>console.log(this.state)}/>
+                <img src={this.props.podcast.image_url}/>
               </li>
               <li className="buttons-descriptions">
                 <ul>
@@ -97,8 +105,10 @@ class PodcastDetail extends React.Component {
                   </li>
                   <li className="row-buttons">
                     <ul>
-                      <li><i className="fa fa-play" aria-hidden="true" title="Play Podcast Radio"></i></li>
-                      <li><button className="subscribe-button" onClick={()=>this.subscriptionsHandler()}>
+                      <li><i className="fa fa-play" aria-hidden="true"
+                        title="Play Podcast Radio"></i></li>
+                      <li><button className="subscribe-button"
+                        onClick={()=>this.subscriptionsHandler()}>
                         {this.state.button}</button></li>
                     </ul>
                   </li>

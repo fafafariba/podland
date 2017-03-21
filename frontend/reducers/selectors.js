@@ -7,5 +7,3 @@ export const selectSubscriptions = subscriptions => (
 export const selectSubscriptionIds = subscriptions => (
   selectSubscriptions(subscriptions).map(sub => (sub.id))
 );
-
-window.selectSubscriptions = selectSubscriptions;

@@ -26,7 +26,7 @@ class Popular extends React.Component {
             <li>
               <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
                 <div className="podcast-overlay">
-                  <a href="#" title="Play Latest Episode">
+                  <a href="" title="Play Latest Episode">
                     <i className="fa fa-play-circle" aria-hidden="true"></i>
                   </a>
                 </div>
