@@ -56,9 +56,7 @@ class MainNav extends React.Component {
             <li>[photo]</li>
             <li>Welcome, { name }</li>
             <li id="navicon">
-              <a href="#" onClick={this.toggleMenu}>
-              <i className="fa fa-bars" aria-hidden="true"></i>
-              </a>
+              <i className="fa fa-bars" aria-hidden="true" onClick={this.toggleMenu}></i>
               {menu}
             </li>
       </ul>

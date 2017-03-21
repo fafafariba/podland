@@ -39,11 +39,10 @@ const Root = ({ store }) => {
             component={ SubscriptionsAllContainer }
             onEnter={_ensureLoggedIn} />
           <Route path="/podcasts" component={ PodcastsAllContainer }
-            onEnter={_ensureLoggedIn } >
-            <Route path="/podcasts/:podcastId"
-              component={ PodcastDetailContainer }
-              onEnter={_ensureLoggedIn } />
-          </Route>
+            onEnter={_ensureLoggedIn } />
+          <Route path="/podcasts/:podcastId"
+            component={ PodcastDetailContainer }
+            onEnter={_ensureLoggedIn } />
         </Route>
       </Router>
     </Provider>

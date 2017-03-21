@@ -43,7 +43,7 @@ class SubscriptionsAll extends React.Component {
                       aria-hidden="true" title="Play Latest Episode"></i>
                   </li>
                   <li>
-                    <i className="fa fa-minus-circle"
+                    <i className="fa fa-times-circle"
                         onClick={ () => this.deleteHandler(podcast.subscription_id) }
                           aria-hidden="true" title="Unsubscribe">
                     </i>

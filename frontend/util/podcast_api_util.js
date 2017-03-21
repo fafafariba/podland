@@ -6,6 +6,8 @@ export const fetchPodcasts = (filter = "") => (
   })
 );
 
+window.fetchPodcasts = fetchPodcasts;
+
 export const fetchPodcast = (podcastId) => (
   $.ajax({
     method: 'GET',

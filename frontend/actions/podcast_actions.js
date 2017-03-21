@@ -74,6 +74,8 @@ export const fetchPopularPodcasts = () => dispatch => (
     dispatch(receivePopularPodcasts(podcasts))))
 );
 
+window.fetchPopularPodcasts = fetchPopularPodcasts;
+
 export const fetchPodcast = podcastId => dispatch => (
   PodcastAPIUtil.fetchPodcast(podcastId).then(podcast => (
     dispatch(receivePodcast(podcast)))).fail(errors => (
