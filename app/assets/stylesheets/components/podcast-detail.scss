@@ -122,9 +122,25 @@
   margin: 30px 50px 50px 30px;
 }
 
+.all-episodes-header li:first-of-type{
+  flex: 5;
+}
+
+.all-episodes-header li:not(:first-of-type){
+  flex: 2;
+}
+
+.all-episodes-header li:last-of-type{
+  flex: 1;
+}
+
 .all-episodes-header h4{
   margin-left: 20px;
   padding: 0;
+}
+
+.all-episodes-header h4:hover{
+  cursor: pointer;
 }
 
 .all-episodes-header p{
@@ -140,7 +156,6 @@
 }
 
 all-episodes-header ul li{
-  background-color: yellow;
   border-bottom: 1px solid gray;
 }
 

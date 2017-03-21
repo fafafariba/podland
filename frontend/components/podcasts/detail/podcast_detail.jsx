@@ -66,9 +66,15 @@ class PodcastDetail extends React.Component {
       // console.log("rest", rest);
     }
 
+
     let latestContent, episodeContent;
 
     if (latest) {
+      let episodeImage = <div></div>;
+
+        if (latest.image_url) {
+          episodeImage = <img className="thumb" src={latest.image_url} />;
+        }
       latestContent =
       <section className="latest-episode">
         <ul>
@@ -85,7 +91,7 @@ class PodcastDetail extends React.Component {
             </div>
           </li>
           <li>
-            <img className="thumb" src={latest.image_url} />
+            { episodeImage }
           </li>
         </ul>
       </section>;
@@ -98,15 +104,6 @@ class PodcastDetail extends React.Component {
       ));
     }
 
-    let episodeImage = <div></div>;
-
-    if (this.props.podcast.image_url) {
-      episodeImage =
-      <li>
-        <img src={this.props.podcast.image_url}/>
-      </li>;
-    }
-
     return (
       <main className="podcast-detail">
         <header className="podcast-detail-header">
@@ -114,7 +111,9 @@ class PodcastDetail extends React.Component {
         </header>
           <section className="profile">
             <ul>
-                { episodeImage }
+              <li>
+                <img src={this.props.podcast.image_url}/>
+              </li>
               <li className="buttons-descriptions">
                 <ul>
                   <li>
