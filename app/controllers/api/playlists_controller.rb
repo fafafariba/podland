@@ -18,7 +18,6 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def destroy
-    @playlist = Playlist.find(params[:id])
     @playlist.destroy
     render 'api/playlists/show'
   end
@@ -26,6 +25,7 @@ class Api::PlaylistsController < ApplicationController
   private
 
   def set_playlist
+    @playlist = Playlist.find(params[:id])
   rescue
     render json: ["Playlist doesn't exist"], status: 404
   end

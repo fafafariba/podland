@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     resources :podcasts, only: [:create, :index, :show]
     resources :subscriptions, only: [:index, :create, :destroy]
     resources :episodes, only: [:index, :show]
-    resources :playlists, only: [:index, :create, :show, :destroy]
+    resources :playlists, only: [:index, :create, :destroy]
+    resources :tracks, only: [:index, :create, :destroy]
   end
   root "static_pages#root"
 end

@@ -19,6 +19,7 @@ const PlaylistsReducer = (state = defaultState, action) => {
       newState.playlists[keyId] = action.playlist;
       return newState;
     case DELETE_PLAYLIST:
+      debugger;
       keyId = action.playlist.id;
       delete newState.playlists[keyId];
       return newState;

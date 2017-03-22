@@ -5,8 +5,8 @@ class Playlist < ApplicationRecord
 
   belongs_to :user
 
-  has_many :podcasts,
+  has_many :episodes,
   through: :tracks,
-  source: :podcast
+  source: :episode
 
 end

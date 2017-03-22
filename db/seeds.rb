@@ -217,3 +217,10 @@ e11 = Episode.create!(name: "Vague and Confused",
 ## PLAYLISTS
 plist1 = Playlist.create!(name: "Podcast Jamz", user_id: tester.id)
 plist2 = Playlist.create!(name: "Morning Jamz", user_id: tester.id)
+
+#tracks
+t1 = Track.create!(playlist_id: plist1.id, episode_id: e10.id)
+t1 = Track.create!(playlist_id: plist1.id, episode_id: e6.id)
+t1 = Track.create!(playlist_id: plist1.id, episode_id: e1.id)
+t1 = Track.create!(playlist_id: plist1.id, episode_id: e4.id)
+t1 = Track.create!(playlist_id: plist1.id, episode_id: e7.id)
