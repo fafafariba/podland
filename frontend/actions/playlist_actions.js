@@ -19,10 +19,13 @@ const newPlaylist = playlist => ({
   playlist
 });
 
-const delPlaylist = playlist => ({
+const delPlaylist = playlist => {
+  debugger;
+  return {
   type: DELETE_PLAYLIST,
   playlist
-});
+};
+};
 
 const newTrack = track => ({
   type: ADD_TRACK,
@@ -46,8 +49,9 @@ const clearErrors = () => ({
 
 export const fetchPlaylists = () => dispatch => (
   PlaylistAPIUtil.fetchPlaylists()
-  .then(playlists => receivePlaylists(playlists))
+  .then(playlists => dispatch(receivePlaylists(playlists)))
 );
+
 
 export const deletePlaylist = playlistId => dispatch => (
   PlaylistAPIUtil.deletePlaylist(playlistId)

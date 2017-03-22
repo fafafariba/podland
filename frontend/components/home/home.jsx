@@ -9,7 +9,7 @@ class Home extends React.Component {
     super(props);
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.fetchFeaturedPodcasts();
     this.props.fetchSubscriptions();
     this.props.fetchPopularPodcasts();

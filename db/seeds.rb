@@ -216,3 +216,4 @@ e11 = Episode.create!(name: "Vague and Confused",
 
 ## PLAYLISTS
 plist1 = Playlist.create!(name: "Podcast Jamz", user_id: tester.id)
+plist2 = Playlist.create!(name: "Morning Jamz", user_id: tester.id)

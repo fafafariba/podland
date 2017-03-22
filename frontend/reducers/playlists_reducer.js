@@ -1,5 +1,5 @@
 import { RECEIVE_PLAYLISTS, ADD_PLAYLIST, DELETE_PLAYLIST, RECEIVE_ERRORS,
-  CLEAR_ERRORS } from '../actions/podcast_actions';
+  CLEAR_ERRORS } from '../actions/playlist_actions';
 import merge from 'lodash/merge';
 
 const defaultState = {
@@ -9,11 +9,10 @@ const defaultState = {
 
 const PlaylistsReducer = (state = defaultState, action) => {
   Object.freeze(state);
-
   let newState = merge({}, state);
-
   switch (action.type) {
     case RECEIVE_PLAYLISTS:
+      newState.playlists = action.playlists;
       return newState;
     case ADD_PLAYLIST:
       let keyId = action.playlist.id;

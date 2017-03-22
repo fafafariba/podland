@@ -9,6 +9,10 @@
   border-bottom: 1px solid black;
 }
 
+nav {
+  margin-top: 20px;
+}
+
 .playlists p {
   margin-left: 20px;
   color: darkgray;
@@ -21,6 +25,107 @@
   padding: 0;
 }
 
-.Select-clear-zone span{
-  display: none;
+.Collapsible {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-left: 20px;
+  padding: 2px;
 }
+
+.Collapsible span{
+  margin-left: 10px;
+}
+
+.all-episodes {
+  margin: 30px 50px 50px 30px;
+}
+
+.all-episodes-header li:first-of-type{
+  flex: 5;
+}
+
+.all-episodes-header li:not(:first-of-type){
+  flex: 2;
+}
+
+.all-episodes-header li:last-of-type{
+  flex: 1;
+}
+
+.all-episodes-header h4{
+  margin-left: 20px;
+  padding: 0;
+}
+
+.all-episodes-header h4:hover{
+  cursor: pointer;
+}
+
+.all-episodes-header p{
+  margin-left: 20px;
+}
+
+
+// .all-episodes-header > ul{
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   height: 40px;
+// }
+
+// all-episodes-header ul li{
+//   border-bottom: 1px solid gray;
+// }
+
+
+// .all-episodes-header i{
+//   font-size: 20px;
+//   margin-right: 20px;
+// }
+
+
+.collapsible {
+  background-color: rgb(208, 213, 221);
+  box-shadow: $gray-shadow;
+  border-top: 1px solid gray;
+  padding: 0;
+}
+
+.Collapsible__contentInner p {
+  margin-left: 20px;
+}
+
+#delete-playlist:hover {
+  cursor: pointer;
+}
+
+// .playlist-drop-down {
+//   margin: 20px;
+// }
+//
+// .playlist-drop-down ul {
+//   border: 1px solid lightgray;
+//   padding: 0;
+//   min-width: 200px;
+//   max-width: 300px;
+// }
+//
+// .playlist-drop-down ul li:first-child {
+//   text-align: right;
+// }
+//
+//
+// .playlist-drop-down ul li:not(:first-child) {
+//   border-top: 1px solid lightgray;
+//   vertical-align: middle;
+// }
+//
+// .playlist-drop-down li {
+//   height: 40px;
+//   padding: 0;
+// }
+//
+// .playlist-drop-down ul li i {
+//   font-size: 20px;
+//   margin: 10px;
+// }

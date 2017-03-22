@@ -6,6 +6,8 @@ export const fetchPlaylists = () => (
   })
 );
 
+window.fetchPlaylists = fetchPlaylists;
+
 export const addPlaylist = name => (
   $.ajax({
     method: 'POST',

@@ -22,9 +22,12 @@ class SessionForm extends React.Component {
     if (this.props.currentUser) this.redirect();
   }
 
-  componentDidUpdate(){
-    if (this.props.currentUser) this.redirect();
+  // componentDidUpdate(){
+  //   if (this.props.currentUser) this.redirect();
+  // }
 
+  componentWillReceiveProps(nextProps){
+    if (nextProps.currentUser) this.redirect();
   }
 
   // resetState() {
@@ -54,9 +57,12 @@ class SessionForm extends React.Component {
         <input type="text" onChange={this.inputHandler("image_url")}/>
         </label>;
     }
-    const errors = this.props.errors.map((error,idx) =>(
+    let errors;
+    if (this.props.errors){
+      errors = this.props.errors.map((error,idx) =>(
         <li key={error+idx}>{error}</li>
-    ));
+      ));
+    }
     if (errors) displayErrors = <ul className="errors">{errors}</ul>;
 
 
