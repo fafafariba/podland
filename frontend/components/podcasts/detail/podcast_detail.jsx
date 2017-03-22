@@ -80,8 +80,8 @@ class PodcastDetail extends React.Component {
         <ul>
           <li>
             <h4>No. {latest.no} {latest.name}</h4>
-            <p>{latest.description}</p>
             <p>{latest.duration} </p>
+            <p>{latest.description}</p>
             <div className="latest-row-buttons">
               <ul>
                 <li><i className="fa fa-play" aria-hidden="true"
