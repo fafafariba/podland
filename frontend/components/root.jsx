@@ -10,7 +10,7 @@ import SubscriptionsAllContainer
 import PodcastsAllContainer from './podcasts/podcasts_all_container';
 import PodcastDetailContainer
   from './podcasts/detail/podcast_detail_container';
-// import PlaylistsContainer from './podcasts/playslists/playslists_container';
+import PlaylistsContainer from './playlists/playlists_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -43,6 +43,8 @@ const Root = ({ store }) => {
           <Route path="/podcasts/:podcastId"
             component={ PodcastDetailContainer }
             onEnter={_ensureLoggedIn } />
+          <Route path="/playlists" component={ PlaylistsContainer }
+            onEnter={_ensureLoggedIn } />
         </Route>
       </Router>
     </Provider>
@@ -50,4 +52,3 @@ const Root = ({ store }) => {
 };
 
 export default Root;
-//   <Route path="/playlists" component={ PlaylistsContainer } onEnter={_ensureLoggedIn } />

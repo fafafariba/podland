@@ -209,9 +209,10 @@ e11 = Episode.create!(name: "Vague and Confused",
   date: Date.new(2017, 03, 3),
   no: 611,
   duration: "1:03:51",
-  audio_url: "http://www.podtrac.com/pts/redirect.mp3/podcast.thisamericanlife.org/extended/611.mp3"
-  image_url: "https://res.cloudinary.com/fafafariba/image/upload/v1490084281/611-enlarged_apen2a.jpg",
+  audio_url: "http://www.podtrac.com/pts/redirect.mp3/podcast.thisamericanlife.org/extended/611.mp3",
+  image_url: "https://res.cloudinary.com/fafafariba/image/upload/v1490084281/611-enlarged_apen2a.jpg"
   )
 
 
 ## PLAYLISTS
+plist1 = Playlist.create!(name: "Podcast Jamz", user_id: tester.id)

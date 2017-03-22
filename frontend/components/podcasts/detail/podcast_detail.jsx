@@ -79,12 +79,13 @@ class PodcastDetail extends React.Component {
       <section className="latest-episode">
         <ul>
           <li>
-            <h4>No. {latest.no} {latest.name} {latest.duration}</h4>
+            <h4>No. {latest.no} {latest.name}</h4>
             <p>{latest.description}</p>
+            <p>{latest.duration} </p>
             <div className="latest-row-buttons">
               <ul>
                 <li><i className="fa fa-play" aria-hidden="true"
-                  title="Play"></i></li>
+                  title="Play Episode"></i></li>
                 <li><i id="plus" className="fa fa-plus" aria-hidden="true"
                   title="Add to Playlist"></i></li>
               </ul>
@@ -98,9 +99,10 @@ class PodcastDetail extends React.Component {
     }
 
     if (rest) {
-      episodeContent = rest.map((episode) => (
+      episodeContent = rest.map((episode, idx) => (
         <EpisodeTrack no={episode.no} name={episode.name}
-          duration={episode.duration} description={episode.description} />
+          duration={episode.duration} description={episode.description}
+          key={episode+idx}/>
       ));
     }
 

@@ -7,7 +7,7 @@ const podcastStyle = url =>({
   backgroundSize: 'contain'
 });
 
-let subscriptions = <p>No subscriptions...yet...</p>;
+let subscriptions = <p>No subscriptions... yet...</p>;
 
 class SubscriptionsAll extends React.Component {
   constructor(props){

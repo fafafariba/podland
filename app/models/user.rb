@@ -5,9 +5,20 @@ class User < ApplicationRecord
 
   has_many :subscriptions, dependent: :destroy
 
+  has_many :playlists, dependent: :destroy
+
   has_many :podcasts,
   through: :subscriptions,
   source: :podcast
+
+  has_many :tracks,
+  dependent: :destroy,
+  through: :playlists,
+  source: :tracks
+
+  has_many :episodes,
+  through: :tracks,
+  source: :episode
 
   before_validation :ensure_session_token
 
