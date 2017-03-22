@@ -3,6 +3,7 @@ import * as PlaylistAPIUtil from '../util/playlist_api_util';
 export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
 export const ADD_PLAYLIST = 'ADD_PLAYLIST';
 export const DELETE_PLAYLIST = 'DELETE_PLAYLIST';
+export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
 export const ADD_TRACK = 'ADD_TRACK';
 export const DELETE_TRACK = 'DELETE_TRACK';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -34,6 +35,11 @@ const delTrack = track => ({
   track
 });
 
+const receiveTracks = tracks => ({
+  type: RECEIVE_TRACKS,
+  tracks
+})
+
 const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
@@ -55,7 +61,7 @@ export const deletePlaylist = playlistId => dispatch => (
 );
 
 export const addPlaylist = name => dispatch => (
-  PlaylistAPIUtil.addPlalist(name)
+  PlaylistAPIUtil.addPlaylist(name)
   .then(playlist => dispatch(newPlaylist(playlist)))
   .fail(errors => dispatch(receiveErrors(errors)))
 );
@@ -70,4 +76,8 @@ export const addTrack = episodeId => dispatch => (
   .then(track => dispatch(newTrack(track)))
   .fail(errors => dispatch(receiveErrors(errors)))
 
+);
+
+export const fetchTracks = tracks => dispatch => (
+  () => dispatch(receiveTracks(tracks))
 );

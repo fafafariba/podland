@@ -13,5 +13,9 @@ class Episode < ApplicationRecord
   has_many :users,
   through: :playlists,
   source: :user
+
+  def podcast_thumb_url
+    self.podcast.thumb_url
+  end
   
 end

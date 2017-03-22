@@ -95,6 +95,51 @@
   margin-left: 20px;
 }
 
+
+//TODO: WHYYYY???
+.playlist li ul:first-child {
+  border-top: 1px solid lightgray;
+  background-color: yellow;
+}
+
+.track ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+
+.track p{
+  font-size: 16px;
+}
+
+.track i{
+  font-size: 20px;
+}
+
+.track-thumb img {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.track.track-thumb > li {
+  flex: 2;
+}
+
+.track-title li {
+  flex: 5;
+}
+.track-duration li {
+  flex: 2;
+}
+.track-play li {
+  flex: 1;
+}
+.track-delete li {
+  flex: 1;
+}
+
+
 #delete-playlist:hover {
   cursor: pointer;
 }
