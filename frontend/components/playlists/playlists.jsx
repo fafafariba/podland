@@ -46,23 +46,23 @@ class Playlists extends React.Component {
 
     let playlistTitles = <p>No playlists... yet... </p>;
 
-    // if (this.props.playlists !== {}) {
-    //   playlistTitles = Object.values(this.props.playlists)
-    //     .map( (playlist, idx) => (
-    //       <div key={playlist+idx}>
-    //         <Collapsible className="collapsible"
-    //           trigger={ playlist.name }
-    //           onClick={ () => this.setTracks(playlist.id) } >
-    //           <PlaylistItem tracks={playlist.episodes}
-    //             playlistId={playlist.id}
-    //             deleteTrack={ (id) => this.props.deleteTrack(id) } />
-    //         </Collapsible>
-    //         <p id="delete-playlist" onClick=
-    //           { () => this.deletePlaylistHandler(playlist.id) }>
-    //           Delete Playlist</p>
-    //       </div>
-    //   ));
-    // }
+    if (this.props.playlists !== {}) {
+      playlistTitles = Object.values(this.props.playlists)
+        .map( (playlist, idx) => (
+          <div key={playlist+idx}>
+            <Collapsible className="collapsible"
+              trigger={ playlist.name }
+              onClick={ () => this.setTracks(playlist.id) } >
+              <PlaylistItem tracks={playlist.episodes}
+                playlistId={playlist.id}
+                deleteTrack={ (id) => this.props.deleteTrack(id) } />
+            </Collapsible>
+            <p id="delete-playlist" onClick=
+              { () => this.deletePlaylistHandler(playlist.id) }>
+              Delete Playlist</p>
+          </div>
+      ));
+    }
 
     return (
       <main className="playlists">
