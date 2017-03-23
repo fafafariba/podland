@@ -1,3 +1,5 @@
+
+
 @-webkit-keyframes marquee1 {
   0% {
     -webkit-transform: translateX(100%);
@@ -104,8 +106,13 @@
   -webkit-box-direction: normal;
           flex-direction: row;
   height: 50px;
-  background-color: #333;
+  background: url(http://res.cloudinary.com/fafafariba/image/upload/v1489953939/nav-texture_oqaebq.png);
+  background-color: $black;
   width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-family: 'Lato', sans-serif;
+
   /* http://codepen.io/aralon/pen/NqGWXZ */ }
   .audio_player .audio_controls {
     display: -webkit-box;

@@ -1,2 +1,4 @@
 json.extract! @playlist, :id, :name
-json.partial! 'api/episodes/episode', episode: playlist.episode
+json.episodes @playlist.episodes do |episode|
+  json.partial! 'api/episodes/episode', episode: episode
+end

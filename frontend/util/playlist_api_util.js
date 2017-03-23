@@ -9,7 +9,7 @@ export const fetchPlaylists = () => (
 export const addPlaylist = name => (
   $.ajax({
     method: 'POST',
-    data: { name },
+    data: { playlist: { name } },
     url: `api/playlists/`
   })
 );

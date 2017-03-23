@@ -3,6 +3,9 @@
 User.destroy_all
 Podcast.destroy_all
 Subscription.destroy_all
+Episode.destroy_all
+Track.destroy_all
+Playlist.destroy_all
 
 
 ### USERS
@@ -46,12 +49,12 @@ pcast5 = Podcast.create!(name: "Radiolab",
   thumb_url: "http://is1.mzstatic.com/image/thumb/Music71/v4/a3/5c/0a/a35c0ad1-8b64-f680-77b1-09a12c01e950/source/170x170bb.jpg",
   link:"http://www.radiolab.org"
   )
-pcast6 = Podcast.create!(name: "Bulletproof Radio",
-description: "Bulletproof Executive Radio was born out of a fifteen-year single-minded crusade to upgrade the human being using every available technology. It distills the knowledge of more than 120 world-class MDs, biochemists, Olympic nutritionists, meditation experts, and more than $250,000 spent on personal self-experiments. From private brain EEG facilities hidden in a Canadian forest to remote monasteries in Tibet, from Silicon Valley to the Andes, high tech entrepreneur Dave Asprey used hacking techniques and tried everything himself, obsessively focused on discovering: What are the simplest things you can do to be better at everything? Welcome to being bulletproof, the state of high performance where you take control of and improve your biochemistry, your body, and your mind so they work in unison, helping you execute at levels far beyond what you’d expect, without burning out, getting sick, or just acting like a stressed-out jerk. It used to take a lifetime to radically rewire the human body and mind this way. Technology has changed the rules. Follow along as Dave Asprey and guests provide you with everything you need to upgrade your mind, body, and life.",
+pcast6 = Podcast.create!(name: "The Jillian Michaels Show",
+description: "Jillian Michaels, America's Health and Wellness guru, brings you the Jillian Michaels Show. An entertaining, inspirational, informative show that gives you tools to find health and happiness in all areas of your life.",
   category: "Health & Nutrition",
-  image_url: "https://res.cloudinary.com/fafafariba/image/upload/v1489899055/podland/18656.jpg",
-  thumb_url: "http://is1.mzstatic.com/image/thumb/Music122/v4/3b/47/f8/3b47f8f6-b123-9cbc-3829-4480730e14d5/source/170x170bb.jpg",
-  link: "https://blog.bulletproof.com"
+  image_url: "http://cloudfront.assets.stitcher.com/feedimagesplain328/16125.jpg",
+  thumb_url: "http://is2.mzstatic.com/image/thumb/Music62/v4/39/0f/78/390f789b-e32e-4c05-a5ff-7740b3b2e99c/source/170x170bb.jpg",
+  link: "https://www.jillianmichaels.com/podcast"
   )
 pcast7 = Podcast.create!(name:"Call Your Girlfriend",
   description: "A podcast for long distance besties everywhere. Co-hosted by your new BFFs Ann Friedman and Aminatou Sow.",
@@ -212,6 +215,240 @@ e11 = Episode.create!(name: "Vague and Confused",
   audio_url: "http://www.podtrac.com/pts/redirect.mp3/podcast.thisamericanlife.org/extended/611.mp3",
   image_url: "https://res.cloudinary.com/fafafariba/image/upload/v1490084281/611-enlarged_apen2a.jpg"
   )
+e13 = Episode.create!(name: "The Man Who Invented Facebook Ad Tracking Is Not Sorry",
+  description: "After building the social network’s ad system, Antonio García Martínez tried to set his career on fire with a tell-all. An inside view on Face-versaries, terrifying emails from Zuck, and the cult of changing the world. Turns out, it takes a lot to get shunned in the Valley. Especially when you write a bestseller. The author of Chaos Monkeys, on the fallout from his attempt to commit career suicide.",
+  podcast_id: pcast2.id,
+  date: Date.new(2017, 03, 21),
+  no: 86,
+  duration: "22:02",
+  audio_url: "https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/notetoself/notetoself032217_cms744153_pod.mp3",
+  image_url: "https://media2.wnyc.org/i/0/400/l/99/1/AP_537322114763.jpg"
+  )
+e14 = Episode.create!(name: "Government Secrets Worth Leaking... or Keeping?",
+  description: "So, the C.I.A. has a back door to your phone. At least, according to the Vault 7 data dump from WikiLeaks. This week, when are these tactics really making our lives safer?",
+  podcast_id: pcast2.id,
+  date: Date.new(2017, 03, 14),
+  no: 85,
+  duration: "27:13",
+  audio_url: "https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/notetoself/notetoself031517_cms742537_pod.mp3"
+  )
+e15 = Episode.create!(name: "Will You Do a Snapchat Streak With Me?",
+  description: "A little yellow ghost has joined Manoush’s home screen. This week, Note to Self takes the plunge into Snapchat. Where we find lots of opportunities for passive aggression, obligation, and shade. And that’s not a bug. It’s a feature. With designer Tristan Harris, of Time Well Spent, and Snapchat artist CyreneQ.",
+  podcast_id: pcast2.id,
+  date: Date.new(2017,03,7),
+  no: 84,
+  duration: "18:43",
+  audio_url: "https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/notetoself/notetoself030817_cms740978_pod.mp3"
+  )
+e16 = Episode.create!(name: "Andrew Forsthoefel: Deluded in the Desert",
+  description: "A young man sets out on a 4,000 mile journey and becomes a magnet for stories along the way.",
+  podcast_id: pcast3.id,
+  date: Date.new(2017, 03, 21),
+  no: 27,
+  duration: "16:44",
+  audio_url: "http://feeds.themoth.org/~r/themothpodcast/~5/-6QcpmdXSd4/moth_479_3_21_17.mp3",
+  image_url: "https://res.cloudinary.com/fafafariba/image/upload/v1490248206/Andrew-Forsthoefel-Podcast-479-2_ubtrhn.jpg"
+  )
+e17 = Episode.create!(name: "The Moth Radio Hour: People, Places, Problems",
+  description: "In this hour, a man whose mother never learned to read enrolls in law school.; a recent graduate runs in to familiar faces; an uber driver encounters an unruly passenger; a photo collage fails to capture the scope of a relationship; and a child's hair is shaved to save her life. The Moth Radio Hour is produced by The Moth and Jay Allison of Atlantic Public Media.
+
+Ray Christian struggles to realize his dream of graduating from law school.
+
+Alyssa Ladd is embarrassed to run into familiar faces while working at a Michaels craft store.
+
+Nestor Gomez is stuck driving an unruly Uber passenger during rush hour.
+
+Steven Carr is given a photo collage from his mother of he and his 'friend.'
+
+Melanie Kostrezwa learns her daughter must undergo a craniotomy.",
+  podcast_id: pcast3.id,
+  date: Date.new(2017,03,14),
+  no: 26,
+  duration: "54:40",
+  audio_url: "http://feeds.themoth.org/~r/themothpodcast/~5/mv7n5cTY68k/moth_478_mrh_1709_3_14_17-1.mp3"
+  )
+e18 = Episode.create!(name: "The Moth Radio Hour: Wedding Jitters and Kindergarten Battle Prep",
+  description: "A basement fire leads to a wedding, a young man in Jamaica is obsessed with a comic book, a child from a strict home lets off steam with her two grandmothers and a protective father prepares to do battle with his kid’s school.",
+  podcast_id: pcast3.id,
+  date: Date.new(2017, 03, 7),
+  no: 25,
+  duration: "53:46",
+  audio_url: "http://feeds.themoth.org/~r/themothpodcast/~5/2_NROEaZ330/moth_477_mrh_1624_3_7_17-1.mp3"
+  )
+e19 = Episode.create!(name: "Shots Fired: Part 1",
+  description: "We join Ben Montgomery, a reporter at the Tampa Bay Times, as he looks at every person killed or injured by Florida police over six years. ",
+  podcast_id: pcast5.id,
+  date: Date.new(2017, 03, 17),
+  no: 143,
+  duration: "58:20",
+  audio_url: "https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/radiolab_podcast/radiolab_podcast17shotsfiredone.mp3",
+  image_url: "https://media2.wnyc.org/i/620/372/c/80/1/3957814193_6fd835e7c0_o.jpg"
+  )
+e20 = Episode.create!(name: "Update: CRISPR",
+  description: "In 2012, scientists had a realization: hidden inside one of the world’s smallest organisms, was one of the world’s most powerful tools.",
+  podcast_id: pcast5.id,
+  date: Date.new(2017, 02, 24),
+  no: 142,
+  duration: "52:25",
+  audio_url: "https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/radiolab_podcast/radiolab_podcast17updatecrispr.mp3"
+  )
+e21 = Episode.create!(name: "Radiolab Presents: Ponzi Supernova",
+  description: "Madoff speaks.  Investigating the world's largest con with the team behind @Audible_com's #PonziSupernova.",
+  podcast_id: pcast5.id,
+  date: Date.new(2017, 02, 10),
+  no: 141,
+  duration: "40:35",
+  audio_url: "https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/radiolab_podcast/radiolab_podcast17ponzi.mp3"
+  )
+e21 = Episode.create!(name: "Raise Me Up",
+  description: "--",
+  podcast_id: pcast6.id,
+  date: Date.new(2017, 03, 20),
+  no: 299,
+  duration: "42:00",
+  audio_url: "http://rss.art19.com/episodes/99858ff9-9913-4812-9be3-0ed0ff80f215.mp3",
+  image_url: "http://cloudfront.assets.stitcher.com/customfeedimages/480x270_16125.jpg"
+  )
+e22 = Episode.create!(name: "The Honest Conversation",
+  description: "Bloaty McBloat.",
+  podcast_id: pcast6.id,
+  date: Date.new(2017, 03, 13),
+  no: 298,
+  duration: "51:58",
+  audio_url: "http://rss.art19.com/episodes/802356cc-7350-4d0f-855a-d7718202ae99.mp3"
+  )
+e23 = Episode.create!(name: "The PC Rabbit Hole",
+  description: "Skinny on salt.",
+  podcast_id: pcast6.id,
+  date: Date.new(2017, 03, 6),
+  no: 297,
+  duration: "41:41",
+  audio_url: "http://rss.art19.com/episodes/575fc074-6fcf-4d94-a956-3360d4510c02.mp3"
+  )
+e24 = Episode.create!(name: "Ur Fave is Problematic",
+  description: "How we spent the strike on International Women's Day. We answer listener questions about critically reading feminist thinkers, and keeping up on abortion rights laws. CheetoWatch: what's Kellyanne up to? Representative Steve King and other racist liars. Plus, Inspector Gadget and ALL of our problematic faves.",
+  podcast_id: pcast7.id,
+  date: Date.new(2017, 03, 17),
+  no: 84,
+  duration: "49:47",
+  audio_url: "https://rss.art19.com/episodes/f1afc7e0-2a0a-41a3-a465-24f96cc3ff63.mp3",
+  image_url: "https://static1.squarespace.com/static/566ea44e0e4c116bdc16c66c/t/58cb91379f74560b269e95d4/1489736000875/gadget.jpg"
+  )
+e25 = Episode.create!(name: "Obama Glow Up",
+  description: "How did you spend International Women's Day? Thoughts on women's labor strikes of the '70s and now. Study shows that men are more aggro in the Trump era. Brief thoughts on La Croix, post-presidency Barack and the best wealthy communities for thrifting. Women are having too much fun to retire. And, staying politically engaged in a red state.",
+  podcast_id: pcast7.id,
+  date: Date.new(2017, 03, 10),
+  no: 83,
+  duration: "50:05",
+  audio_url: "https://rss.art19.com/episodes/fc9ab402-0850-4df2-99da-c6ff1013fcdd.mp3"
+  )
+e26 = Episode.create!(name: "It's a Trap!",
+  description: "'90s icons return: Amina discovers the sexiness of Keanu Reeves & there's a new ::fire emoji:: Calvin Klein campaign featuring the cast of Moonlight. This week in menstruation, that labia glue to stop period flow you heard about? It's a real patent, but also fake news. Cheeto Watch continues as Kellyanne gets too comfortable in the Oval Office and HBCU leaders realize they got played. Plus, a 'feminist' manifesto.",
+  podcast_id: pcast7.id,
+  date: Date.new(2017, 03, 3),
+  no: 82,
+  duration: "50:12",
+  audio_url: "https://rss.art19.com/episodes/8b32a7cc-9da3-4212-bc1d-5f6781c8cab8.mp3"
+  )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
+# e15 = Episode.create!(name: "",
+#   description: "",
+#   podcast_id: ,
+#   date: Date.new(2017, ,),
+#   no: ,
+#   duration: ":",
+#   audio_url: "",
+#   image_url: ""
+#   )
 
 
 ## PLAYLISTS

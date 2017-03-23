@@ -6,7 +6,6 @@ import FooterContainer from './footer/footer_container';
 
 
 const App = (props) => {
-  console.log(props);
   let navbar = <MainNavContainer />;
   let footer = <FooterContainer/>;
   if (props.location.pathname === "/welcome") navbar = <SplashNavContainer/>;

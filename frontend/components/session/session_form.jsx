@@ -27,7 +27,6 @@ class SessionForm extends React.Component {
   // }
 
   componentWillReceiveProps(nextProps){ //just commented out
-    debugger;
     if (nextProps.currentUser) this.redirect();
   }
 

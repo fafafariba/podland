@@ -1,14 +1,20 @@
 class Api::EpisodesController < ApplicationController
 
+  def create
+    @episode = Episode.new(episode_params)
+    @episode.save
+    render 'api/episodes/show'
+  end
+
   def index
     @episodes = Podcast.episodes
-    render json: @episodes
+    render 'api/episodes/index'
   end
 
   def show
     @episode = Episode.find(params[:id])
     if @episode
-      render json: @episode
+      render 'api/episodes/show'
     else
       render json: @episode.errors.full_messages
     end

@@ -1,5 +1,6 @@
 import React from 'react';
 import onClickOutside from 'react-onclickoutside';
+import { Link } from 'react-router';
 
 class MainNav extends React.Component {
   constructor(props){
@@ -49,11 +50,11 @@ class MainNav extends React.Component {
     return (
       <header className="main-nav">
         <nav className="left-nav">
-          <h1>Podland</h1>
+          <Link to="/"><h1>Podland</h1></Link>
         </nav>
         <nav className="right-nav">
           <ul>
-            <li>[photo]</li>
+            <li><i className="fa fa-headphones" aria-hidden="true"></i></li>
             <li>Welcome, { name }</li>
             <li id="navicon">
               <i className="fa fa-bars" aria-hidden="true" onClick={this.toggleMenu}></i>

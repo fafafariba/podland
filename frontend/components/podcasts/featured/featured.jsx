@@ -10,6 +10,12 @@ const podcastStyle = url =>({
 class Featured extends React.Component {
   constructor(props) {
     super(props);
+    this.playHandler = this.playHandler.bind(this);
+  }
+
+  playHandler(audio, id){
+    this.props.receiveAudio(audio);
+    this.props.router.push(`/podcasts/${id}`);
   }
 
   render () {
@@ -22,9 +28,9 @@ class Featured extends React.Component {
             <li>
               <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
                 <div className="podcast-overlay">
-                  <a href="#" title="Play Latest Episode">
-                    <i className="fa fa-play-circle" aria-hidden="true"></i>
-                  </a>
+                    <i className="fa fa-play-circle" aria-hidden="true"
+                      title="Play Latest Episode"
+                      onClick={ () => this.playHandler(podcast.episodes, podcast.id) }></i>
                 </div>
               </div>
             </li>

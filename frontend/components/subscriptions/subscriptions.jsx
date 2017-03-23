@@ -12,10 +12,12 @@ let subscriptions = <p>No subscriptions...yet...</p>;
 class Subscriptions extends React.Component {
   constructor(props){
     super(props);
+    this.playHandler = this.playHandler.bind(this);
   }
 
-  playHandler(){
-    //for player
+  playHandler(audio, id){
+    this.props.receiveAudio(audio);
+    this.props.router.push(`/podcasts/${id}`);
   }
 
   render() {
@@ -26,11 +28,12 @@ class Subscriptions extends React.Component {
         <li key={podcast+idx}>
           <ul className="podcast-container">
             <li>
-                <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
+              <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
                 <div className="podcast-overlay">
-                  <a href="" title="Play Latest Episode">
-                    <i className="fa fa-play-circle" aria-hidden="true"></i>
-                  </a>
+                  <i className="fa fa-play-circle" aria-hidden="true"
+                     title="Play Latest Episode"
+                     onClick={ () => this.playHandler(podcast.episodes, podcast.id) }>
+                  </i>
                 </div>
               </div>
             </li>

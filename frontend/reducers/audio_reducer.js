@@ -3,7 +3,6 @@ import merge from 'lodash/merge';
 
 const AudioReducer = ( state = [], action ) => {
   Object.freeze(state);
-
   switch(action.type){
     case RECEIVE_AUDIO:
       return action.audio;

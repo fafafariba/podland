@@ -8,7 +8,6 @@ class Footer extends React.Component {
 
   render(){
     let player = null;
-    debugger;
     if (this.props.audio.length > 0) {
       const playlist = this.props.audio.map(track => (
         { url: track.audio_url,
@@ -17,10 +16,9 @@ class Footer extends React.Component {
       player = (
         <nav>
           <div className="audioPlayer">
-            <p>hi</p>
             <AudioPlayer playlist={playlist}
-              hideBackSkip={true}
-              autoPlay={true} />
+              hideBackSkip={false}
+              autoplay={true} />
           </div>
         </nav>
       );

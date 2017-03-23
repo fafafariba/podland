@@ -25,7 +25,7 @@ class Podcast < ApplicationRecord
   end
 
   def self.featured
-    self.order("RANDOM()").limit(10)
+    self.order("RANDOM()").limit(8)
   end
 
   def popularity

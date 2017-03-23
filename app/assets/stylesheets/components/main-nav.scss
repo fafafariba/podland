@@ -6,7 +6,6 @@
   width: 100%;
   opacity: .9;
   background: url(http://res.cloudinary.com/fafafariba/image/upload/v1489953939/nav-texture_oqaebq.png);
-  // background: url(http://www.transparenttextures.com/patterns/asfalt-dark.png);
   background-color: #171717;
   justify-content: space-between;
   align-items: center;
@@ -38,6 +37,11 @@
 .right-nav li {
   font-size: 18px;
   margin-left: 20px;
+}
+
+.right-nav li i:first-of-type{
+  font-size: 25px;
+  align-self: baseline;
 }
 .right-nav li a {
   color: white;

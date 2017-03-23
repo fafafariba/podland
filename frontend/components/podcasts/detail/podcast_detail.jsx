@@ -38,8 +38,8 @@ class PodcastDetail extends React.Component {
     }
   }
 
-  playerHandler(){
-    //start playlist with all podcasts
+  playerHandler(audio){
+    this.props.receiveAudio(audio);
   }
 
   subscriptionsHandler(){
@@ -62,10 +62,7 @@ class PodcastDetail extends React.Component {
       const episodes = this.props.podcast.episodes;
       latest = episodes[0];
       rest = episodes.slice(1);
-      // console.log("latest", latest);
-      // console.log("rest", rest);
     }
-
 
     let latestContent, episodeContent;
 

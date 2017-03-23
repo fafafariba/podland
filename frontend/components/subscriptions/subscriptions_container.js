@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import { clearMessages, fetchSubscriptions }
-  from '../../actions/podcast_actions';
+import { fetchSubscriptions } from '../../actions/podcast_actions';
 import Subscriptions from './subscriptions';
 import { withRouter } from 'react-router';
 import { selectSubscriptions } from '../../reducers/selectors.js';
+import { receiveAudio } from '../../actions/audio_actions';
+
 
 const mapStateToProps = state => ({
   subscriptions: selectSubscriptions(state.subscriptions.subscriptions),
@@ -12,7 +13,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchSubscriptions: () => dispatch(fetchSubscriptions()),
-  clearMessages: () => dispatch(clearMessages())
+  receiveAudio: audio => dispatch(receiveAudio(audio))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Subscriptions));

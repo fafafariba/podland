@@ -16,8 +16,6 @@ const mapDispatchToProps = dispatch => ({
   fetchAllPodcasts: () => dispatch(fetchAllPodcasts()),
   fetchFeaturedPodcasts: () => dispatch(fetchFeaturedPodcasts()),
   fetchPopularPodcasts: () => dispatch(fetchPopularPodcasts()),
-  receiveErrors: () => dispatch(receiveErrors()),
-  clearErrors: () => dispatch(clearErrors()),
   fetchSubscriptions: () => dispatch(fetchSubscriptions())
 });
 

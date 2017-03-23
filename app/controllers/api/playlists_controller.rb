@@ -11,7 +11,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist = Playlist.new(playlist_params)
     @playlist.user_id = current_user.id
     if @playlist.save
-      'api/playlists/show'
+      render 'api/playlists/show'
     else
       render json: @playlist.errors.full_messages
     end
