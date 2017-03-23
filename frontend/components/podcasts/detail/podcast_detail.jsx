@@ -7,6 +7,7 @@ class PodcastDetail extends React.Component {
     super(props);
     this.state = { subscribed: "", button: "" , subscriptionId: ""};
     this.subscriptionsHandler = this.subscriptionsHandler.bind(this);
+    this.playHandler = this.playHandler.bind(this);
   }
 
   setSubscribed(subs){
@@ -38,7 +39,7 @@ class PodcastDetail extends React.Component {
     }
   }
 
-  playerHandler(audio){
+  playHandler(audio){
     this.props.receiveAudio(audio);
   }
 
@@ -82,7 +83,8 @@ class PodcastDetail extends React.Component {
             <div className="latest-row-buttons">
               <ul>
                 <li><i className="fa fa-play" aria-hidden="true"
-                  title="Play Episode"></i></li>
+                  title="Play Episode"
+                  onClick={ ()=>this.playHandler([latest]) }></i></li>
                 <li><i id="plus" className="fa fa-plus" aria-hidden="true"
                   title="Add to Playlist"></i></li>
               </ul>
@@ -97,8 +99,7 @@ class PodcastDetail extends React.Component {
 
     if (rest) {
       episodeContent = rest.map((episode, idx) => (
-        <EpisodeTrack no={episode.no} name={episode.name}
-          duration={episode.duration} description={episode.description}
+        <EpisodeTrack episode={episode} receiveAudio={this.props.receiveAudio}
           key={episode+idx}/>
       ));
     }
@@ -122,7 +123,8 @@ class PodcastDetail extends React.Component {
                   <li className="row-buttons">
                     <ul>
                       <li><i className="fa fa-play" aria-hidden="true"
-                        title="Play Podcast Radio"></i></li>
+                        title="Play Podcast Radio"
+                        onClick={ ()=> this.playHandler(this.props.podcast.episodes) }></i></li>
                       <li><button className="subscribe-button"
                         onClick={()=>this.subscriptionsHandler()}>
                         {this.state.button}</button></li>

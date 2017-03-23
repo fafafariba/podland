@@ -10,17 +10,21 @@ const podcastStyle = url =>({
 class PodcastsAll extends React.Component {
   constructor(props){
     super(props);
+    this.playHandler = this.playHandler.bind(this);
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.fetchAllPodcasts();
+  }
+  playHandler(audio, id){
+    this.props.receiveAudio(audio);
+    this.props.router.push(`/podcasts/${id}`);
   }
 
   render() {
-    console.log(this.props);
     let allPodcasts=[];
     if (this.props.allPodcasts) {
-      console.log(true);
+
       allPodcasts = this.props.allPodcasts.map((podcast, idx) => (
       <li key={podcast+idx}>
         <ul className="podcast-container" >
@@ -28,9 +32,9 @@ class PodcastsAll extends React.Component {
             <div className="podcast-img"
               style={podcastStyle(podcast.image_url)}>
               <div className="podcast-overlay">
-                <a href="#" title="Play Latest Episode">
-                  <i className="fa fa-play-circle" aria-hidden="true"></i>
-                </a>
+                <i className="fa fa-play-circle" aria-hidden="true"
+                  onClick={ () => this.playHandler(podcast.episodes, podcast.id) }>
+                </i>
               </div>
             </div>
           </li>
