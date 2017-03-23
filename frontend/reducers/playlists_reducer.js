@@ -1,5 +1,5 @@
-import { RECEIVE_PLAYLISTS, ADD_PLAYLIST, DELETE_PLAYLIST, RECEIVE_ERRORS,
-  CLEAR_ERRORS } from '../actions/playlist_actions';
+import { RECEIVE_PLAYLISTS, RECEIVE_PLAYLISTS_ERRORS, ADD_PLAYLIST,
+  DELETE_PLAYLIST, CLEAR_ERRORS } from '../actions/playlist_actions';
 import merge from 'lodash/merge';
 
 const defaultState = {
@@ -22,6 +22,8 @@ const PlaylistsReducer = (state = defaultState, action) => {
       keyId = action.playlist.id;
       delete newState.playlists[keyId];
       return newState;
+    case RECEIVE_PLAYLISTS_ERRORS:
+      newState.errors = action.errors;
     case CLEAR_ERRORS:
       newState.errors = [];
       return newState;

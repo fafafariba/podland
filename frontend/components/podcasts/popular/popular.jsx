@@ -12,10 +12,6 @@ class Popular extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.fetchPopularPodcasts();
-  }
-
   render(){
     let popular = [];
 

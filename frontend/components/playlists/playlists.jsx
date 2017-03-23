@@ -2,14 +2,14 @@ import React from 'react';
 import PlaylistItem from './playlist_item';
 import Collapsible from 'react-collapsible';
 import Modal from 'react-modal';
-import modalStyle from './modal_style';
+import playlistModalStyle from './playlist_modal_style';
 
 class Playlists extends React.Component {
   constructor(props){
     super(props);
     this.createPlaylistHandler = this.createPlaylistHandler.bind(this);
     this.openModal = this.openModal.bind(this);
-    this.onModalClose = this.onModalClose.bind(this);
+    this.onPlaylistModalClose = this.onPlaylistModalClose.bind(this);
     this.inputHandler = this.inputHandler.bind(this);
     this.state = { modalOpen: false, newPlaylist: "New Playlist"};
   }
@@ -34,7 +34,7 @@ class Playlists extends React.Component {
     this.props.addPlaylist(this.state.newPlaylist);
   }
 
-  onModalClose() {
+  onPlaylistModalClose() {
     this.setState({ modalOpen: false });
   }
 
@@ -53,9 +53,10 @@ class Playlists extends React.Component {
             <Collapsible className="collapsible"
               trigger={ playlist.name }
               onClick={ () => this.setTracks(playlist.id) } >
-              <PlaylistItem tracks={playlist.episodes}
+              <PlaylistItem tracks={ playlist.episodes }
                 playlistId={playlist.id}
-                deleteTrack={ (id) => this.props.deleteTrack(id) } />
+                deleteTrack={ this.props.deleteTrack }
+                receiveAudio={ this.props.receiveAudio } />
             </Collapsible>
             <p id="delete-playlist" onClick=
               { () => this.deletePlaylistHandler(playlist.id) }>
@@ -74,8 +75,8 @@ class Playlists extends React.Component {
 
           <Modal
             isOpen={this.state.modalOpen}
-            onRequestClose={this.onModalClose}
-            style={modalStyle}
+            onRequestClose={this.onPlaylistModalClose}
+            style={playlistModalStyle}
             contentLabel="playlist">
               <form onSubmit={this.createPlaylistHandler}>
                 <label>

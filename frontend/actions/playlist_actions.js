@@ -6,7 +6,7 @@ export const DELETE_PLAYLIST = 'DELETE_PLAYLIST';
 export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
 export const ADD_TRACK = 'ADD_TRACK';
 export const DELETE_TRACK = 'DELETE_TRACK';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_PLAYLISTS_ERRORS = 'RECEIVE_PLAYLISTS_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
@@ -38,10 +38,10 @@ const delTrack = track => ({
 const receiveTracks = tracks => ({
   type: RECEIVE_TRACKS,
   tracks
-})
+});
 
-const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
+const receivePlaylistsErrors = errors => ({
+  type: RECEIVE_PLAYLISTS_ERRORS,
   errors
 });
 
@@ -63,7 +63,7 @@ export const deletePlaylist = playlistId => dispatch => (
 export const addPlaylist = name => dispatch => (
   PlaylistAPIUtil.addPlaylist(name)
   .then(playlist => dispatch(newPlaylist(playlist)))
-  .fail(errors => dispatch(receiveErrors(errors)))
+  .fail(errors => dispatch(receivePlaylistsErrors(errors)))
 );
 
 export const deleteTrack = trackId => dispatch => (
@@ -74,10 +74,6 @@ export const deleteTrack = trackId => dispatch => (
 export const addTrack = episodeId => dispatch => (
   PlaylistAPIUtil.addTrack(episodeId)
   .then(track => dispatch(newTrack(track)))
-  .fail(errors => dispatch(receiveErrors(errors)))
+  .fail(errors => dispatch(receivePlaylistsErrors(errors)))
 
-);
-
-export const fetchTracks = tracks => dispatch => (
-  () => dispatch(receiveTracks(tracks))
 );

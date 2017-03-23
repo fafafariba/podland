@@ -4,10 +4,15 @@ import Link from 'react-router';
 class PlaylistItem extends React.Component {
   constructor(props){
     super(props);
+    this.playHandler = this.playHandler.bind(this);
   }
 
   deleteHandler(episodeId) {
     this.props.deleteTrack(this.props.playlistId, episodeId);
+  }
+
+  playHandler(episode){
+    this.props.receiveAudio(episode);
   }
 
   render() {
@@ -36,7 +41,8 @@ class PlaylistItem extends React.Component {
             </li>
             <li className="track-add">
               <i className="fa fa-play" aria-hidden="true"
-                title="Play Track"></i>
+                title="Play Track"
+                onClick={ () => this.playHandler([episode]) } ></i>
             </li>
             <li className="track-delete">
               <i className="fa fa-times" aria-hidden="true"

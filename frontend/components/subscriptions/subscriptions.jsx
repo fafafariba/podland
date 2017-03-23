@@ -14,10 +14,6 @@ class Subscriptions extends React.Component {
     super(props);
   }
 
-  componentWillMount(){
-    this.props.fetchSubscriptions();
-  }
-
   playHandler(){
     //for player
   }

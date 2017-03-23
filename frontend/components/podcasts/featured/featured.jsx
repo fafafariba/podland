@@ -12,10 +12,6 @@ class Featured extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.fetchFeaturedPodcasts();
-  }
-
   render () {
     let featured = [];
       if (this.props.featured) {

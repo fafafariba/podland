@@ -26,14 +26,10 @@ class SessionForm extends React.Component {
   //   if (this.props.currentUser) this.redirect();
   // }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps){ //just commented out
+    debugger;
     if (nextProps.currentUser) this.redirect();
   }
-
-  // resetState() {
-  //   console.log("reset");
-  //   this.setState({name: "", email: "", password: "", image_url: ""});
-  // }
 
   redirect(){
     this.props.router.push("/");

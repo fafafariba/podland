@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_PODCASTS, RECEIVE_ERRORS, CLEAR_ERRORS,
+import { RECEIVE_ALL_PODCASTS,
   RECEIVE_FEATURED_PODCASTS, RECEIVE_POPULAR_PODCASTS } from
   '../actions/podcast_actions';
 import merge from 'lodash/merge';
@@ -23,12 +23,6 @@ const PodcastsReducer = (state = defaultState, action) => {
       return newState;
     case RECEIVE_POPULAR_PODCASTS:
       newState.popular = action.popular;
-      return newState;
-    case RECEIVE_ERRORS:
-      newState.errors = action.errors;
-      return newState;
-    case CLEAR_ERRORS:
-      newState.errors = [];
       return newState;
     default:
       return state;
