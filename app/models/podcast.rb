@@ -10,6 +10,10 @@ class Podcast < ApplicationRecord
   through: :subscriptions,
   source: :user
 
+  def episodes_desc
+    self.episodes.order(date: :desc)
+  end
+
   def self.popular
     self.select("podcasts.id, podcasts.name, podcasts.category,
     podcasts.description, podcasts.image_url, podcasts.link,
@@ -18,10 +22,6 @@ class Podcast < ApplicationRecord
     .group("podcasts.id")
     .order("sub_count DESC")
     .limit(10)
-  end
-
-  def self.episodes
-    self.includes(:episodes).order(date: :desc)
   end
 
   def self.featured

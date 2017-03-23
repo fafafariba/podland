@@ -31,22 +31,23 @@ class PlaylistItem extends React.Component {
             <li className="track-thumb" >
               <img src={episode.podcast_thumb_url} />
             </li>
-            <div className="track-title">
-              <li>
-                <p>No. {episode.no} {episode.name}</p>
-              </li>
-            </div>
+            <li className="track-title">
+              <p>No. {episode.no} {episode.name}</p>
+            </li>
             <li className="track-duration">
               <p>{episode.duration}</p>
             </li>
-            <li className="track-add">
-              <i className="fa fa-play" aria-hidden="true"
-                title="Play Track"
-                onClick={ () => this.playHandler([episode]) } ></i>
-            </li>
-            <li className="track-delete">
-              <i className="fa fa-times" aria-hidden="true"
-                title="Delete Track from Playlist"></i>
+            <li className="track-row-buttons">
+              <div className="track-add">
+                <i className="fa fa-play" aria-hidden="true"
+                  title="Play Track"
+                  onClick={ () => this.playHandler([episode]) } ></i>
+              </div>
+              <div className="track-delete">
+                <i className="fa fa-times" aria-hidden="true"
+                  title="Delete Track from Playlist"></i>
+              </div>
+
             </li>
           </ul>
         </li>

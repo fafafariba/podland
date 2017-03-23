@@ -27,6 +27,7 @@ class PodcastDetail extends React.Component {
   componentDidMount(){
     this.props.fetchPodcast(this.props.params.podcastId);
     this.props.fetchSubscriptions();
+    this.props.fetchPlaylists();
 
     if (this.props.podcast.length) {
       this.setSubscribed(this.props.subscriptions);
@@ -59,8 +60,9 @@ class PodcastDetail extends React.Component {
   render () {
     let latest, rest;
 
-    if (this.props.podcast.episodes) {
-      const episodes = this.props.podcast.episodes;
+    let episodes = this.props.podcast.episodes;
+
+    if (episodes) {
       latest = episodes[0];
       rest = episodes.slice(1);
     }
@@ -100,7 +102,7 @@ class PodcastDetail extends React.Component {
     if (rest) {
       episodeContent = rest.map((episode, idx) => (
         <EpisodeTrack episode={episode} receiveAudio={this.props.receiveAudio}
-          key={episode+idx}/>
+          playlists={this.props.playlists} key={episode+idx}/>
       ));
     }
 

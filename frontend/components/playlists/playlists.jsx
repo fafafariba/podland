@@ -35,11 +35,19 @@ class Playlists extends React.Component {
   }
 
   onPlaylistModalClose() {
+    event.preventDefault();
     this.setState({ modalOpen: false });
   }
 
   deletePlaylistHandler(id){
     this.props.deletePlaylist(id);
+  }
+
+  displayErrors(){
+    let errors =<div></div>;
+    if (this.props.errors){
+      errors = <p className="errors">{this.props.errors}</p>;
+    }
   }
 
   render(){
@@ -82,12 +90,15 @@ class Playlists extends React.Component {
                 <label>
                   <h4>Enter Playlist Name:</h4>
                   <br/>
+                  {this.displayErrors()}
                   <input type="text" onChange={this.inputHandler.bind(this)}
                     value={this.state.newPlaylist} />
                 </label>
                 <br />
                 <input type="submit" id="splash-nav-modal-button" />
               </form>
+              <button onClick={this.onPlaylistModalClose} id="outer-modal-button">
+                close</button>
           </Modal>
 
 

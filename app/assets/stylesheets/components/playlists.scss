@@ -117,26 +117,37 @@
   font-size: 20px;
 }
 
+.track-thumb {
+  width: 50px;
+}
+
 .track-thumb img {
   height: 50px;
-  margin-right: 20px;
+  // margin-right: 20px;
+  // width: 50px;
 }
 
 .track.track-thumb > li {
   flex: 2;
 }
 
-.track-title li {
-  flex: 5;
+.track-title {
+  flex: 3;
 }
-.track-duration li {
-  flex: 2;
-}
-.track-play li {
+.track-duration {
   flex: 1;
 }
-.track-delete li {
+.track-play {
   flex: 1;
+}
+.track-delete {
+  flex: 1;
+}
+
+.track-row-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

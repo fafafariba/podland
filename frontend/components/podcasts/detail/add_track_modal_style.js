@@ -1,4 +1,4 @@
-const playlistModalStyle = {
+const addTrackModalStyle = {
   overlay : {
     position        : 'fixed',
     top             : 0,
@@ -24,8 +24,11 @@ const playlistModalStyle = {
      height          : '200px',
      zIndex          : 11,
      backgroundColor : '#ffffff',
-     boxShadow       : '4px 4px 5px #282828'
+     boxShadow       : '4px 4px 5px #282828',
+     display         : 'flex',
+     flexDirection   : 'column',
+     justifyContent  : 'space-around'
   }
 };
 
-export default playlistModalStyle;
+export default addTrackModalStyle;

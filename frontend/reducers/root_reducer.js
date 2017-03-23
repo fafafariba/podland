@@ -12,7 +12,6 @@ const RootReducer = combineReducers ({
   podcasts: PodcastsReducer,
   subscriptions: SubscriptionsReducer,
   podcastDetail: PodcastDetailReducer,
-  // episodes: EpisodesReducer,
   playlists: PlaylistsReducer,
   audio: AudioReducer
 });

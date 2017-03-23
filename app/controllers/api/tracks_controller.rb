@@ -32,5 +32,6 @@ class Api::TracksController < ApplicationController
   end
 
   def track_params
+    params.require(:track).permit(:playlist_id, :episode_id)
   end
 end

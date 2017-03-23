@@ -40,6 +40,11 @@ const receiveTracks = tracks => ({
   tracks
 });
 
+const receiveTrackErrors = errors => ({
+  type: RECEIVE_TRACK_ERRORS,
+  errors
+})
+
 const receivePlaylistsErrors = errors => ({
   type: RECEIVE_PLAYLISTS_ERRORS,
   errors
@@ -71,9 +76,9 @@ export const deleteTrack = trackId => dispatch => (
   .then(track => dispatch(delTrack(track)))
 );
 
-export const addTrack = episodeId => dispatch => (
-  PlaylistAPIUtil.addTrack(episodeId)
+export const addTrack = (playlistId, episodeId) => dispatch => (
+  PlaylistAPIUtil.addTrack(playlistId, episodeId)
   .then(track => dispatch(newTrack(track)))
-  .fail(errors => dispatch(receivePlaylistsErrors(errors)))
+  .fail(errors => dispatch(receiveTrackErrors(errors)))
 
 );

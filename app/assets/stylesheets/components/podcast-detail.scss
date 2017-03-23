@@ -153,6 +153,7 @@
   justify-content: space-between;
   align-items: center;
   height: 40px;
+  min-width: 0;
 }
 
 all-episodes-header ul li{
@@ -171,6 +172,7 @@ all-episodes-header ul li{
   box-shadow: $gray-shadow;
   border-top: 1px solid gray;
   padding: 0;
+  min-width: 560px;
 }
 
 .Collapsible__contentInner p {

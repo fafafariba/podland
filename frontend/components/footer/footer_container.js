@@ -6,8 +6,4 @@ const mapStateToProps = state => ({
   audio: state.audio,
 });
 
-const mapDispatchToProps = dispatch => ({
-  receiveAudio: audio => dispatch(receiveAudio(audio))
-});
-
 export default connect(mapStateToProps)(Footer);
