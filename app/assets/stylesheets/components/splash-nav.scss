@@ -52,15 +52,16 @@
     align-items: center;
 
 }
-  #outer-modal-button {
-    background-color: $black;
-    color: white;
-    font-size: 14px;
-    width: 193.125px;
-    height: 17px;
-    padding: 7px;
-    margin: 0 auto;
-  }
+
+.outer-modal-button {
+  background-color: $black;
+  color: white;
+  font-size: 14px;
+  width: 193.125px;
+  height: 17px;
+  padding: 7px;
+  margin: 0 auto;
+}
 
 
 
@@ -109,7 +110,7 @@
     font-size: 14px;
     margin-left: 0px;
     border: none;
-    width: 100%;
+    width: 193.125px;
 
   }
   #splash-nav-modal-button:hover {

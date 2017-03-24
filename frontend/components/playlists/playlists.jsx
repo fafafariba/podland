@@ -11,7 +11,7 @@ class Playlists extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.onPlaylistModalClose = this.onPlaylistModalClose.bind(this);
     this.inputHandler = this.inputHandler.bind(this);
-    this.state = { modalOpen: false, newPlaylist: "New Playlist"};
+    this.state = { modalOpen: false, playlistName: "Whatever"};
   }
 
   componentDidMount(){
@@ -25,13 +25,14 @@ class Playlists extends React.Component {
     this.setState({modalOpen: true});
   }
 
-  inputHandler(event){
-    this.setState({newPlaylist: event.currentTarget.value});
+  inputHandler(){
+    event.preventDefault();
+    this.setState({playlistName: event.currentTarget.value});
   }
 
   createPlaylistHandler(){
     event.preventDefault();
-    this.props.addPlaylist(this.state.newPlaylist);
+    this.props.addPlaylist(this.state.playlistName);
   }
 
   onPlaylistModalClose() {
@@ -45,12 +46,13 @@ class Playlists extends React.Component {
 
   displayErrors(){
     let errors =<div></div>;
-    if (this.props.errors){
+    if (this.props.errors && this.props.errors.length){
+      console.log(this.props.errors, "errors");
       errors = <p className="errors">{this.props.errors}</p>;
     }
   }
 
-  render(){
+  render() {
 
     let playlistTitles = <p>No playlists... yet... </p>;
 
@@ -81,25 +83,28 @@ class Playlists extends React.Component {
         <button onClick={this.openModal}>
           + New Playlist</button>
 
-          <Modal
-            isOpen={this.state.modalOpen}
-            onRequestClose={this.onPlaylistModalClose}
-            style={playlistModalStyle}
-            contentLabel="playlist">
-              <form onSubmit={this.createPlaylistHandler}>
-                <label>
-                  <h4>Enter Playlist Name:</h4>
-                  <br/>
-                  {this.displayErrors()}
-                  <input type="text" onChange={this.inputHandler.bind(this)}
-                    value={this.state.newPlaylist} />
-                </label>
-                <br />
-                <input type="submit" id="splash-nav-modal-button" />
-              </form>
-              <button onClick={this.onPlaylistModalClose} id="outer-modal-button">
-                close</button>
-          </Modal>
+        <Modal
+          isOpen={this.state.modalOpen}
+          onRequestClose={this.onPlaylistModalClose}
+          style={playlistModalStyle}
+          contentLabel="playlist">
+          <div className="modal-playlist-content">
+            <form onSubmit={this.createPlaylistHandler}>
+              <label>
+                <h4>Enter Playlist Name:</h4>
+                <br/>
+                {this.displayErrors()}
+                <input type="text" onChange={this.inputHandler}
+                  value={this.state.playlistName} />
+              </label>
+              <br />
+              <input type="submit" id="playlist-nav-modal-button" />
+            </form>
+            <button onClick={this.onPlaylistModalClose} className="outer-modal-button">
+              close
+            </button>
+          </div>
+        </Modal>
 
 
         <nav className="playlist-collapsibles">
@@ -110,8 +115,6 @@ class Playlists extends React.Component {
       </main>
     );
   }
-
-
 }
 
 export default Playlists;

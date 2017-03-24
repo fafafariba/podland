@@ -154,3 +154,54 @@
 #delete-playlist:hover {
   cursor: pointer;
 }
+
+// .ReactModal__Content.ReactModal__Content {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   background-color: red;
+// }
+
+.modal-playlist-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-playlist-content input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.outer-modal-button {
+  background-color: $black;
+  color: white;
+  font-size: 14px;
+  width: 193.125px;
+  height: 17px;
+  padding: 7px;
+  margin: 0 auto;
+}
+
+#playlist-nav-modal-button {
+  margin: 20px 0;
+  background-image: url(http://res.cloudinary.com/fafafariba/image/upload/v1489953936/button-texture_d6aobr.png);
+  background-color: $black;
+  font-weight: bold;
+  font-family: "Lato";
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 5px #888888;
+  margin-left: 0px;
+  font-size: 14px;
+  padding: 7px;
+  width: 205px;
+
+}
+#playlist-nav-modal-button:hover {
+  -webkit-filter: $brightness;
+  filter: $brightness;
+  box-shadow: none;
+  cursor: pointer;
+}

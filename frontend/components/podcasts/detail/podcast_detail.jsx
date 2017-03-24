@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import EpisodeTrack from './episode_track';
+import EpisodeContainer from './episode_container';
 
 class PodcastDetail extends React.Component {
   constructor(props) {
@@ -27,7 +27,6 @@ class PodcastDetail extends React.Component {
   componentDidMount(){
     this.props.fetchPodcast(this.props.params.podcastId);
     this.props.fetchSubscriptions();
-    this.props.fetchPlaylists();
 
     if (this.props.podcast.length) {
       this.setSubscribed(this.props.subscriptions);
@@ -101,8 +100,7 @@ class PodcastDetail extends React.Component {
 
     if (rest) {
       episodeContent = rest.map((episode, idx) => (
-        <EpisodeTrack episode={episode} receiveAudio={this.props.receiveAudio}
-          playlists={this.props.playlists} key={episode+idx}/>
+        <EpisodeContainer episode={episode} key={episode+idx}/>
       ));
     }
 

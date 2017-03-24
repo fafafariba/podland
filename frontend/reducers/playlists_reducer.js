@@ -1,11 +1,11 @@
-import { RECEIVE_PLAYLISTS, RECEIVE_PLAYLISTS_ERRORS, ADD_PLAYLIST,
-  DELETE_PLAYLIST, CLEAR_ERRORS, ADD_TRACK, DELETE_TRACK }
+import { RECEIVE_PLAYLISTS, RECEIVE_PLAYLISTS_MESSAGES, ADD_PLAYLIST,
+  DELETE_PLAYLIST, CLEAR_MESSAGES, ADD_TRACK, DELETE_TRACK }
   from '../actions/playlist_actions';
 import merge from 'lodash/merge';
 
 const defaultState = {
   playlists: {},
-  errors: []
+  messages: []
 };
 
 const PlaylistsReducer = (state = defaultState, action) => {
@@ -24,13 +24,14 @@ const PlaylistsReducer = (state = defaultState, action) => {
       delete newState.playlists[keyId];
       return newState;
     case ADD_TRACK:
-      //{playlist_id:}
-      newState[action.track.playlist_id].push(action.track.episode);
+      let targetPlaylist = newState.playlists[action.track.playlist_id];
+      targetPlaylist.episodes.push(action.track.episode);
       return newState;
-    case RECEIVE_PLAYLISTS_ERRORS:
-      newState.errors = action.errors;
-    case CLEAR_ERRORS:
-      newState.errors = [];
+    case RECEIVE_PLAYLISTS_MESSAGES:
+      newState.messages = action.msg;
+      return newState;
+    case CLEAR_MESSAGES:
+      newState.messages = [];
       return newState;
     default:
       return state;

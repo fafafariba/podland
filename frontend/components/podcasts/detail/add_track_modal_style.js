@@ -21,7 +21,7 @@ const addTrackModalStyle = {
      border          : '1px solid #ccc',
      width           : '250px',
      borderRadius    : 0,
-     height          : '200px',
+     height          : '240px',
      zIndex          : 11,
      backgroundColor : '#ffffff',
      boxShadow       : '4px 4px 5px #282828',

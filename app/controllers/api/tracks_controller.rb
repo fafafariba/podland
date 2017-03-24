@@ -12,7 +12,7 @@ class Api::TracksController < ApplicationController
     if @track.save
       render 'api/tracks/show'
     else
-      render json: @track.errors.full_messages
+      render json: ["Duplicate Entry."], status: 422
     end
   end
 
@@ -28,7 +28,7 @@ class Api::TracksController < ApplicationController
     episode_id = track_params[:episode_id]
     @track = Track.find_by_ids(playlist_id, episode_id)
   rescue
-    render json: ["Track doesn't exist"], status: 404
+    render json: ["Track doesn't exist."], status: 404
   end
 
   def track_params

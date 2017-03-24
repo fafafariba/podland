@@ -2,15 +2,14 @@ import React from 'react';
 import Collapsible from 'react-collapsible';
 import Modal from 'react-modal';
 import addTrackModalStyle from './add_track_modal_style';
-import SelectPlaylistItem from './select_playlist_item';
+import SelectPlaylistItemContainer from './select_playlist_item_container';
 
 
-class EpisodeTrack extends React.Component {
+class Episode extends React.Component {
   constructor(props){
     super(props);
     this.playHandler = this.playHandler.bind(this);
-    this.addToPlaylistHandler = this.addToPlaylistHandler.bind(this);
-    this.state = { modalOpen: false, selectedPlaylist: ""};
+    this.state = { modalOpen: false, epsiodeId: null};
     this.openModal = this.openModal.bind(this);
     this.onAddTrackModalClose = this.onAddTrackModalClose.bind(this);
   }
@@ -19,17 +18,22 @@ class EpisodeTrack extends React.Component {
     this.props.receiveAudio(audio);
   }
 
-  openModal() {
-    this.setState({modalOpen: true});
-  }
-
-  addToPlaylistHandler(track) {
-
+  openModal(id){
+    this.setState({modalOpen: true, episodeId: id});
   }
 
   onAddTrackModalClose() {
     event.preventDefault();
+    this.props.clearMessages();
     this.setState({ modalOpen: false });
+  }
+
+  displayMessages(){
+    if (this.props.messages && this.props.messages.length) {
+      return (
+        <p className="errors">{this.props.messages}</p>
+      );
+    }
   }
 
   render(){
@@ -46,11 +50,11 @@ class EpisodeTrack extends React.Component {
         <li className="row-buttons">
           <ul>
             <li><i className="fa fa-play" aria-hidden="true"
-              title="Add to Playlist"
-              onClick={ ()=> this.addToPlaylistHandler([this.props.episode]) }>
+              title="Play Episode"
+              onClick={ ()=> this.playHandler([this.props.episode]) }>
             </i></li>
-            <li><i className="fa fa-plus" title="Play Episode" aria-hidden="true"
-              onClick={this.openModal} aria-hidden="true">
+          <li><i className="fa fa-plus" title="Add to Playlist" aria-hidden="true"
+              onClick={()=> this.openModal(this.props.episode.id)} aria-hidden="true">
             </i></li>
           </ul>
         </li>
@@ -71,9 +75,9 @@ class EpisodeTrack extends React.Component {
           style={addTrackModalStyle}
           contentLabel="addTrack">
           <h4>Select Playlist:</h4>
-          <SelectPlaylistItem playlists={Object.values(this.props.playlists)} />
-          <button onSubmit={this.addToPlaylistHandler}>Add</button>
-          <button onClick={this.onAddTrackModalClose} id="outer-modal-button">
+          {this.displayMessages()}
+          <SelectPlaylistItemContainer episodeId={this.state.episodeId} />
+          <button onClick={this.onAddTrackModalClose} className="outer-modal-button">
           close</button>
         </Modal>
       </div>
@@ -81,4 +85,4 @@ class EpisodeTrack extends React.Component {
   }
 }
 
-export default EpisodeTrack;
+export default Episode;
