@@ -21,12 +21,10 @@ class Footer extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if (this.audioPlayer)
-    console.log(this.audioPlayer);
     if (nextProps.audio.length && !isEqual(this.props.audio, nextProps.audio)) {
-      console.log("props not equal");
       setTimeout(() => {
         this.audioPlayer.togglePause();
-      }, 3000);
+      }, 1000);
       let list = this.extractPlaylist(nextProps.audio);
       this.setState({list});
     }
