@@ -5,37 +5,40 @@
       id: 1,
       username: "fafafariba",
       name: "Fariba",
-      image_url: "/image.jpg"
     },
     errors: []
   },
   subscriptions: {
-    subscriptions: { //array of user subscriptions
+    subscriptions: { 
+      23: {
+        subscription_id: 23
+        podcasts: [] //Array of user's podcasts
+      }
     },
-    errors: []
+    errors : []
   }
   podcasts : {
-    all: //Array of all podcasts, first 20
+    all: [] //Array of all podcasts
     popular: //Array of podcast objects like below
     featured: //Array of podcast objects selected based on genre
   },
 
-  podcastDetail: { //single selected podcasts
+  podcastDetail: {
     podcast:
       {
+      id: 345,
       title: "This American Life",
-      description: "From WBEZ Chicago Public Radio, This American Life podcast gives listeners touching, humorous and often unexpected vignettes of life in America. Hosted by Ira Glass, these weekly short stories are an on demand version of the popular radio show and available in Stitcher's Society & Culture station. Consistently ranked #1 Podcast in the US. New episodes available on Mondays.",
+      description: "From WBEZ Chicago Public Radio, This American Life podcast gives listeners touching, humorous and often unexpected         vignettes of life in America. Hosted by Ira Glass, these weekly short stories are an on demand version of the popular radio show   
+      and available in Stitcher's Society & Culture station. Consistently ranked #1 Podcast in the US. New episodes available on  
+      Mondays.",
       image_url: "http something",
       thumb_url: ".jpg",
       link: "https://www.thisamericanlife.org",
       categories: "Society & Culture",
-      popularity: 4 //number of subscribers
-    episodes: {
-        //Array of episodes 
-        //id, podcast_id, name, description, audio_url, image_url,
-        //thumb_url, episode_no, duration
+      popularity: 4,
+      episodes: {
+        [] //Array of podcasts
       }
-    errors: []
     },
 
 
@@ -49,11 +52,8 @@
       }
 
   ]
-  audio: {
-      tracks: {
-        1: {}
-      }
-    }
+  audio: { 
+    [] //Array of audio objects
   }
 }
 ```
