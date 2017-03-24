@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router';
 import EpisodeContainer from './episode_container';
+import Modal from 'react-modal';
+import addTrackModalStyle from './add_track_modal_style';
+import SelectPlaylistItemContainer from './select_playlist_item_container';
 
 class PodcastDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { subscribed: "", button: "" , subscriptionId: ""};
+    this.state = { subscribed: "", button: "" , subscriptionId: "",
+      modalOpen: false, episodeId: null };
     this.subscriptionsHandler = this.subscriptionsHandler.bind(this);
     this.playHandler = this.playHandler.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.onAddTrackModalClose = this.onAddTrackModalClose.bind(this);
   }
 
   setSubscribed(subs){
@@ -52,8 +58,22 @@ class PodcastDetail extends React.Component {
     }
   }
 
-  externalHandler(){
+  openModal(id){
+    this.setState({modalOpen: true, episodeId: id});
+  }
 
+  onAddTrackModalClose() {
+    event.preventDefault();
+    this.props.clearMessages();
+    this.setState({ modalOpen: false });
+  }
+
+  displayMessages(){
+    if (this.props.messages && this.props.messages.length) {
+      return (
+        <p className="errors">{this.props.messages}</p>
+      );
+    }
   }
 
   render () {
@@ -87,7 +107,8 @@ class PodcastDetail extends React.Component {
                   title="Play Episode"
                   onClick={ ()=>this.playHandler([latest]) }></i></li>
                 <li><i id="plus" className="fa fa-plus" aria-hidden="true"
-                  title="Add to Playlist"></i></li>
+                  title="Add to Playlist"
+                  onClick={()=> this.openModal(latest.id)}></i></li>
               </ul>
             </div>
           </li>
@@ -136,6 +157,17 @@ class PodcastDetail extends React.Component {
           </section>
         <header className="podcast-detail-header">
           <h3>Latest Episode</h3>
+            <Modal
+              isOpen={this.state.modalOpen}
+              onRequestClose={this.onAddTrackModalClose}
+              style={addTrackModalStyle}
+              contentLabel="addTrack">
+              <h4>Select Playlist:</h4>
+              {this.displayMessages()}
+              <SelectPlaylistItemContainer episodeId={this.state.episodeId} />
+              <button onClick={this.onAddTrackModalClose} className="outer-modal-button">
+              close</button>
+            </Modal>
         </header>
           {latestContent}
         <header className="podcast-detail-header">

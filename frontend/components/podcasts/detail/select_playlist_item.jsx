@@ -51,8 +51,10 @@ class SelectPlaylistItem extends React.Component {
     return (
       <div className="select-playlist-items">
         <ul>
-          <li id="drop-down-chevron"><i className={`fa fa-chevron-${this.state.direction}`}
-            aria-hidden="true" onClick={ () => this.toggleChevron() }></i>
+          <li id="drop-down-chevron"
+            onClick={ () => this.toggleChevron() }>
+            <i className={`fa fa-chevron-${this.state.direction}`}
+            aria-hidden="true"></i>
           </li>
             <ul className="modal-drop-down">
               { list }
