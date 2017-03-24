@@ -42,6 +42,8 @@ Babel compiler was used to transpile ES6 to ES5 for browsers.
 ### Libraries
 
 [React-Router](https://github.com/ReactTraining/react-router) for seamless transitioning from page to page on a single page app
+
 [React-Modal](https://github.com/reactjs/react-modal) for modals
+
 [React-Player](https://www.npmjs.com/package/react-player) for the continuous playing audio player
 
