@@ -99,22 +99,22 @@ class Playlists extends React.Component {
           isOpen={this.state.modalOpen}
           onRequestClose={this.onPlaylistModalClose}
           style={playlistModalStyle}
-          contentLabel="playlist">
-
-            <form onSubmit={this.createPlaylistHandler}
-              className="modal-playlist-form">
+          contentLabel="playlist"
+          className="modal-playlist-content">
+            <div className="modal-playlist-form">
               <h4>Enter Playlist Name:</h4>
-                {this.displayErrors()}
+              {this.displayErrors()}
+            <form onSubmit={this.createPlaylistHandler}>
               <input type="text" onChange={this.inputHandler}
                 value={this.state.playlistName} />
               <input type="submit" id="playlist-nav-modal-button" />
-            </form>
 
             <button onClick={this.onPlaylistModalClose}
               className="outer-modal-button">
               close
             </button>
-
+            </form>
+          </div>
         </Modal>
 
 

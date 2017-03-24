@@ -157,26 +157,16 @@
 // }
 //
 
+.modal-playlist-form form{
+  display: flex;
+  flex-direction: column;
+  width: 207px;
+}
 
-//
-// .modal-playlist-content {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: yellow;
-// }
-
-// .modal-playlist-form {
-//   justify-content: center;
-//   align-items: center;
-//   background-color: green;
-// }
-
-// .modal-playlist-content input{
-//   margin-top: 20px;
-//   margin-bottom: 20px;
-// }
+.modal-playlist-form input {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
 
 .outer-modal-button {
   background-color: $black;
@@ -205,7 +195,7 @@
   margin-left: 0px;
   font-size: 14px;
   padding: 7px;
-  width: 205px;
+  width: 207px;
 
 }
 #playlist-nav-modal-button:hover {

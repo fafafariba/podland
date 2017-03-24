@@ -19,15 +19,17 @@ const playlistModalStyle = {
      right           : 0,
      bottom          : 0,
      border          : '1px solid #ccc',
-     width           : '250px',
+     width           : '220px',
      borderRadius    : 0,
-     height          : '200px',
+     height          : '180px',
      zIndex          : 11,
      backgroundColor : '#ffffff',
      boxShadow       : '4px 4px 5px #282828',
      display         : 'flex',
      flexDirection   : 'column',
-     justifyContent  : 'space-around'
+     justifyContent  : 'justify-content',
+     padding         : '30px',
+     alignItems      : 'center'
   }
 };
 

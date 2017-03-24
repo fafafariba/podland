@@ -56,7 +56,7 @@ class MainNav extends React.Component {
         </header>
           <nav className="sub-nav">
             <ul>
-              <li><Link to="/"><h4>Home</h4></Link></li>
+              <li><Link to="/"><h4>Dashboard</h4></Link></li>
               <li><Link to="/subscriptions"><h4>Subscriptions</h4></Link></li>
               <li><Link to="/playlists"><h4>Playlists</h4></Link></li>
               <li><Link to="/podcasts"><h4>Explore</h4></Link></li>
