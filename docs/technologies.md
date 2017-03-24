@@ -1,6 +1,4 @@
-# Technologies
-
-Podlands 
+# Technologies 
 
 ## Back-End
 
