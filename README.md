@@ -21,7 +21,7 @@
 
 ## Design
 
-Podland was designed and implemented in under 2 weeks. The initial proposal included an outline of [database schema](https://github.com/fafafariba/podland/blob/master/docs/schema.md), [redux state](https://github.com/fafafariba/podland/blob/master/docs/sample-state.md), [layout]  
+Podland was designed and implemented in under 2 weeks. The initial proposal included an outline of [database schema](https://github.com/fafafariba/podland/blob/master/docs/schema.md), [redux state](https://github.com/fafafariba/podland/blob/master/docs/sample-state.md), and [layout](https://github.com/fafafariba/podland/tree/master/docs/wireframes). 
 
 
 ## Technology
