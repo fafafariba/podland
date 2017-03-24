@@ -27,6 +27,12 @@ const PlaylistsReducer = (state = defaultState, action) => {
       let targetPlaylist = newState.playlists[action.track.playlist_id];
       targetPlaylist.episodes.push(action.track.episode);
       return newState;
+    case DELETE_TRACK:
+      keyId = action.track.playlist_id;
+      let targetId = action.track.episode.id;
+      let targetEpisodes = newState.playlists[keyId].episodes;
+      newState.playlists[keyId].episodes = targetEpisodes.filter(e => e.id !== targetId);
+      return newState;
     case RECEIVE_PLAYLISTS_MESSAGES:
       newState.messages = action.msg;
       return newState;

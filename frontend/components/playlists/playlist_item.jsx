@@ -5,10 +5,16 @@ class PlaylistItem extends React.Component {
   constructor(props){
     super(props);
     this.playHandler = this.playHandler.bind(this);
+    this.deleteTrackHandler = this.deleteTrackHandler.bind(this);
+    this.deletePlaylistHandler = this.deletePlaylistHandler.bind(this);
   }
 
-  deleteHandler(episodeId) {
-    this.props.deleteTrack(this.props.playlistId, episodeId);
+  deletePlaylistHandler(id){
+    this.props.deletePlaylist(id);
+  }
+
+  deleteTrackHandler(id) {
+    this.props.deleteTrack(this.props.playlist.id, id);
   }
 
   playHandler(episode){
@@ -16,7 +22,6 @@ class PlaylistItem extends React.Component {
   }
 
   render() {
-
     let tracks = <div></div>;
       // <li>
       //   <Link to={`/podcasts/${episode.podcast_id}`}>
@@ -24,8 +29,8 @@ class PlaylistItem extends React.Component {
       //   </Link>
       // </li>
 
-    if (this.props.tracks.length > 0) {
-      tracks = this.props.tracks.map((episode, idx) => (
+    if (this.props.playlist.episodes && this.props.playlist.episodes.length > 0) {
+      tracks = this.props.playlist.episodes.map((episode, idx) => (
         <li key={episode+idx} className="track">
           <ul>
             <li className="track-thumb" >
@@ -38,14 +43,15 @@ class PlaylistItem extends React.Component {
               <p>{episode.duration}</p>
             </li>
             <li className="track-row-buttons">
-              <div className="track-add">
+              <div className="track-play">
                 <i className="fa fa-play" aria-hidden="true"
                   title="Play Track"
                   onClick={ () => this.playHandler([episode]) } ></i>
               </div>
               <div className="track-delete">
                 <i className="fa fa-times" aria-hidden="true"
-                  title="Delete Track from Playlist"></i>
+                  title="Delete Track from Playlist"
+                  onClick= { () => this.deleteTrackHandler(episode.id)}></i>
               </div>
 
             </li>
@@ -59,6 +65,12 @@ class PlaylistItem extends React.Component {
         <ul>
           { tracks }
         </ul>
+        <div className="delete-playlist">
+          <p onClick=
+            { () => this.deletePlaylistHandler(this.props.playlist.id) }>
+            <i className="fa fa-trash-o" aria-hidden="true"></i>
+          Delete Playlist</p>
+        </div>
       </div>
     );
   }

@@ -32,6 +32,6 @@ export const addTrack = (playlistId, episodeId) => (
 export const deleteTrack = (playlistId, episodeId) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/tracks?playlist_id=${playlistId}&episode_id=${episodeId}`
+    url: `api/tracks/1?playlist_id=${playlistId}&episode_id=${episodeId}`
   })
 );

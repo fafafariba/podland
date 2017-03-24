@@ -13,22 +13,20 @@ class SubscriptionsAll extends React.Component {
   constructor(props){
     super(props);
     this.deleteHandler = this.deleteHandler.bind(this);
+    this.playHandler = this.playHandler.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchSubscriptions();
   }
 
-  componentWillReceiveProps(nextProps){
-
-  }
-
   deleteHandler(id){
     this.props.deleteSubscription(id);
   }
 
-  playHandler(){
-    //for player
+  playHandler(audio, id){
+    this.props.receiveAudio(audio);
+    this.props.router.push(`/podcasts/${id}`);
   }
 
   render() {
@@ -42,7 +40,7 @@ class SubscriptionsAll extends React.Component {
                 <ul className="subscriptions-podcast-overlay">
                   <li>
                     <i className="fa fa-play-circle"
-                      onClick={ () => this.playHandler(podcast.episode.id) }
+                      onClick={ () => this.playHandler(podcast.episodes, podcast.id) }
                       aria-hidden="true" title="Play Latest Episode"></i>
                   </li>
                   <li>

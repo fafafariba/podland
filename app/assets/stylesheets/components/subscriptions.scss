@@ -89,36 +89,7 @@
   text-decoration: none;
 }
 
-i:hover {
+.subscriptions i:hover {
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
 }
-
-//in case you messed up
-
-// .podcast-container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-//
-// .subscriptions-podcast-img{
-//   border: 1px solid gray;
-//   height: 180px;
-//   width: 180px;
-//   margin: 20px 0;
-//   overflow: hidden;
-//   position: relative;
-//   box-shadow: $gray-shadow;
-// }
-//
-// .subscriptions-podcast-overlay {
-//   position: absolute;
-//   width: 182px;
-//   height: 182px;
-//   justify-content: space-around;
-//   align-items: center;
-//   background-color: rgba(0, 0, 0, 0.6);
-//   display: none;
-// }

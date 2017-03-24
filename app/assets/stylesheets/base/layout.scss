@@ -90,9 +90,13 @@ a {
 }
 
 a:hover {
-  color: rgba(89, 159, 168, .7);
+  color: rgba(89, 159, 168, .6);
+}
+
+i:hover {
+  cursor: pointer;
 }
 
 .errors {
-  color: red;
+  color: mediumturquoise;
 }

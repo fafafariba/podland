@@ -29,10 +29,10 @@ class Subscriptions extends React.Component {
           <ul className="podcast-container">
             <li>
               <div className="podcast-img" style={podcastStyle(podcast.image_url)}>
-                <div className="podcast-overlay">
+                <div className="podcast-overlay"
+                  onClick={ () => this.playHandler(podcast.episodes, podcast.id) }>
                   <i className="fa fa-play-circle" aria-hidden="true"
-                     title="Play Latest Episode"
-                     onClick={ () => this.playHandler(podcast.episodes, podcast.id) }>
+                     title="Play Latest Episode">
                   </i>
                 </div>
               </div>

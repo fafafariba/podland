@@ -31,9 +31,9 @@ class PodcastsAll extends React.Component {
           <li>
             <div className="podcast-img"
               style={podcastStyle(podcast.image_url)}>
-              <div className="podcast-overlay">
-                <i className="fa fa-play-circle" aria-hidden="true"
-                  onClick={ () => this.playHandler(podcast.episodes, podcast.id) }>
+              <div className="podcast-overlay"
+                onClick={ () => this.playHandler(podcast.episodes, podcast.id) }>
+                <i className="fa fa-play-circle" aria-hidden="true">
                 </i>
               </div>
             </div>
@@ -51,7 +51,7 @@ class PodcastsAll extends React.Component {
     return (
       <main className="all-podcasts">
         <header className="all-podcasts-header">
-          <h2>All</h2>
+          <h2>Explore</h2>
         </header>
         <section className="podcasts">
           <ul>

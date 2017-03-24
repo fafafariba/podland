@@ -73,8 +73,9 @@
 
 .latest-row-buttons i:hover,
 .row-buttons i:hover {
-  -webkit-filter: brightness(.3);
-  filter: brightness(.3);
+  -webkit-filter: brightness(.6);
+  filter: brightness(.6);
+  opacity: .5;
   text-shadow: $black-shadow;
 }
 
@@ -177,6 +178,10 @@ all-episodes-header ul li{
   min-width: 500px;
 }
 
+.Collapsible__trigger,
+.Collapsible__contentOuter {
+min-width: 500px;
+}
 .Collapsible__contentInner p {
   margin-left: 20px;
 }

@@ -1,0 +1,91 @@
+.Collapsible {
+  box-shadow: $gray-shadow;
+  margin-left: 20px;
+  margin-right: 50px;
+}
+
+.Collapsible.collapsible {
+  margin-left: 20px;
+  margin-right: 50px;
+}
+
+// .Collapsible span,
+// .collapsible span{
+//   font-size: 18px;
+//   margin-left: 20px;
+// }
+
+.Collapsible span h4:hover,
+.collapsible span h4:hover{
+  -webkit-filter: $brightness;
+  filter: $brightness;
+  cursor: pointer;
+}
+
+.Collapsible__trigger{
+  height: 40px;
+}
+
+.Collapsible__contentInner {
+  margin-left: 20px;
+}
+
+.track ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $gray;
+}
+
+.track p{
+  font-size: 16px;
+}
+
+.track i{
+  font-size: 20px;
+}
+
+.track-thumb {
+  width: 50px;
+}
+
+.track-thumb img {
+  height: 50px;
+  // margin-right: 20px;
+  // width: 50px;
+}
+
+.track.track-thumb > li {
+  flex: 2;
+}
+
+.track-title {
+  flex: 3;
+}
+.track-duration {
+  flex: 1;
+}
+.track-play i{
+  margin-right: 30px;
+}
+.track-delete {
+  flex: 1;
+}
+
+.track-row-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: green;
+  margin-right: 20px;
+}
+
+.delete-playlist i {
+  margin-right: 5px;
+}
+
+.delete-playlist:hover {
+  -webkit-filter: $brightness;
+  filter: $brightness;
+  cursor: pointer;
+}

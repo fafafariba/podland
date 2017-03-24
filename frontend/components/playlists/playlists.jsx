@@ -1,5 +1,5 @@
 import React from 'react';
-import PlaylistItem from './playlist_item';
+import PlaylistItemContainer from './playlist_item_container';
 import Collapsible from 'react-collapsible';
 import Modal from 'react-modal';
 import playlistModalStyle from './playlist_modal_style';
@@ -11,21 +11,23 @@ class Playlists extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.onPlaylistModalClose = this.onPlaylistModalClose.bind(this);
     this.inputHandler = this.inputHandler.bind(this);
-    this.state = { modalOpen: false, playlistName: "Whatever"};
+    this.playHandler = this.playHandler.bind(this);
+    this.state = { modalOpen: false, playlistName: ""};
   }
 
   componentDidMount(){
     this.props.fetchPlaylists();
   }
 
-  playHandler() {
+  playHandler(audio) {
+    this.receiveAudio(audio);
   }
 
   openModal(){
     this.setState({modalOpen: true});
   }
 
-  inputHandler(){
+  inputHandler(event){
     event.preventDefault();
     this.setState({playlistName: event.currentTarget.value});
   }
@@ -37,6 +39,7 @@ class Playlists extends React.Component {
 
   onPlaylistModalClose() {
     event.preventDefault();
+    this.props.clearMessages();
     this.setState({ modalOpen: false });
   }
 
@@ -45,10 +48,9 @@ class Playlists extends React.Component {
   }
 
   displayErrors(){
-    let errors =<div></div>;
-    if (this.props.errors && this.props.errors.length){
-      console.log(this.props.errors, "errors");
-      errors = <p className="errors">{this.props.errors}</p>;
+    let messages =<div></div>;
+    if (this.props.messages && this.props.messages.length){
+      messages = <p className="errors">{this.props.messages}</p>;
     }
   }
 
@@ -57,64 +59,65 @@ class Playlists extends React.Component {
     let playlistTitles = <p>No playlists... yet... </p>;
 
     if (this.props.playlists !== {}) {
+
       playlistTitles = Object.values(this.props.playlists)
-        .map( (playlist, idx) => (
+        .map( (playlist, idx) => {
+          return (
           <div key={playlist+idx}>
-            <Collapsible className="collapsible"
-              trigger={ playlist.name }
-              onClick={ () => this.setTracks(playlist.id) } >
-              <PlaylistItem tracks={ playlist.episodes }
-                playlistId={playlist.id}
-                deleteTrack={ this.props.deleteTrack }
-                receiveAudio={ this.props.receiveAudio } />
+            <Collapsible className="playlists-collapsible"
+              trigger={<h4>{playlist.name}</h4>}>
+              <PlaylistItemContainer playlist={ playlist }  />
             </Collapsible>
-            <p id="delete-playlist" onClick=
-              { () => this.deletePlaylistHandler(playlist.id) }>
-              Delete Playlist</p>
           </div>
-      ));
-    }
+        );
+    });
+  }
+
 
     return (
       <main className="playlists">
         <header>
-          <h2>Playlists</h2>
+          <ul>
+          <li>
+            <h2>Playlists</h2>
+            </li>
+            <li>
+              <button className="create-playlist" onClick={this.openModal}>
+                + New Playlist</button>
+            </li>
+          </ul>
         </header>
-        <button onClick={this.openModal}>
-          + New Playlist</button>
-
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this.onPlaylistModalClose}
           style={playlistModalStyle}
           contentLabel="playlist">
-          <div className="modal-playlist-content">
-            <form onSubmit={this.createPlaylistHandler}>
-              <label>
-                <h4>Enter Playlist Name:</h4>
-                <br/>
+
+            <form onSubmit={this.createPlaylistHandler}
+              className="modal-playlist-form">
+              <h4>Enter Playlist Name:</h4>
                 {this.displayErrors()}
-                <input type="text" onChange={this.inputHandler}
-                  value={this.state.playlistName} />
-              </label>
-              <br />
+              <input type="text" onChange={this.inputHandler}
+                value={this.state.playlistName} />
               <input type="submit" id="playlist-nav-modal-button" />
             </form>
-            <button onClick={this.onPlaylistModalClose} className="outer-modal-button">
+
+            <button onClick={this.onPlaylistModalClose}
+              className="outer-modal-button">
               close
             </button>
-          </div>
+
         </Modal>
 
 
         <nav className="playlist-collapsibles">
           { playlistTitles }
         </nav>
-        <section>
-        </section>
       </main>
     );
   }
 }
 
 export default Playlists;
+
+// onClick={ () => this.setTracks(playlist.id)

@@ -28,9 +28,9 @@ class Popular extends React.Component {
             <li>
               <div className="podcast-img"
                 style={podcastStyle(podcast.image_url)}>
-                <div className="podcast-overlay">
+                <div className="podcast-overlay"
+                  onClick={ () => this.playHandler(podcast.episodes, podcast.id) }>
                     <i className="fa fa-play-circle" aria-hidden="true"
-                      onClick={ () => this.playHandler(podcast.episodes, podcast.id) }
                       title="Play Latest Episode">
                     </i>
                 </div>

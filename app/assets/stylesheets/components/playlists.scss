@@ -1,5 +1,5 @@
 .playlists {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 100px;
@@ -9,167 +9,165 @@
   border-bottom: 1px solid black;
 }
 
+.playlists header > ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.playlists header > ul > li > button {
+  background-color: mediumturquoise;
+  opacity: .8;
+  font-weight: bold;
+  color: white;
+  border: $gray;
+  top: 160px;
+  right: 50px;
+  margin-right: 5px;
+  position: absolute;
+}
+
 .playlists nav {
   margin-top: 20px;
 }
 
-.playlists p {
+.playlists p { //inside collapsible
   margin-left: 20px;
-  color: $gray;
 }
 
-.playlists h2, h3{
-  margin-left: 10px;
-  margin-top: 0;
-  margin-bottom: 5px;
-  padding: 0;
-}
-
+//
+// .playlists h2, h3{
+//   margin-left: 10px;
+//   margin-top: 0;
+//   margin-bottom: 5px;
+//   padding: 0;
+// }
+//
 .playlists.Collapsible {
-  font-size: 20px;
-  text-transform: uppercase;
-  margin-left: 20px;
-  padding: 2px;
+// //   font-size: 20px;
+// //   text-transform: uppercase;
+// //   margin-left: 20px;
+// //   padding: 2px;
 }
-
+//
 .playlists.Collapsible span{
   margin-left: 10px;
 }
-
-.all-episodes {
-  margin: 30px 50px 50px 30px;
-}
-
-.all-episodes-header li:first-of-type{
-  flex: 5;
-}
-
-.all-episodes-header li:not(:first-of-type){
-  flex: 2;
-}
-
-.all-episodes-header li:last-of-type{
-  flex: 1;
-}
-
-.all-episodes-header h4{
-  margin-left: 20px;
-  padding: 0;
-}
-
-.all-episodes-header h4:hover{
-  cursor: pointer;
-}
-
-.all-episodes-header p{
-  margin-left: 20px;
-}
-
-
-// .all-episodes-header > ul{
+//
+// .all-episodes {
+//   margin: 30px 50px 50px 30px;
+// }
+//
+// .all-episodes-header li:first-of-type{
+//   flex: 5;
+// }
+//
+// .all-episodes-header li:not(:first-of-type){
+//   flex: 2;
+// }
+//
+// .all-episodes-header li:last-of-type{
+//   flex: 1;
+// }
+//
+// .all-episodes-header h4{
+//   margin-left: 20px;
+//   padding: 0;
+// }
+//
+// .all-episodes-header h4:hover{
+//   cursor: pointer;
+// }
+//
+// .all-episodes-header p{
+//   margin-left: 20px;
+// }
+//
+//
+// // .all-episodes-header > ul{
+// //   display: flex;
+// //   justify-content: space-between;
+// //   align-items: center;
+// //   height: 40px;
+// // }
+//
+// // all-episodes-header ul li{
+// //   border-bottom: 1px solid gray;
+// // }
+//
+//
+// // .all-episodes-header i{
+// //   font-size: 20px;
+// //   margin-right: 20px;
+// // }
+//
+//
+// .Collapsible {
 //   display: flex;
 //   justify-content: space-between;
 //   align-items: center;
+//   background-color: rgb(208, 213, 221);
+//   box-shadow: $gray-shadow;
 //   height: 40px;
+//   margin-left: 20px;
+//   margin-right: 50px;
 // }
-
-// all-episodes-header ul li{
-//   border-bottom: 1px solid gray;
+//
+//
+// .Collapsible.collapsible {
+//   margin-left: 20px;
+//   margin-right: 50px;
 // }
-
-
-// .all-episodes-header i{
-//   font-size: 20px;
-//   margin-right: 20px;
+//
+// .Collapsible span,
+// .collapsible span{
+//   font-size: 18px;
+//   margin-left: 20px;
 // }
-
-
-.collapsible {
-  background-color: rgb(208, 213, 221);
-  box-shadow: $gray-shadow;
-  border-top: 1px solid $gray;
-  padding: 0;
-}
-
-.Collapsible__contentInner p {
-  margin-left: 20px;
-}
-
-
-//TODO: WHYYYY???
-.playlist li ul:first-child {
-  border-top: 1px solid $gray;
-  background-color: yellow;
-}
-
-.track ul{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid $gray;
-}
-
-.track p{
-  font-size: 16px;
-}
-
-.track i{
-  font-size: 20px;
-}
-
-.track-thumb {
-  width: 50px;
-}
-
-.track-thumb img {
-  height: 50px;
-  // margin-right: 20px;
-  // width: 50px;
-}
-
-.track.track-thumb > li {
-  flex: 2;
-}
-
-.track-title {
-  flex: 3;
-}
-.track-duration {
-  flex: 1;
-}
-.track-play {
-  flex: 1;
-}
-.track-delete {
-  flex: 1;
-}
-
-.track-row-buttons{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-#delete-playlist:hover {
-  cursor: pointer;
-}
-
-// .ReactModal__Content.ReactModal__Content {
+//
+// .Collapsible span h4:hover,
+// .collapsible span h4:hover{
+//   -webkit-filter: $brightness;
+//   filter: $brightness;
+//   cursor: pointer;
+// }
+//
+// .Collapsible__contentInner {
+//   margin-left: 20px;
+// }
+//
+//
+// //TODO: WHYYYY???
+// .playlist li ul:first-child {
+//   border-top: 1px solid $gray;
+//   background-color: yellow;
+// }
+//
+// .track ul{
 //   display: flex;
-//   flex-direction: column;
 //   align-items: center;
-//   background-color: red;
+//   justify-content: space-between;
+//   border-bottom: 1px solid $gray;
 // }
+//
 
+
+//
 .modal-playlist-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: yellow;
+}
+//
+.modal-playlist-form {
+  justify-content: center;
+  align-items: center;
+  background-color: green;
 }
 
 .modal-playlist-content input{
-  width: 100%;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -204,4 +202,11 @@
   filter: $brightness;
   box-shadow: none;
   cursor: pointer;
+}
+
+.playlists i:hover{
+  -webkit-filter: brightness(.6);
+  filter: brightness(.6);
+  opacity: .5;
+  text-shadow: $black-shadow
 }

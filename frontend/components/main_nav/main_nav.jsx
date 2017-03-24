@@ -10,7 +10,7 @@ class MainNav extends React.Component {
     this.logout = this.logout.bind(this);
   }
 
-  handleClickOutside () {
+  handleClickOutside() {
     event.preventDefault();
     if (this.state.menuOpen) this.toggleMenu();
   }
@@ -55,11 +55,11 @@ class MainNav extends React.Component {
           </nav>
           <nav className="right-nav">
             <ul>
-              <li><i className="fa fa-headphones" aria-hidden="true"></i></li>
+              <li id="headphones"><i className="fa fa-headphones" aria-hidden="true"></i></li>
               <li>Welcome, { name }</li>
               <li id="navicon">
                 <i className="fa fa-bars" aria-hidden="true" onClick={this.toggleMenu}></i>
-                {menu}
+                { menu }
               </li>
             </ul>
           </nav>

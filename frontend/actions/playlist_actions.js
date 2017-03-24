@@ -30,10 +30,12 @@ const newTrack = track => ({
   track
 });
 
-const delTrack = track => ({
+const delTrack = track => {
+  return {
   type: DELETE_TRACK,
   track
-});
+};
+};
 
 const receiveTracks = tracks => ({
   type: RECEIVE_TRACKS,
@@ -66,8 +68,8 @@ export const addPlaylist = name => dispatch => (
   .fail(errors => dispatch(receivePlaylistsMessages(errors)))
 );
 
-export const deleteTrack = trackId => dispatch => (
-  PlaylistAPIUtil.deleteTrack(trackId)
+export const deleteTrack = (playlistId, episodeId) => dispatch => (
+  PlaylistAPIUtil.deleteTrack(playlistId, episodeId)
   .then(track => dispatch(delTrack(track)))
 );
 
