@@ -12,6 +12,9 @@ Podland runs on the MVC framewwork Ruby on Rails.
 
 All of Podland's data was stored in PostgresQL, an open source database.
 
+### BCrypt
+
+Secure authentication was setup with the use of BCrypt for password-salting and hashing.
 
 ## Front-End
 
