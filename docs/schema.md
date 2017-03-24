@@ -6,7 +6,6 @@
     <li>email</li>
     <li>password_digest</li>
     <li>session_token</li>
-    <li>image_url</li>
   </ul>
  <h2>Podcast</h2>
   <ul>
@@ -27,16 +26,21 @@
   <h2>Episode</h2>
   <ul>
     <li>podcast_id</li>
-    <li>episode name</li>
-    <li>episode description</li>
-    <li>date created</li>
-    <li>audio_link</li>
+    <li>name</li>
+    <li>description</li>
+    <li>date</li>
+    <li>audio_url</li>
     <li>image_url</li>
   </ul>
 
   <h2>Playlist</h2>
   <ul>
-    <li>user id</li>
-    <li>podcast_id</li>
+    <li>user_id</li>
+    <li>episode_id</li>
+  </ul>
+  
+  <h2>Track</h2>
+    <ul>
+    <li>playlist_id</li>
     <li>episode_id</li>
   </ul>
