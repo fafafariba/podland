@@ -13,7 +13,7 @@ class Api::PlaylistsController < ApplicationController
     if @playlist.save
       render 'api/playlists/show'
     else
-      render json: @playlist.errors.full_messages
+      render json: @playlist.errors.full_messages, status: 422
     end
   end
 

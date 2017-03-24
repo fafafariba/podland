@@ -19,6 +19,12 @@ class Playlists extends React.Component {
     this.props.fetchPlaylists();
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.messages && nextProps.messages.length){
+  //     this.setState({ playlistName: ""});
+  //   }
+  // }
+
   playHandler(audio) {
     this.receiveAudio(audio);
   }
@@ -40,17 +46,19 @@ class Playlists extends React.Component {
   onPlaylistModalClose() {
     event.preventDefault();
     this.props.clearMessages();
-    this.setState({ modalOpen: false });
+    this.setState({ modalOpen: false, playlistName: "" });
   }
 
   deletePlaylistHandler(id){
     this.props.deletePlaylist(id);
   }
 
+
   displayErrors(){
-    let messages =<div></div>;
     if (this.props.messages && this.props.messages.length){
-      messages = <p className="errors">{this.props.messages}</p>;
+      return (<p className="errors">{this.props.messages}</p>);
+    } else {
+      return (<div></div>);
     }
   }
 

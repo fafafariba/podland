@@ -65,7 +65,7 @@ export const deletePlaylist = playlistId => dispatch => (
 export const addPlaylist = name => dispatch => (
   PlaylistAPIUtil.addPlaylist(name)
   .then(playlist => dispatch(newPlaylist(playlist)))
-  .fail(errors => dispatch(receivePlaylistsMessages(errors)))
+  .fail(errors => dispatch(receivePlaylistsMessages(errors.responseJSON)))
 );
 
 export const deleteTrack = (playlistId, episodeId) => dispatch => (

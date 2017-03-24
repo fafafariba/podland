@@ -1,26 +1,22 @@
 import React from 'react';
-import onClickOutside from 'react-onclickoutside';
+// import onClickOutside from 'react-onclickoutside';
 import { Link } from 'react-router';
+import SettingsMenu from './settings_menu';
 
 class MainNav extends React.Component {
   constructor(props){
     super(props);
     this.toggleMenu = this.toggleMenu.bind(this);
     this.state = { menuOpen: false };
-    this.logout = this.logout.bind(this);
   }
 
-  handleClickOutside() {
-    event.preventDefault();
-    if (this.state.menuOpen) this.toggleMenu();
-  }
+  // handleClickOutside() {
+  //   event.preventDefault();
+  //   if (this.state.menuOpen) this.toggleMenu();
+  // }
 
   toggleMenu(){
     this.setState({ menuOpen: !this.state.menuOpen});
-  }
-
-  logout(){
-    this.props.logout();
   }
 
   componentDidUpdate(){
@@ -31,21 +27,15 @@ class MainNav extends React.Component {
   }
 
   render(){
-    let menu, name;
-    if (this.state.menuOpen) {
-      menu =
-      <nav className="settings-menu">
-        <ul>
-          <li><a href="https://github.com/fafafariba/podland">About</a></li>
-          <li><a href="#" onClick={this.logout}>Logout</a></li>
-        </ul>
-      </nav>;
-    } else {
-      menu = <div></div>;
-    }
+    let name, menu;
 
     name = this.props.currentUser ? this.props.currentUser.name : "";
 
+    if (this.state.menuOpen) {
+      menu = <SettingsMenu state={this.state.menuOpen} logout={this.props.logout}/>;
+    } else {
+      menu = <div></div>;
+    }
 
     return (
       <div>
@@ -77,4 +67,5 @@ class MainNav extends React.Component {
   }
 }
 
-export default onClickOutside(MainNav);
+export default MainNav;
+// export default onClickOutside(MainNav);

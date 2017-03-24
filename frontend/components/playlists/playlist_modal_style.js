@@ -21,10 +21,13 @@ const playlistModalStyle = {
      border          : '1px solid #ccc',
      width           : '250px',
      borderRadius    : 0,
-     height          : '240px',
+     height          : '200px',
      zIndex          : 11,
      backgroundColor : '#ffffff',
-     boxShadow       : '4px 4px 5px #282828'
+     boxShadow       : '4px 4px 5px #282828',
+     display         : 'flex',
+     flexDirection   : 'column',
+     justifyContent  : 'space-around'
   }
 };
 

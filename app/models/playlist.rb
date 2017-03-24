@@ -1,5 +1,7 @@
 class Playlist < ApplicationRecord
   validates :name, :user, presence: true
+  validates_uniqueness_of :name, scope: :user
+
 
   has_many :tracks, dependent: :destroy
 

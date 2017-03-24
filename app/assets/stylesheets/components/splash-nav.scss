@@ -6,17 +6,12 @@
   height: 60px;
   width: 100vw;
   background: url(http://res.cloudinary.com/fafafariba/image/upload/v1489953939/nav-texture_oqaebq.png);
-  // background: url(http://www.transparenttextures.com/patterns/asfalt-dark.png);
   background-color: $black;
   justify-content: space-between;
   align-items: center;
   z-index: 12;
   box-shadow: $black-shadow;
 }
-
-// .splash-nav img{
-//   width: 97px;
-// }
 
 .splash-nav h1{
   color: white;
@@ -54,7 +49,7 @@
 
 }
 
-.outer-modal-button {
+#outer-modal-button {
   background-color: $black;
   color: white;
   font-size: 14px;
@@ -111,7 +106,7 @@
     font-size: 14px;
     margin-left: 0px;
     border: none;
-    width: 193.125px;
+    width: 202.47px;
 
   }
   #splash-nav-modal-button:hover {

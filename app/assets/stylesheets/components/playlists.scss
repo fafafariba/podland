@@ -152,24 +152,24 @@
 
 
 //
-.modal-playlist-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: yellow;
-}
-//
-.modal-playlist-form {
-  justify-content: center;
-  align-items: center;
-  background-color: green;
-}
+// .modal-playlist-content {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: yellow;
+// }
 
-.modal-playlist-content input{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+// .modal-playlist-form {
+//   justify-content: center;
+//   align-items: center;
+//   background-color: green;
+// }
+
+// .modal-playlist-content input{
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+// }
 
 .outer-modal-button {
   background-color: $black;
@@ -179,6 +179,10 @@
   height: 17px;
   padding: 7px;
   margin: 0 auto;
+}
+
+.ReactModal__Content.ReactModal__Content {
+  background-color: yellow;
 }
 
 #playlist-nav-modal-button {
