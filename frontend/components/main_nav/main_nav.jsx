@@ -48,21 +48,31 @@ class MainNav extends React.Component {
 
 
     return (
-      <header className="main-nav">
-        <nav className="left-nav">
-          <Link to="/"><h1>Podland</h1></Link>
-        </nav>
-        <nav className="right-nav">
-          <ul>
-            <li><i className="fa fa-headphones" aria-hidden="true"></i></li>
-            <li>Welcome, { name }</li>
-            <li id="navicon">
-              <i className="fa fa-bars" aria-hidden="true" onClick={this.toggleMenu}></i>
-              {menu}
-            </li>
-      </ul>
-      </nav>
-    </header>
+      <div>
+        <header className="main-nav">
+          <nav className="left-nav">
+            <Link to="/"><h1>Podland</h1></Link>
+          </nav>
+          <nav className="right-nav">
+            <ul>
+              <li><i className="fa fa-headphones" aria-hidden="true"></i></li>
+              <li>Welcome, { name }</li>
+              <li id="navicon">
+                <i className="fa fa-bars" aria-hidden="true" onClick={this.toggleMenu}></i>
+                {menu}
+              </li>
+            </ul>
+          </nav>
+        </header>
+          <nav className="sub-nav">
+            <ul>
+              <li><Link to="/"><h4>Home</h4></Link></li>
+              <li><Link to="/subscriptions"><h4>Subscriptions</h4></Link></li>
+              <li><Link to="/playlists"><h4>Playlists</h4></Link></li>
+              <li><Link to="/podcasts"><h4>Explore</h4></Link></li>
+            </ul>
+          </nav>
+      </div>
     );
   }
 }

@@ -15,7 +15,7 @@
 
 .playlists p {
   margin-left: 20px;
-  color: darkgray;
+  color: $gray;
 }
 
 .playlists h2, h3{
@@ -87,7 +87,7 @@
 .collapsible {
   background-color: rgb(208, 213, 221);
   box-shadow: $gray-shadow;
-  border-top: 1px solid gray;
+  border-top: 1px solid $gray;
   padding: 0;
 }
 
@@ -98,7 +98,7 @@
 
 //TODO: WHYYYY???
 .playlist li ul:first-child {
-  border-top: 1px solid lightgray;
+  border-top: 1px solid $gray;
   background-color: yellow;
 }
 
@@ -106,7 +106,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid $gray;
 }
 
 .track p{

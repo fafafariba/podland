@@ -7,7 +7,7 @@ import Playlists from './playlists';
 const mapStateToProps = state => ({
   currentUserId: state.session.currentUser.id,
   playlists: state.playlists.playlists,
-  errors: state.playlists.errors
+  messages: state.playlists.messages
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -15,7 +15,8 @@ const mapDispatchToProps = (dispatch, props) => ({
   receiveAudio: (audio) => dispatch(receiveAudio(audio)),
   addPlaylist: (name) => dispatch(addPlaylist(name)),
   deletePlaylist: (playlistId) => dispatch(deletePlaylist(playlistId)),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  deleteTrack: (playlistId, episodeId) => dispatch(deleteTrack(playlistId, episodeId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Playlists);

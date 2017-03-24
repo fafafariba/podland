@@ -22,6 +22,7 @@
   color: white;
   text-transform: uppercase;
   margin-left: 50px;
+  letter-spacing: 10px;
 }
 
 .right-nav ul {
@@ -108,4 +109,32 @@
 .settings-menu a:hover{
   -webkit-filter: $brightness;
   filter: $brightness;
+}
+
+.sub-nav {
+  border-bottom: 1px solid silver;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.sub-nav ul{
+  margin-top: 80px;
+  margin-left: 0;
+  display: flex;
+  color: rgb(209, 207, 204);
+  justify-content: flex-start;
+}
+
+.sub-nav li {
+  margin-right: 20px;
+}
+
+.sub-nav li:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(.75);
+  filter: brightness(.75);
+}
+
+.sub-nav a{
+  color: silver;
 }

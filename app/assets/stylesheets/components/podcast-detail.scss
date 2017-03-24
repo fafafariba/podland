@@ -159,7 +159,7 @@
 }
 
 all-episodes-header ul li{
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid $gray;
 }
 
 
@@ -170,9 +170,9 @@ all-episodes-header ul li{
 
 
 .collapsible {
-  background-color: rgb(208, 213, 221);
+  background-color: WhiteSmoke;
   box-shadow: $gray-shadow;
-  border-top: 1px solid gray;
+  border-top: 1px solid $gray;
   padding: 0;
   min-width: 500px;
 }
