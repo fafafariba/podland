@@ -789,6 +789,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1:
   dependencies:
     inherits "^2.0.1"
 
+classnames@^2.2.0:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 cliui@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -1080,6 +1084,10 @@ fbjs@^0.8.1, fbjs@^0.8.4:
     promise "^7.1.1"
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
+
+fetch-jsonp@^1.0.2:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/fetch-jsonp/-/fetch-jsonp-1.0.6.tgz#8d2ae174ed14108292f025f43fa07d2078de6736"
 
 filename-regex@^2.0.0:
   version "2.0.0"
@@ -1534,6 +1542,10 @@ load-json-file@^1.0.0:
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
 
+load-script@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
+
 loader-runner@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.3.0.tgz#f482aea82d543e07921700d5a46ef26fdac6b8a2"
@@ -1900,7 +1912,7 @@ qs@~6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
-query-string@^4.2.2:
+query-string@^4.2.2, query-string@^4.2.3:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-4.3.2.tgz#ec0fd765f58a50031a3968c2431386f8947a5cdd"
   dependencies:
@@ -1939,6 +1951,13 @@ react-audio-player@^0.3.3:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/react-audio-player/-/react-audio-player-0.3.3.tgz#ae435fe5f11e46cd5418febce2a6052a9e529988"
 
+react-cl-audio-player@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-cl-audio-player/-/react-cl-audio-player-1.0.0.tgz#59fa5b57993e1c0291ab2ba420d9620518529095"
+  dependencies:
+    classnames "^2.2.0"
+    shuffle-array "^0.1.0"
+
 react-collapsible@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-collapsible/-/react-collapsible-1.4.0.tgz#76571edc09877a3f3d1b2298d6c9ccee9421935e"
@@ -1962,6 +1981,14 @@ react-modal@^1.7.3:
 react-onclickoutside@^5.9.0:
   version "5.9.0"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-5.9.0.tgz#c47bb506384adc98d686d134b34412ed17b97437"
+
+react-player@^0.14.3:
+  version "0.14.3"
+  resolved "https://registry.yarnpkg.com/react-player/-/react-player-0.14.3.tgz#4b836092bdb527ac2926460905f4e953c6a127ce"
+  dependencies:
+    fetch-jsonp "^1.0.2"
+    load-script "^1.0.0"
+    query-string "^4.2.3"
 
 react-redux@^5.0.3:
   version "5.0.3"
@@ -2193,6 +2220,10 @@ sha.js@^2.3.6:
   resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.4.8.tgz#37068c2c476b6baf402d14a49c67f597921f634f"
   dependencies:
     inherits "^2.0.1"
+
+shuffle-array@^0.1.0:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/shuffle-array/-/shuffle-array-0.1.2.tgz#3f0cf0806641a8c703210eafdb923bd65604aa7a"
 
 signal-exit@^3.0.0:
   version "3.0.2"
