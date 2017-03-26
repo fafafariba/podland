@@ -12,11 +12,27 @@ class Footer extends React.Component {
     this.forwardHandler = this.forwardHandler.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
+    console.log("mounting");
     if (this.props.audio.length > 0) {
       const queue = this.extractPlaylist(this.props.audio);
       this.setState({queue, playing: true, current: queue[0] });
     }
+    window.addEventListener("keydown", event => {
+      if (event.key === " ") {
+        this.togglePlay();
+      }
+    });
+    window.addEventListener("keydown", event => {
+      if (event.key === "ArrowLeft") {
+        this.backHandler();
+      }
+    });
+    window.addEventListener("keydown", event => {
+      if (event.key === "ArrowRight") {
+        this.forwardHandler();
+      }
+    });
   }
 
   componentWillReceiveProps(nextProps){
@@ -36,8 +52,7 @@ class Footer extends React.Component {
     ));
   }
 
-  togglePlay(e) {
-    e.stopPropagation();
+  togglePlay(event) {
     if (this.state.current) {
       this.state.playing ? this.pauseTrack() : this.playTrack();
     }
@@ -51,7 +66,7 @@ class Footer extends React.Component {
     this.setState({playing: false});
   }
 
-  backHandler(e) {
+  backHandler(event) {
     const index = this.state.current.position - 1;
     if (index > -1 ) {
       this.setState({current: this.state.queue[index]});
@@ -62,7 +77,7 @@ class Footer extends React.Component {
     this.playTrack();
   }
 
-  forwardHandler(e) {
+  forwardHandler(event) {
     const index = this.state.current.position + 1;
     if (this.state.queue[index]) {
       this.setState({current: this.state.queue[index]});
@@ -73,6 +88,8 @@ class Footer extends React.Component {
   }
 
   render(){
+
+
     let player, trackInfo, image, button, loadBar, time;
 
     if (this.state.current) {
@@ -138,6 +155,7 @@ class Footer extends React.Component {
       </div>
     );
   }
+
 }
 
 export default Footer;

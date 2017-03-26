@@ -1,5 +1,4 @@
 
-
 .audio-player {
   display: -webkit-box;
   display: flex;
@@ -20,10 +19,12 @@
 
 .audio-player ul {
   display: flex;
+  // align-items: center;
 }
 
 .audio-player li {
   display: flex;
+  align-items: center;
 }
 .audio-player img {
   width: 50px;
@@ -67,7 +68,7 @@
 
 .audio-info-marquee {
   overflow:hidden;
-  width: 200px;
+  width: 270px;
 }
 
 .audio-info-marquee:hover {
@@ -77,70 +78,22 @@
 .audio-info {
   white-space: nowrap;
   position: relative;
-  // height: 30px;
+  height: 30px;
   animation-play-state: paused;
-  animation: scroll 10s linear infinite;
-  // padding:3px;
+  animation: scroll 15s linear infinite;
+  padding:3px;
 }
 
-// @keyframes .audio-info-marquee {
-//     0%   { transform: translate(0, 0); }
-//     50% { transform: translate(-100%, 0); }
-// }
 
-
-
-  // font-size: 18px;
-  // position: absolute;
-  // width: 100%;
-  // height: 100%;
-  // margin: 0;
-  // line-height: 20px;
-  // text-align: center;
-
-// display: none;
-// width: 100%;
-// white-space: nowrap;
-// word-break: break-all;
-// margin: 0;
-// font-size: 19.2px;
-// color: #fff;
 
 @keyframes scroll {
-0% {left:300px;}
-100% {left:-300px;}
+0% {left:500px;}
+100% {left:-500px;}
 }
 
-// @-moz-keyframes .audio-info-marquee {
-//  0%   { -moz-transform: translateX(100%); }
-//  100% { -moz-transform: translateX(-100%); }
-// }
-// @-webkit-keyframes .audio-info-marquee {
-//  0%   { -webkit-transform: translateX(100%); }
-//  100% { -webkit-transform: translateX(-100%); }
-// }
-// @keyframes .audio-info-marquee {
-//  0%   {
-//  -moz-transform: translateX(100%); /* Firefox bug fix */
-//  -webkit-transform: translateX(100%); /* Firefox bug fix */
-//  transform: translateX(100%);
-//  }
-//  100% {
-//  -moz-transform: translateX(-100%); /* Firefox bug fix */
-//  -webkit-transform: translateX(-100%); /* Firefox bug fix */
-//  transform: translateX(-100%);
-//  }
-// }
-
-
-
-
-
-
-
-.audio_player .audio_time_progress {
-margin-right: 20px;
--ms-grid-row-align: center;
-    align-self: center;
-color: #fff;
-font-size: 23px; }
+// .audio_player .audio_time_progress {
+// margin-right: 20px;
+// -ms-grid-row-align: center;
+//     align-self: center;
+// color: #fff;
+// font-size: 23px; }

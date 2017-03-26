@@ -64,7 +64,7 @@ class Episode extends React.Component {
 
 
     return (
-      <div>
+      <div id="collapsible-inner">
         <Collapsible className="collapsible"
           trigger={title}>
           <p>{this.props.episode.description}</p>

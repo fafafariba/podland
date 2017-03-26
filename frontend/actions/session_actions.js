@@ -20,19 +20,19 @@ export const clearErrors = () => ({
 });
 
 export const newUser = user => dispatch => (
-  SessionAPIUtil.newUser(user).then(currentUser => (
-    dispatch(receiveCurrentUser(currentUser)))).fail(errors=>(
-    dispatch(receiveErrors(errors.responseJSON))))
+  SessionAPIUtil.newUser(user)
+  .then(currentUser => dispatch(receiveCurrentUser(currentUser)))
+  .fail(errors=>dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const login = user => dispatch => (
-  SessionAPIUtil.login(user).then(currentUser => (
-    dispatch(receiveCurrentUser(currentUser)))).fail(errors=>(
-      dispatch(receiveErrors(errors.responseJSON))))
+  SessionAPIUtil.login(user)
+  .then(currentUser => dispatch(receiveCurrentUser(currentUser)))
+    .fail(errors=>dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const logout = () => dispatch => (
-  SessionAPIUtil.logout().then((user) => (
-    dispatch(receiveCurrentUser(null))))
-    .fail(errors=>(dispatch(receiveErrors(errors.responseJSON))))
+  SessionAPIUtil.logout()
+  .then(user => dispatch(receiveCurrentUser(null)))
+  .fail(errors=> dispatch(receiveErrors(errors.responseJSON)))
   );

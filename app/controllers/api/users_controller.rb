@@ -10,7 +10,6 @@ class Api::UsersController < ApplicationController
     end
   end
 
-# TODO: IF YOU IMPLEMENT EDITABILITY
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
