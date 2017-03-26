@@ -20,6 +20,7 @@ class Footer extends React.Component {
     }
     window.addEventListener("keydown", event => {
       if (event.key === " ") {
+        event.preventDefault();
         this.togglePlay();
       }
     });
@@ -127,31 +128,35 @@ class Footer extends React.Component {
 
     }
 
+    const toRenderOnLoad = (
+      <nav className="audio-player">
+        {player}
+        <ul>
+          <li>
+            {image}
+          </li>
+          <li>
+            <div className="play-controls">
+              <i className="fa fa-backward"
+                onClick={this.backHandler} aria-hidden="true"></i>
+              <i className={`fa fa-${this.state.playing ? "pause" : "play"}`}
+                onClick={this.togglePlay} aria-hidden="true"></i>
+              <i className="fa fa-forward"
+                onClick={this.forwardHandler} aria-hidden="true"></i>
+            </div>
+          </li>
+          <li>
+            <ul>
+              <li>{trackInfo}</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    );
+
     return (
       <div>
-        <nav className="audio-player">
-          {player}
-          <ul>
-            <li>
-              {image}
-            </li>
-            <li>
-              <div className="play-controls">
-                <i className="fa fa-backward"
-                  onClick={this.backHandler} aria-hidden="true"></i>
-                <i className={`fa fa-${this.state.playing ? "pause" : "play"}`}
-                  onClick={this.togglePlay} aria-hidden="true"></i>
-                <i className="fa fa-forward"
-                  onClick={this.forwardHandler} aria-hidden="true"></i>
-              </div>
-            </li>
-            <li>
-              <ul>
-                <li>{trackInfo}</li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+        {this.state.current ? toRenderOnLoad : <div></div>}
       </div>
     );
   }
