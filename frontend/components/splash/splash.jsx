@@ -30,7 +30,7 @@ class Splash extends React.Component {
         </div>
 
         <div className="blurb-1">
-          <p>Where podcasts live</p>
+          <p id="blurb">Where podcasts live</p>
         </div>
 
         <div className="bgimg-2">
@@ -41,7 +41,7 @@ class Splash extends React.Component {
 
         <div>
           <div className="blurb-2">
-            <p>Explore new shows</p>
+            <p id="blurb">Explore new shows</p>
           </div>
         </div>
 
@@ -53,7 +53,7 @@ class Splash extends React.Component {
 
         <div>
           <div className="blurb-3">
-            <p>Make your own playlists</p>
+            <p id="blurb">Make your own playlists</p>
           </div>
         </div>
 
@@ -65,14 +65,14 @@ class Splash extends React.Component {
 
         <div>
           <div className="blurb-4">
-            <p>Track your favorites</p>
+            <p id="blurb">Track your favorites</p>
           </div>
         </div>
 
         <div className="bgimg-5">
           <div className="caption">
             <a className="try-button" href="#">
-            <span className="border" onClick={()=>this.guestLogin()}>try it now</span>
+            <span className="border" onClick={()=>this.guestLogin()}>TRY IT NOW</span>
             </a>
           </div>
         </div>

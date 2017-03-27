@@ -28,7 +28,7 @@
 
 .try-button span:last-child {
   background-image: url(http://res.cloudinary.com/fafafariba/image/upload/v1489953936/button-texture_d6aobr.png);
-  background-color: lightsalmon;
+  background-color: rgba(255,235,205,.9);
   color: black;
   box-shadow: $black-shadow;
 }
@@ -65,25 +65,27 @@ min-height: 600px;
 }
 
 
-.blurb-1{
+.blurb-1, .blurb-3{
   position: relative;
   color: #777;
-  background-color:white;
-  font-size: 25px;
+  background-color: #f2f5f9;
   letter-spacing: 10px;
   text-align:center;
   padding:30px 80px;
   text-align: justify;
 }
 
+#blurb {
+  font-size: 18px;
+}
 
-.blurb-2, .blurb-3, .blurb-4{
+
+.blurb-2, .blurb-4{
+  position: relative;
   color:#ddd;
   background-color:#282E34;
   text-align:center;
-  font-size: 25px;
   letter-spacing: 10px;
   padding:30px 80px;
   text-align: justify;
-  position: relative;
 }

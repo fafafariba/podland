@@ -71,9 +71,11 @@ class Playlists extends React.Component {
       playlistTitles = Object.values(this.props.playlists)
         .map( (playlist, idx) => {
           return (
-          <div key={playlist+idx}>
+          <div key={playlist+idx} id="collapsible-inner">
             <Collapsible className="playlists-collapsible"
-              trigger={<h4>{playlist.name}</h4>}>
+              transitionTime={0}
+              trigger={<div className="playlists-collapsible-header">
+                <h4>{playlist.name}</h4></div>}>
               <PlaylistItemContainer playlist={ playlist }  />
             </Collapsible>
           </div>

@@ -2,24 +2,54 @@
   box-shadow: $gray-shadow;
   margin-left: 20px;
   margin-right: 50px;
+  align-items: center;
+  min-width: 590px;
 }
 
-playlists.Collapsible.collapsible {
+.Collapsible h4{
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.playlists.Collapsible.collapsible {
   margin-left: 20px;
   margin-right: 50px;
-
 }
 
-// .Collapsible span,
-// .collapsible span{
-//   font-size: 18px;
-//   margin-left: 20px;
-// }
+nav > div > div > .Collapsible__trigger,
+nav > div > div > .Collapsible__contentOuter {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  transition: none;
+}
+
+.play-all-button-container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 500px;
+}
+
+#play-all-button {
+  background-color: $black;
+  color: white;
+  font-size: 14px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
 
 .Collapsible span h4:hover,
 .collapsible span h4:hover{
   -webkit-filter: $brightness;
   filter: $brightness;
+  cursor: pointer;
+}
+
+.Collapsible.playlists-collapsible span:hover,
+.Collapsible__trigger.is-open:hover{
   cursor: pointer;
 }
 

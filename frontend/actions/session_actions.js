@@ -34,5 +34,4 @@ export const login = user => dispatch => (
 export const logout = () => dispatch => (
   SessionAPIUtil.logout()
   .then(user => dispatch(receiveCurrentUser(null)))
-  .fail(errors=> dispatch(receiveErrors(errors.responseJSON)))
   );

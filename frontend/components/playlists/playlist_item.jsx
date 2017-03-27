@@ -58,11 +58,17 @@ class PlaylistItem extends React.Component {
           </ul>
         </li>
       ));
+
     }
 
     return (
       <div>
         <ul>
+          <div className="play-all-button-container">
+            <button id="play-all-button"
+              onClick={() => this.playHandler(this.props.playlist.episodes)}>
+              Play All</button>
+          </div>
           { tracks }
         </ul>
         <div className="delete-playlist">

@@ -15,6 +15,7 @@ class SplashNav extends React.Component {
   }
 
   onModalClose() {
+    event.preventDefault();
     this.props.clearErrors();
     this.setState({ modalOpen: false });
   }

@@ -13,7 +13,6 @@ class Footer extends React.Component {
   }
 
   componentDidMount() {
-    console.log("mounting");
     if (this.props.audio.length > 0) {
       const queue = this.extractPlaylist(this.props.audio);
       this.setState({queue, playing: true, current: queue[0] });

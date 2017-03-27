@@ -25,6 +25,7 @@
   background-color: mediumturquoise;
   opacity: .8;
   font-weight: bold;
+  font-size: 14px;
   color: white;
   border: $gray;
   top: 160px;
@@ -41,121 +42,18 @@
   margin-left: 20px;
 }
 
-//
-// .playlists h2, h3{
-//   margin-left: 10px;
-//   margin-top: 0;
-//   margin-bottom: 5px;
-//   padding: 0;
-// }
-//
-.playlists.Collapsible {
-// //   font-size: 20px;
-// //   text-transform: uppercase;
-// //   margin-left: 20px;
-// //   padding: 2px;
+
+.Collapsible.playlists-collapsible {
+  background-color: WhiteSmoke;
+  box-shadow: $gray-shadow;
+  border-top: 1px solid $gray;
+  padding: 0;
+  min-width: 590px;
+  height: 40px;
 }
-//
-.playlists.Collapsible span{
-  margin-left: 10px;
-}
-//
-// .all-episodes {
-//   margin: 30px 50px 50px 30px;
-// }
-//
-// .all-episodes-header li:first-of-type{
-//   flex: 5;
-// }
-//
-// .all-episodes-header li:not(:first-of-type){
-//   flex: 2;
-// }
-//
-// .all-episodes-header li:last-of-type{
-//   flex: 1;
-// }
-//
-// .all-episodes-header h4{
-//   margin-left: 20px;
-//   padding: 0;
-// }
-//
-// .all-episodes-header h4:hover{
-//   cursor: pointer;
-// }
-//
-// .all-episodes-header p{
-//   margin-left: 20px;
-// }
-//
-//
-// // .all-episodes-header > ul{
-// //   display: flex;
-// //   justify-content: space-between;
-// //   align-items: center;
-// //   height: 40px;
-// // }
-//
-// // all-episodes-header ul li{
-// //   border-bottom: 1px solid gray;
-// // }
-//
-//
-// // .all-episodes-header i{
-// //   font-size: 20px;
-// //   margin-right: 20px;
-// // }
-//
-//
-// .Collapsible {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   background-color: rgb(208, 213, 221);
-//   box-shadow: $gray-shadow;
-//   height: 40px;
-//   margin-left: 20px;
-//   margin-right: 50px;
-// }
-//
-//
-// .Collapsible.collapsible {
-//   margin-left: 20px;
-//   margin-right: 50px;
-// }
-//
-// .Collapsible span,
-// .collapsible span{
-//   font-size: 18px;
-//   margin-left: 20px;
-// }
-//
-// .Collapsible span h4:hover,
-// .collapsible span h4:hover{
-//   -webkit-filter: $brightness;
-//   filter: $brightness;
-//   cursor: pointer;
-// }
-//
-// .Collapsible__contentInner {
-//   margin-left: 20px;
-// }
-//
-//
-// //TODO: WHYYYY???
-// .playlist li ul:first-child {
-//   border-top: 1px solid $gray;
-//   background-color: yellow;
-// }
-//
-// .track ul{
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   border-bottom: 1px solid $gray;
-// }
-//
+
+
+//Modal Styling
 
 .modal-playlist-form form{
   display: flex;
