@@ -29,7 +29,7 @@ nav > div > div > .Collapsible__contentOuter {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  min-width: 500px;
+  min-width: 550px;
 }
 
 #play-all-button {
@@ -66,6 +66,7 @@ nav > div > div > .Collapsible__contentOuter {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid $gray;
+  margin-right: 20px;
 }
 
 .track p{
