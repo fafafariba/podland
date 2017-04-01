@@ -9,7 +9,6 @@ const _nullUser = {
 
 const SessionReducer = (state = _nullUser, action) => {
   Object.freeze(state);
-
   let newState = merge({}, state);
 
   switch(action.type) {

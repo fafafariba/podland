@@ -3,7 +3,9 @@ class Api::SubscriptionsController < ApplicationController
   before_action :set_sub, only: [:destroy]
 
   def index
+    debugger
     @subscriptions = current_user.subscriptions
+    debugger
     render 'api/subscriptions/index'
   end
 

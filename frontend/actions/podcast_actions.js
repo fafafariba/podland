@@ -89,6 +89,8 @@ export const fetchSubscriptions = () => dispatch => (
     dispatch(receiveSubscriptions(subs))))
     );
 
+window.fetchSubscriptions = fetchSubscriptions;
+
 export const addSubscription = subscription => dispatch => (
   PodcastAPIUtil.addSubscription(subscription)
   .then(subs => dispatch(receiveSubscription(subs)))

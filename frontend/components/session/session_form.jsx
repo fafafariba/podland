@@ -14,12 +14,17 @@ class SessionForm extends React.Component {
 
   submitHandler(){
     event.preventDefault();
+    debugger;
     if (this.props.formType === "login") {
+      console.log("state", this.state);
       this.props.login(this.state);
     } else {
       this.props.newUser(this.state);
     }
-    if (this.props.currentUser) this.redirect();
+    if (this.props.currentUser) {
+      debugger;
+      this.redirect();
+    }
   }
 
   // componentDidUpdate(){

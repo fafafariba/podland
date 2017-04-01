@@ -93,7 +93,6 @@ class Footer extends React.Component {
     let player, trackInfo, image, button, loadBar, time;
 
     if (this.state.current) {
-      console.log("going to render");
       player = (
         <div className="audio-player-container">
           <ReactPlayer
