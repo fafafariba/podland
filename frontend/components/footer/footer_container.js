@@ -4,6 +4,7 @@ import Footer from './footer';
 
 const mapStateToProps = state => ({
   audio: state.audio,
+  currentUser: state.session.currentUser
 });
 
 export default connect(mapStateToProps)(Footer);

@@ -13,7 +13,7 @@ class Footer extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.audio.length > 0) {
+    if (this.props.audio.length > 0 && this.props.currentUser) {
       const queue = this.extractPlaylist(this.props.audio);
       this.setState({queue, playing: true, current: queue[0] });
     }
@@ -36,7 +36,8 @@ class Footer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if (nextProps.audio.length > 0 && !isEqual(this.props.audio, nextProps.audio)) {
+    if (nextProps.audio.length > 0 && !isEqual(this.props.audio, nextProps.audio) &&
+        this.props.currentUser) {
       const queue = this.extractPlaylist(nextProps.audio);
       this.setState({ queue, playing: true, current: queue[0] });
     }
