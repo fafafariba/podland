@@ -43,13 +43,18 @@ class Footer extends React.Component {
   }
 
   extractPlaylist(audio) {
-    return audio.map((track, idx) => (
-      { url: track.audio_url,
-        cover: track.podcast_thumb_url,
-        title: `No. ${track.no} ${track.name}`,
-        position: idx
+    return audio.map((track, idx) => {
+      let title = `No. ${track.no}`;
+      if (!track.no) {
+        title = "";
       }
-    ));
+      return {
+        url: track.audio_url,
+        cover: track.podcast_thumb_url,
+        title: `${title} ${track.name}`,
+        position: idx
+      };
+    });
   }
 
   togglePlay(event) {

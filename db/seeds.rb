@@ -77,12 +77,12 @@ pcast9 = Podcast.create!(name: "Ask Me Another",
   thumb_url: "http://is4.mzstatic.com/image/thumb/Music62/v4/4b/14/ae/4b14ae9a-38b2-d14c-20ff-ccfa09211093/source/170x170bb.jpg",
   link: "http://www.npr.org/programs/ask-me-another/"
   )
-pcast10 = Podcast.create!(name:"KEXP Song of the Day",
-  description: "KEXP's Song of the Day podcast features exclusive in-studio performances, unreleased songs, and recordings from independent musicians that KEXP thinks listeners should hear along with songs from more well-known artists.",
+pcast10 = Podcast.create!(name:"Song Exploder",
+  description: "Song Exploder is a podcast where musicians take apart their songs, and piece by piece, tell the story of how they were made. Each episode features an artist discussing a song of theirs, breaking down the sounds and ideas that went into the writing and recording. Hosted and produced by Hrishikesh Hirway.",
   category: "Music",
-  image_url: "https://res.cloudinary.com/fafafariba/image/upload/v1489900146/podland/11137.jpg",
-  thumb_url: "http://is4.mzstatic.com/image/thumb/Music/v4/14/de/94/14de94fa-7c8c-bb8a-9d3e-f301c681a351/source/170x170bb.jpg",
-  link: "http://www.kexp.org/podcasts#song"
+  image_url: "http://cloudfront.assets.stitcher.com/feedimagesplain328/42322.jpg",
+  thumb_url: "http://is1.mzstatic.com/image/thumb/Music62/v4/6c/33/ea/6c33eaee-9d65-499e-4a46-edc7edf73bad/source/170x170bb.jpg",
+  link: "http://songexploder.net"
   )
 pcast11 = Podcast.create!(name:"Hidden Brain",
   description: "The Hidden Brain helps curious people understand the world – and themselves. Using science and storytelling, Hidden Brain's host Shankar Vedantam reveals the unconscious patterns that drive human behavior, the biases that shape our choices, and the triggers that direct the course of our relationships.",
@@ -101,12 +101,17 @@ pcast12 = Podcast.create!(name: "Freakonomics",
 
 
 ### SUBSCRIPTIONS
+subs1 = Subscription.create!(user_id: tester.id, podcast_id: pcast8.id)
+subs2 = Subscription.create!(user_id: tester.id, podcast_id: pcast12.id)
 subs1 = Subscription.create!(user_id: tester.id, podcast_id: pcast1.id)
-subs2 = Subscription.create!(user_id: tester.id, podcast_id: pcast2.id)
-subs3 = Subscription.create!(user_id: tester.id, podcast_id: pcast3.id)
+subs2 = Subscription.create!(user_id: tester.id, podcast_id: pcast10.id)
+subs3 = Subscription.create!(user_id: tester.id, podcast_id: pcast4.id)
+subs3 = Subscription.create!(user_id: tester.id, podcast_id: pcast7.id)
+subs3 = Subscription.create!(user_id: tester.id, podcast_id: pcast9.id)
 subs4 = Subscription.create!(user_id: guest.id, podcast_id: pcast1.id)
 subs5 = Subscription.create!(user_id: guest.id, podcast_id: pcast2.id)
-subs6 = Subscription.create!(user_id: guest.id, podcast_id: pcast3.id)
+subs6 = Subscription.create!(user_id: guest.id, podcast_id: pcast11.id)
+subs6 = Subscription.create!(user_id: guest.id, podcast_id: pcast10.id)
 
 
 ## EPISODES
@@ -300,7 +305,7 @@ e21 = Episode.create!(name: "Radiolab Presents: Ponzi Supernova",
   duration: "40:35",
   audio_url: "https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/radiolab_podcast/radiolab_podcast17ponzi.mp3"
   )
-e21 = Episode.create!(name: "Raise Me Up",
+e22 = Episode.create!(name: "Raise Me Up",
   description: "--",
   podcast_id: pcast6.id,
   date: Date.new(2017, 03, 20),
@@ -309,7 +314,7 @@ e21 = Episode.create!(name: "Raise Me Up",
   audio_url: "http://rss.art19.com/episodes/99858ff9-9913-4812-9be3-0ed0ff80f215.mp3",
   image_url: "http://cloudfront.assets.stitcher.com/customfeedimages/480x270_16125.jpg"
   )
-e22 = Episode.create!(name: "The Honest Conversation",
+e23 = Episode.create!(name: "The Honest Conversation",
   description: "Bloaty McBloat.",
   podcast_id: pcast6.id,
   date: Date.new(2017, 03, 13),
@@ -317,7 +322,7 @@ e22 = Episode.create!(name: "The Honest Conversation",
   duration: "51:58",
   audio_url: "http://rss.art19.com/episodes/802356cc-7350-4d0f-855a-d7718202ae99.mp3"
   )
-e23 = Episode.create!(name: "The PC Rabbit Hole",
+e24 = Episode.create!(name: "The PC Rabbit Hole",
   description: "Skinny on salt.",
   podcast_id: pcast6.id,
   date: Date.new(2017, 03, 6),
@@ -325,7 +330,7 @@ e23 = Episode.create!(name: "The PC Rabbit Hole",
   duration: "41:41",
   audio_url: "http://rss.art19.com/episodes/575fc074-6fcf-4d94-a956-3360d4510c02.mp3"
   )
-e24 = Episode.create!(name: "Ur Fave is Problematic",
+e25 = Episode.create!(name: "Ur Fave is Problematic",
   description: "How we spent the strike on International Women's Day. We answer listener questions about critically reading feminist thinkers, and keeping up on abortion rights laws. CheetoWatch: what's Kellyanne up to? Representative Steve King and other racist liars. Plus, Inspector Gadget and ALL of our problematic faves.",
   podcast_id: pcast7.id,
   date: Date.new(2017, 03, 17),
@@ -334,7 +339,7 @@ e24 = Episode.create!(name: "Ur Fave is Problematic",
   audio_url: "https://rss.art19.com/episodes/f1afc7e0-2a0a-41a3-a465-24f96cc3ff63.mp3",
   image_url: "https://static1.squarespace.com/static/566ea44e0e4c116bdc16c66c/t/58cb91379f74560b269e95d4/1489736000875/gadget.jpg"
   )
-e25 = Episode.create!(name: "Obama Glow Up",
+e26 = Episode.create!(name: "Obama Glow Up",
   description: "How did you spend International Women's Day? Thoughts on women's labor strikes of the '70s and now. Study shows that men are more aggro in the Trump era. Brief thoughts on La Croix, post-presidency Barack and the best wealthy communities for thrifting. Women are having too much fun to retire. And, staying politically engaged in a red state.",
   podcast_id: pcast7.id,
   date: Date.new(2017, 03, 10),
@@ -342,7 +347,7 @@ e25 = Episode.create!(name: "Obama Glow Up",
   duration: "50:05",
   audio_url: "https://rss.art19.com/episodes/fc9ab402-0850-4df2-99da-c6ff1013fcdd.mp3"
   )
-e26 = Episode.create!(name: "It's a Trap!",
+e27 = Episode.create!(name: "It's a Trap!",
   description: "'90s icons return: Amina discovers the sexiness of Keanu Reeves & there's a new ::fire emoji:: Calvin Klein campaign featuring the cast of Moonlight. This week in menstruation, that labia glue to stop period flow you heard about? It's a real patent, but also fake news. Cheeto Watch continues as Kellyanne gets too comfortable in the Oval Office and HBCU leaders realize they got played. Plus, a 'feminist' manifesto.",
   podcast_id: pcast7.id,
   date: Date.new(2017, 03, 3),
@@ -350,87 +355,87 @@ e26 = Episode.create!(name: "It's a Trap!",
   duration: "50:12",
   audio_url: "https://rss.art19.com/episodes/8b32a7cc-9da3-4212-bc1d-5f6781c8cab8.mp3"
   )
-# e15 = Episode.create!(name: "",
-#   description: "",
-#   podcast_id: ,
-#   date: Date.new(2017, ,),
-#   no: ,
-#   duration: ":",
-#   audio_url: "",
-#   image_url: ""
-#   )
-# e15 = Episode.create!(name: "",
-#   description: "",
-#   podcast_id: ,
-#   date: Date.new(2017, ,),
-#   no: ,
-#   duration: ":",
-#   audio_url: "",
-#   image_url: ""
-#   )
-# e15 = Episode.create!(name: "",
-#   description: "",
-#   podcast_id: ,
-#   date: Date.new(2017, ,),
-#   no: ,
-#   duration: ":",
-#   audio_url: "",
-#   image_url: ""
-#   )
-# e15 = Episode.create!(name: "",
-#   description: "",
-#   podcast_id: ,
-#   date: Date.new(2017, ,),
-#   no: ,
-#   duration: ":",
-#   audio_url: "",
-#   image_url: ""
-#   )
-# e15 = Episode.create!(name: "",
-#   description: "",
-#   podcast_id: ,
-#   date: Date.new(2017, ,),
-#   no: ,
-#   duration: ":",
-#   audio_url: "",
-#   image_url: ""
-#   )
-# e15 = Episode.create!(name: "",
-#   description: "",
-#   podcast_id: ,
-#   date: Date.new(2017, ,),
-#   no: ,
-#   duration: ":",
-#   audio_url: "",
-#   image_url: ""
-#   )
-# e15 = Episode.create!(name: "",
-#   description: "",
-#   podcast_id: ,
-#   date: Date.new(2017, ,),
-#   no: ,
-#   duration: ":",
-#   audio_url: "",
-#   image_url: ""
-#   )
-# e15 = Episode.create!(name: "",
-#   description: "",
-#   podcast_id: ,
-#   date: Date.new(2017, ,),
-#   no: ,
-#   duration: ":",
-#   audio_url: "",
-#   image_url: ""
-#   )
-# e15 = Episode.create!(name: "",
-#   description: "",
-#   podcast_id: ,
-#   date: Date.new(2017, ,),
-#   no: ,
-#   duration: ":",
-#   audio_url: "",
-#   image_url: ""
-#   )
+e28 = Episode.create!(name: "Governor John Hickenlooper",
+  description: "Recorded in Denver, Colo., with Not My Job guest Gov. John Hickenlooper and panelists Alonzo Bodden, Paula Poundstone and Tom Bodett.",
+  podcast_id: pcast8.id,
+  date: Date.new(2017, 04, 8),
+  no: nil,
+  duration: "50:37",
+  audio_url: "https://ondemand.npr.org/anon.npr-mp3/npr/waitwait/2017/04/20170408_waitwait_01.mp3",
+  image_url: "http://media.npr.org/assets/img/2017/04/07/gettyimages-584270332_wide-78975888caf23e1bcaf902fe88e3f6a44424f63e-s700-c85.jpg"
+  )
+e29 = Episode.create!(name: "Sarah Koenig",
+  description: "Recorded in Chicago with Not My Job guest Sarah Koenig and panelists Luke Burbank, Amy Dickinson and Greg Proops.",
+  podcast_id: pcast8.id,
+  date: Date.new(2017, 04, 1),
+  no: nil,
+  duration: "51:01",
+  audio_url: "https://ondemand.npr.org/anon.npr-mp3/npr/waitwait/2017/04/20170401_waitwait_01.mp3",
+  image_url: "http://media.npr.org/assets/img/2017/03/31/serial_wide-eb32fada84e7bc4e1ea8ab02eda0cfea40ec0d8f-s700-c85.jpg"
+  )
+e30 = Episode.create!(name: "Charley Pride",
+  description: "Recorded in Dallas with Not My Job Guest Charley Pride and panelists Paula Poundstone, Roxanne Roberts and Peter Grosz.",
+  podcast_id: pcast8.id,
+  date: Date.new(2017, 03, 25),
+  no: nil,
+  duration: "51:02",
+  audio_url: "https://ondemand.npr.org/anon.npr-mp3/npr/waitwait/2017/03/20170325_waitwait_01.mp3",
+  image_url: "http://media.npr.org/assets/img/2017/03/24/gettyimages-476664316_wide-54e9c726eca20c458c65dc79accd04d692894960-s700-c85.jpg"
+  )
+e31 = Episode.create!(name: "Natasha Lyonne: Random Houses",
+  description: "Natasha Lyonne plans a double feature strategy for her films Yoga Hosers and Antibirth. Then we quiz the actor, who grew up in Herman Melville's house, on other famous authors' homes.",
+  podcast_id: pcast9.id,
+  date: Date.new(2017, 04, 7),
+  no: 294,
+  duration: "52:17",
+  audio_url: "https://ondemand.npr.org/anon.npr-mp3/npr/ama/2016/09/20160923_ama_06.mp3",
+  image_url: "http://media.npr.org/assets/img/2016/09/23/nprama_aug16-2016_191_wide-3a42bc34fcadfc0e669e1e6b019450ec86f0b70e-s800-c85.jpg"
+  )
+e32 = Episode.create!(name: "Josh Groban And Lucas Steele: Double Your Pleasure",
+  description: "Josh Groban and Lucas Steele from The Great Comet, a musical based on Leo Tolstoy's War and Peace, share what makes their show unique, from audience interaction to immersive sound design.",
+  podcast_id: pcast9.id,
+  date: Date.new(2017, 03, 31),
+  no: 293,
+  duration: "51:54",
+  audio_url: "https://ondemand.npr.org/anon.npr-mp3/npr/ama/2017/03/20170331_ama_fullshow.mp3",
+  image_url: "http://media.npr.org/assets/img/2017/03/31/joshgroban_20170327__mg_0790_npr_mkatzif_wide-5f4821a8577dc2ec22cc92aef634531125a71bc1-s700-c85.jpg"
+  )
+e33 = Episode.create!(name: "Judy Gold: Very Special Episodes",
+  description: 'Comedian Judy Gold talks about coming out to her audience, and her podcast "Kill Me Now," where celebrities reveal what makes them angry. Then we quiz her on strange episodes of classic sitcoms.',
+  podcast_id: pcast9.id,
+  date: Date.new(2017, 03, 17),
+  no: 292,
+  duration: "52:39",
+  audio_url: "https://ondemand.npr.org/anon.npr-mp3/npr/ama/2017/03/20170317_ama_fullshow.mp3",
+  image_url: "http://media.npr.org/assets/img/2017/03/16/judygold_20170313__mg_8934_npr_mkatzif_wide-b266e5119c9f7a0554114081c4b4b2978f0185a7-s700-c85.jpg"
+  )
+e34 = Episode.create!(name: 'Norah Jones "Day Breaks" ',
+  description: "Since her debut in 2002, Norah Jones has sold over 50 million albums and won 8 Grammys. In 2016, she released Day Breaks, her sixth album. In this episode, she takes apart the title track and details how the pieces unexpectedly came together. you’ll hear her original demo for the song, and how it was transformed in the studio, including a session with jazz saxophone legend Wayne Shorter. Plus, a few thoughts from Norah’s co-producer and longtime collaborator Sarah Oda.",
+  podcast_id: pcast10.id,
+  date: Date.new(2017, 04, 10),
+  no: 101,
+  duration: "15:08",
+  audio_url: "http://www.podtrac.com/pts/redirect.mp3/traffic.libsyn.com/songexploder/SongExploder101-NorahJones.mp3",
+  image_url: "http://songexploder.net/wp-content/uploads/2017/03/SongExploder101-NorahJones-600x420.png"
+  )
+e35 = Episode.create!(name: 'Dirty Projects "Up In Hudson" ',
+  description: 'David Longstreth started making music under the name Dirty Projectors in 2002. Since then, he’s released seven albums and collaborated with Björk, Solange, and Kanye West, Paul McCartney, and Rihanna. Dirty Projectors went from a solo project to a full-band, performing on TV, and at Carnegie Hall. Dave and one of his bandmates were in a relationship for years, but then that relationship—and the band—broke up. In February 2017, with Dirty Projectors as solo project once again, Dave released a self-titled album, a breakup album by all accounts. In this episode, Dave breaks down the song “Up in Hudson” and the winding road he went down to create it.',
+  podcast_id: pcast10.id,
+  date: Date.new(2017, 04, 7),
+  no: 100,
+  duration: "26:42",
+  audio_url: "http://www.podtrac.com/pts/redirect.mp3/traffic.libsyn.com/songexploder/SongExploder100-DirtyProjectors.mp3",
+  image_url: "http://songexploder.net/wp-content/uploads/2017/03/SongExploder100-DirtyProjectors-600x420.png"
+  )
+e36 = Episode.create!(name: 'Sleigh Bells "I Can Only Stare" ',
+  description: 'Sleigh Bells formed in 2008. They released their fourth album, "Jessica Rabbit," in 2016. In this episode, Alexis Krauss and Derek Miller break down their song “I Can Only Stare.” I interviewed the two of them in front of a live audience at the Kaufman Music Center in New York, as part of the Ecstatic Music Festival.',
+  podcast_id: pcast10.id,
+  date: Date.new(2017, 03, 14),
+  no: 99,
+  duration: "15:35",
+  audio_url: "http://www.podtrac.com/pts/redirect.mp3/traffic.libsyn.com/songexploder/SongExploder99-SleighBells.mp3",
+  image_url: "http://songexploder.net/wp-content/uploads/2017/03/SongExploder99-SleighBells.png"
+  )
 # e15 = Episode.create!(name: "",
 #   description: "",
 #   podcast_id: ,

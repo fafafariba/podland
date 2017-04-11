@@ -90,7 +90,10 @@ class PodcastDetail extends React.Component {
 
     if (latest) {
       let episodeImage = <div></div>;
-
+        let titleName = `No. ${latest.no}`;
+        if (!latest.no) {
+          titleName = "";
+        }
         if (latest.image_url) {
           episodeImage = <img className="thumb" src={latest.image_url} />;
         }
@@ -98,7 +101,7 @@ class PodcastDetail extends React.Component {
       <section className="latest-episode">
         <ul>
           <li>
-            <h4>No. {latest.no} {latest.name}</h4>
+            <h4>{titleName} {latest.name}</h4>
             <p>{latest.duration} </p>
             <p>{latest.description}</p>
             <div className="latest-row-buttons">
@@ -145,7 +148,9 @@ class PodcastDetail extends React.Component {
                     <ul>
                       <li><i className="fa fa-play" aria-hidden="true"
                         title="Play Podcast Radio"
-                        onClick={ ()=> this.playHandler(this.props.podcast.episodes) }></i></li>
+                        onClick={ ()=>
+                          this.playHandler(this.props.podcast.episodes)
+                            }></i></li>
                       <li><button className="subscribe-button"
                         onClick={()=>this.subscriptionsHandler()}>
                         {this.state.button}</button></li>
@@ -165,7 +170,8 @@ class PodcastDetail extends React.Component {
               <h4>Select Playlist:</h4>
               {this.displayMessages()}
               <SelectPlaylistItemContainer episodeId={this.state.episodeId} />
-              <button onClick={this.onAddTrackModalClose} className="outer-modal-button">
+              <button onClick={this.onAddTrackModalClose}
+                className="outer-modal-button">
               close</button>
             </Modal>
         </header>

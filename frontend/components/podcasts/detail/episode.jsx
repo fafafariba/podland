@@ -38,11 +38,16 @@ class Episode extends React.Component {
 
   render(){
 
+    let titleName = `No. ${this.props.episode.no}`;
+    if (!this.props.episode.no) {
+      titleName = "";
+    }
+
     let title =
     <header className="all-episodes-header">
       <ul>
         <li>
-          <h4>No. {this.props.episode.no} {this.props.episode.name}</h4>
+          <h4>{titleName} {this.props.episode.name}</h4>
         </li>
         <li>
           <p>{this.props.episode.duration}</p>
@@ -53,8 +58,9 @@ class Episode extends React.Component {
               title="Play Episode"
               onClick={ ()=> this.playHandler([this.props.episode]) }>
             </i></li>
-          <li><i className="fa fa-plus" title="Add to Playlist" aria-hidden="true"
-              onClick={()=> this.openModal(this.props.episode.id)} aria-hidden="true">
+          <li><i className="fa fa-plus" title="Add to Playlist"
+            aria-hidden="true" onClick={()=>
+              this.openModal(this.props.episode.id)} aria-hidden="true">
             </i></li>
           </ul>
         </li>
@@ -77,7 +83,8 @@ class Episode extends React.Component {
           <h4>Select Playlist:</h4>
           {this.displayMessages()}
           <SelectPlaylistItemContainer episodeId={this.state.episodeId} />
-          <button onClick={this.onAddTrackModalClose} className="outer-modal-button">
+          <button onClick={this.onAddTrackModalClose}
+            className="outer-modal-button">
           close</button>
         </Modal>
       </div>
