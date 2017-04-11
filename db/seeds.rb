@@ -103,7 +103,6 @@ pcast12 = Podcast.create!(name: "Freakonomics",
 ### SUBSCRIPTIONS
 subs1 = Subscription.create!(user_id: tester.id, podcast_id: pcast8.id)
 subs2 = Subscription.create!(user_id: tester.id, podcast_id: pcast12.id)
-subs1 = Subscription.create!(user_id: tester.id, podcast_id: pcast1.id)
 subs2 = Subscription.create!(user_id: tester.id, podcast_id: pcast10.id)
 subs3 = Subscription.create!(user_id: tester.id, podcast_id: pcast4.id)
 subs3 = Subscription.create!(user_id: tester.id, podcast_id: pcast7.id)
